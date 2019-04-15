@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.kmmedia.top/"/>
-  <updated>2019-04-15T11:41:02.643Z</updated>
+  <updated>2019-04-15T11:47:49.643Z</updated>
   <id>http://www.kmmedia.top/</id>
   
   <author>
@@ -21,9 +21,16 @@
     <link href="http://www.kmmedia.top/2019/04/15/Linux-0/"/>
     <id>http://www.kmmedia.top/2019/04/15/Linux-0/</id>
     <published>2019-04-15T11:41:02.000Z</published>
-    <updated>2019-04-15T11:41:02.643Z</updated>
+    <updated>2019-04-15T11:47:49.643Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="Linux-命令整理"><a href="#Linux-命令整理" class="headerlink" title="Linux 命令整理"></a>Linux 命令整理</h1><h1 id="一、lsof"><a href="#一、lsof" class="headerlink" title="一、lsof"></a>一、lsof</h1><p>1、列出本机正在运行的ipv4/ipv6协议服务</p><p>lsof -i 4/6</p><p>2、列出本机正在运行的tcp/udp服务</p><p>lsof -i tcp/udp</p><p>3、列出本机1-1024的开放端口</p><p>lsof -i :1-1024</p><p>4、列出本机用户的进程服务</p><p>lsfo -u user</p>]]></content>
     
     <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;Linux-命令整理&quot;&gt;&lt;a href=&quot;#Linux-命令整理&quot; class=&quot;headerlink&quot; title=&quot;Linux 命令整理&quot;&gt;&lt;/a&gt;Linux 命令整理&lt;/h1&gt;&lt;h1 id=&quot;一、lsof&quot;&gt;&lt;a href=&quot;#一、lsof&quot; class=&quot;
+      
     
     </summary>
     
@@ -38,27 +45,6 @@
     <updated>2019-04-15T11:42:52.424Z</updated>
     
     <summary type="html">
-    
-    </summary>
-    
-    
-  </entry>
-  
-  <entry>
-    <title></title>
-    <link href="http://www.kmmedia.top/2019/04/15/linux/"/>
-    <id>http://www.kmmedia.top/2019/04/15/linux/</id>
-    <published>2019-04-15T08:15:43.883Z</published>
-    <updated>2019-04-15T11:39:14.052Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="Linux-命令整理"><a href="#Linux-命令整理" class="headerlink" title="Linux 命令整理"></a>Linux 命令整理</h1><h1 id="一、lsof"><a href="#一、lsof" class="headerlink" title="一、lsof"></a>一、lsof</h1><p>1、列出本机正在运行的ipv4/ipv6协议服务</p><p>lsof -i 4/6</p><p>2、列出本机正在运行的tcp/udp服务</p><p>lsof -i tcp/udp</p><p>3、列出本机1-1024的开放端口</p><p>lsof -i :1-1024</p><p>4、列出本机用户的进程服务</p><p>lsfo -u user</p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h1 id=&quot;Linux-命令整理&quot;&gt;&lt;a href=&quot;#Linux-命令整理&quot; class=&quot;headerlink&quot; title=&quot;Linux 命令整理&quot;&gt;&lt;/a&gt;Linux 命令整理&lt;/h1&gt;&lt;h1 id=&quot;一、lsof&quot;&gt;&lt;a href=&quot;#一、lsof&quot; class=&quot;
-      
     
     </summary>
     
