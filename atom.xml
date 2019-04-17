@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.kmmedia.top/"/>
-  <updated>2019-04-15T11:42:52.424Z</updated>
+  <updated>2019-04-15T12:04:10.530Z</updated>
   <id>http://www.kmmedia.top/</id>
   
   <author>
@@ -15,6 +15,20 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>1</title>
+    <link href="http://www.kmmedia.top/2019/04/15/1/"/>
+    <id>http://www.kmmedia.top/2019/04/15/1/</id>
+    <published>2019-04-15T12:04:10.000Z</published>
+    <updated>2019-04-15T12:04:10.530Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>Linux 1</title>
