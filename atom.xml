@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.kmmedia.top/"/>
-  <updated>2019-04-19T01:20:54.243Z</updated>
+  <updated>2019-04-19T01:22:50.941Z</updated>
   <id>http://www.kmmedia.top/</id>
   
   <author>
@@ -17,34 +17,19 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>test</title>
-    <link href="http://www.kmmedia.top/2019/04/19/test/"/>
-    <id>http://www.kmmedia.top/2019/04/19/test/</id>
-    <published>2019-04-19T01:20:54.000Z</published>
-    <updated>2019-04-19T01:20:54.243Z</updated>
-    
-    <summary type="html">
-    
-    </summary>
-    
-    
-  </entry>
-  
-  <entry>
-    <title></title>
+    <title>CentOS 7 安装 MariaDB</title>
     <link href="http://www.kmmedia.top/2019/04/19/CentOS%E5%AE%89%E8%A3%85MariaDB/"/>
     <id>http://www.kmmedia.top/2019/04/19/CentOS安装MariaDB/</id>
-    <published>2019-04-19T01:09:47.595Z</published>
-    <updated>2019-04-19T01:17:34.583Z</updated>
+    <published>2019-04-19T01:20:54.000Z</published>
+    <updated>2019-04-19T01:22:50.941Z</updated>
     
-    <content type="html"><![CDATA[<p>title: CentOS 7 安装 MariaDB</p><p>1、yum安装MariaDB</p><blockquote><p>yum -y install mariadb-server</p></blockquote>]]></content>
+    <content type="html"><![CDATA[<p>1、yum安装MariaDB</p><blockquote><p>yum -y install mariadb-server</p></blockquote>]]></content>
     
     <summary type="html">
     
       
       
-        &lt;p&gt;title: CentOS 7 安装 MariaDB&lt;/p&gt;
-&lt;p&gt;1、yum安装MariaDB&lt;/p&gt;
+        &lt;p&gt;1、yum安装MariaDB&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;yum -y install mariadb-server&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -57,11 +42,11 @@
   </entry>
   
   <entry>
-    <title></title>
-    <link href="http://www.kmmedia.top/2019/04/18/CentOS%E6%9B%B4%E6%8D%A2yum%E6%BA%90/"/>
-    <id>http://www.kmmedia.top/2019/04/18/CentOS更换yum源/</id>
-    <published>2019-04-18T07:49:58.243Z</published>
-    <updated>2019-04-19T01:11:07.212Z</updated>
+    <title>CentOS更换yum源</title>
+    <link href="http://www.kmmedia.top/2019/04/15/CentOS%E6%9B%B4%E6%8D%A2yum%E6%BA%90/"/>
+    <id>http://www.kmmedia.top/2019/04/15/CentOS更换yum源/</id>
+    <published>2019-04-15T11:41:02.000Z</published>
+    <updated>2019-04-19T01:29:27.293Z</updated>
     
     <content type="html"><![CDATA[<p>1、备份</p><blockquote><p>mv /etc/yum.repos.d/CentOS-Base.repo /etc/yum.repos.d/CentOS-Base.repo.backup</p></blockquote><p>2、下载新的centos-base.repo到/etc/yum.repos.d/</p><blockquote><p>阿里源地址：<a href="http://mirrors.aliyun.com/repo/" target="_blank" rel="noopener">http://mirrors.aliyun.com/repo/</a></p></blockquote><blockquote><p>wget -O /etc/yum.repos.d/CentOS-Base.repo <a href="http://mirrors.aliyun.com/repo/Centos-5/6/7.repo" target="_blank" rel="noopener">http://mirrors.aliyun.com/repo/Centos-5/6/7.repo</a></p></blockquote><p>3、清除缓存</p><blockquote><p>yum clean all</p></blockquote><p>4、更新本地yum缓存</p><blockquote><p>yum makecache</p></blockquote><p>5、更新yum软件库</p><blockquote><p>yum update -y</p></blockquote><p>6、查看已安装的服务</p><blockquote><p>yum list installed</p></blockquote>]]></content>
     
@@ -82,11 +67,34 @@
   </entry>
   
   <entry>
-    <title></title>
-    <link href="http://www.kmmedia.top/2019/04/18/CentOS%E6%B7%BB%E5%8A%A0FTP%E7%94%A8%E6%88%B7/"/>
-    <id>http://www.kmmedia.top/2019/04/18/CentOS添加FTP用户/</id>
-    <published>2019-04-18T03:15:56.520Z</published>
-    <updated>2019-04-19T01:10:54.811Z</updated>
+    <title>Linux常用命令整理</title>
+    <link href="http://www.kmmedia.top/2019/04/15/Linux%E5%91%BD%E4%BB%A4%E6%95%B4%E7%90%86/"/>
+    <id>http://www.kmmedia.top/2019/04/15/Linux命令整理/</id>
+    <published>2019-04-15T11:41:02.000Z</published>
+    <updated>2019-04-19T01:28:01.311Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="一、lsof"><a href="#一、lsof" class="headerlink" title="一、lsof"></a>一、lsof</h1><p>1、列出本机正在运行的ipv4/ipv6协议服务</p><p>lsof -i 4/6</p><p>2、列出本机正在运行的tcp/udp服务</p><p>lsof -i tcp/udp</p><p>3、列出本机1-1024的开放端口</p><p>lsof -i :1-1024</p><p>4、列出本机用户的进程服务</p><p>lsfo -u user</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;一、lsof&quot;&gt;&lt;a href=&quot;#一、lsof&quot; class=&quot;headerlink&quot; title=&quot;一、lsof&quot;&gt;&lt;/a&gt;一、lsof&lt;/h1&gt;&lt;p&gt;1、列出本机正在运行的ipv4/ipv6协议服务&lt;/p&gt;
+&lt;p&gt;lsof -i 4/6&lt;/p&gt;
+&lt;p&gt;2、列
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>CentOS添加FTP用户</title>
+    <link href="http://www.kmmedia.top/2019/04/15/CentOS%E6%B7%BB%E5%8A%A0FTP%E7%94%A8%E6%88%B7/"/>
+    <id>http://www.kmmedia.top/2019/04/15/CentOS添加FTP用户/</id>
+    <published>2019-04-15T11:41:02.000Z</published>
+    <updated>2019-04-19T01:28:56.107Z</updated>
     
     <content type="html"><![CDATA[<p>1、创建FTP用户test并指定用户家目录</p><blockquote><p>useradd -d /home/test -m test</p></blockquote><p>2、更改用户权限</p><blockquote><p>限定用户test不能登录shell，只能ftp</p></blockquote><blockquote><p>usermod -s /sbin/nologin test</p></blockquote><blockquote><p>用户test恢复正常，允许登录shell</p></blockquote><blockquote><p>usermod -s /sbin/bahs test</p></blockquote><blockquote><p>更改用户test的主目录</p></blockquote><blockquote><p>usermod -d /home/test test</p></blockquote><p>3、修改/etc/vsftpd/vsftpd.conf，限制用户只能访问/home/test，不能访问其他地址</p><blockquote><p>禁止穿越到上级目录</p></blockquote><blockquote><p>chroot_list_enable=YES</p></blockquote>]]></content>
     
@@ -101,27 +109,6 @@
 &lt;p&gt;2、更改用户权限&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;限定用户test不能登录she
-      
-    
-    </summary>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>Linux</title>
-    <link href="http://www.kmmedia.top/2019/04/15/Linux%E5%91%BD%E4%BB%A4%E6%95%B4%E7%90%86/"/>
-    <id>http://www.kmmedia.top/2019/04/15/Linux命令整理/</id>
-    <published>2019-04-15T11:41:02.000Z</published>
-    <updated>2019-04-15T11:47:49.643Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="Linux-命令整理"><a href="#Linux-命令整理" class="headerlink" title="Linux 命令整理"></a>Linux 命令整理</h1><h1 id="一、lsof"><a href="#一、lsof" class="headerlink" title="一、lsof"></a>一、lsof</h1><p>1、列出本机正在运行的ipv4/ipv6协议服务</p><p>lsof -i 4/6</p><p>2、列出本机正在运行的tcp/udp服务</p><p>lsof -i tcp/udp</p><p>3、列出本机1-1024的开放端口</p><p>lsof -i :1-1024</p><p>4、列出本机用户的进程服务</p><p>lsfo -u user</p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h1 id=&quot;Linux-命令整理&quot;&gt;&lt;a href=&quot;#Linux-命令整理&quot; class=&quot;headerlink&quot; title=&quot;Linux 命令整理&quot;&gt;&lt;/a&gt;Linux 命令整理&lt;/h1&gt;&lt;h1 id=&quot;一、lsof&quot;&gt;&lt;a href=&quot;#一、lsof&quot; class=&quot;
       
     
     </summary>
