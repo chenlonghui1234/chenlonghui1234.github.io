@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.kmmedia.top/"/>
-  <updated>2019-04-15T12:04:10.530Z</updated>
+  <updated>2019-04-19T01:09:47.596Z</updated>
   <id>http://www.kmmedia.top/</id>
   
   <author>
@@ -17,13 +17,25 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>1</title>
-    <link href="http://www.kmmedia.top/2019/04/15/1/"/>
-    <id>http://www.kmmedia.top/2019/04/15/1/</id>
-    <published>2019-04-15T12:04:10.000Z</published>
-    <updated>2019-04-15T12:04:10.530Z</updated>
+    <title></title>
+    <link href="http://www.kmmedia.top/2019/04/19/CentOS%E5%AE%89%E8%A3%85MariaDB/"/>
+    <id>http://www.kmmedia.top/2019/04/19/CentOS安装MariaDB/</id>
+    <published>2019-04-19T01:09:47.595Z</published>
+    <updated>2019-04-19T01:09:47.596Z</updated>
+    
+    <content type="html"><![CDATA[<p>CentOS 7 安装 mariadb</p><p>1、yum安装mariadb</p><blockquote><p>yum -y install mariadb-server</p></blockquote>]]></content>
     
     <summary type="html">
+    
+      
+      
+        &lt;p&gt;CentOS 7 安装 mariadb&lt;/p&gt;
+&lt;p&gt;1、yum安装mariadb&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;yum -y install mariadb-server&lt;/p&gt;
+&lt;/blockquote&gt;
+
+      
     
     </summary>
     
@@ -31,13 +43,51 @@
   </entry>
   
   <entry>
-    <title>Linux 1</title>
-    <link href="http://www.kmmedia.top/2019/04/15/Linux%201-1/"/>
-    <id>http://www.kmmedia.top/2019/04/15/Linux 1-1/</id>
-    <published>2019-04-15T11:41:02.000Z</published>
-    <updated>2019-04-15T11:42:52.424Z</updated>
+    <title></title>
+    <link href="http://www.kmmedia.top/2019/04/18/CentOS%E6%9B%B4%E6%8D%A2yum%E6%BA%90/"/>
+    <id>http://www.kmmedia.top/2019/04/18/CentOS更换yum源/</id>
+    <published>2019-04-18T07:49:58.243Z</published>
+    <updated>2019-04-19T01:11:07.212Z</updated>
+    
+    <content type="html"><![CDATA[<p>1、备份</p><blockquote><p>mv /etc/yum.repos.d/CentOS-Base.repo /etc/yum.repos.d/CentOS-Base.repo.backup</p></blockquote><p>2、下载新的centos-base.repo到/etc/yum.repos.d/</p><blockquote><p>阿里源地址：<a href="http://mirrors.aliyun.com/repo/" target="_blank" rel="noopener">http://mirrors.aliyun.com/repo/</a></p></blockquote><blockquote><p>wget -O /etc/yum.repos.d/CentOS-Base.repo <a href="http://mirrors.aliyun.com/repo/Centos-5/6/7.repo" target="_blank" rel="noopener">http://mirrors.aliyun.com/repo/Centos-5/6/7.repo</a></p></blockquote><p>3、清除缓存</p><blockquote><p>yum clean all</p></blockquote><p>4、更新本地yum缓存</p><blockquote><p>yum makecache</p></blockquote><p>5、更新yum软件库</p><blockquote><p>yum update -y</p></blockquote><p>6、查看已安装的服务</p><blockquote><p>yum list installed</p></blockquote>]]></content>
     
     <summary type="html">
+    
+      
+      
+        &lt;p&gt;1、备份&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;mv /etc/yum.repos.d/CentOS-Base.repo /etc/yum.repos.d/CentOS-Base.repo.backup&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;2、下载新的centos-
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title></title>
+    <link href="http://www.kmmedia.top/2019/04/18/CentOS%E6%B7%BB%E5%8A%A0FTP%E7%94%A8%E6%88%B7/"/>
+    <id>http://www.kmmedia.top/2019/04/18/CentOS添加FTP用户/</id>
+    <published>2019-04-18T03:15:56.520Z</published>
+    <updated>2019-04-19T01:10:54.811Z</updated>
+    
+    <content type="html"><![CDATA[<p>1、创建FTP用户test并指定用户家目录</p><blockquote><p>useradd -d /home/test -m test</p></blockquote><p>2、更改用户权限</p><blockquote><p>限定用户test不能登录shell，只能ftp</p></blockquote><blockquote><p>usermod -s /sbin/nologin test</p></blockquote><blockquote><p>用户test恢复正常，允许登录shell</p></blockquote><blockquote><p>usermod -s /sbin/bahs test</p></blockquote><blockquote><p>更改用户test的主目录</p></blockquote><blockquote><p>usermod -d /home/test test</p></blockquote><p>3、修改/etc/vsftpd/vsftpd.conf，限制用户只能访问/home/test，不能访问其他地址</p><blockquote><p>禁止穿越到上级目录</p></blockquote><blockquote><p>chroot_list_enable=YES</p></blockquote>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;1、创建FTP用户test并指定用户家目录&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;useradd -d /home/test -m test&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;2、更改用户权限&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;限定用户test不能登录she
+      
     
     </summary>
     
@@ -46,8 +96,8 @@
   
   <entry>
     <title>Linux</title>
-    <link href="http://www.kmmedia.top/2019/04/15/Linux-0/"/>
-    <id>http://www.kmmedia.top/2019/04/15/Linux-0/</id>
+    <link href="http://www.kmmedia.top/2019/04/15/Linux%E5%91%BD%E4%BB%A4%E6%95%B4%E7%90%86/"/>
+    <id>http://www.kmmedia.top/2019/04/15/Linux命令整理/</id>
     <published>2019-04-15T11:41:02.000Z</published>
     <updated>2019-04-15T11:47:49.643Z</updated>
     
