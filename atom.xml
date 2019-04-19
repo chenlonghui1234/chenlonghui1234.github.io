@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.kmmedia.top/"/>
-  <updated>2019-04-19T01:15:34.109Z</updated>
+  <updated>2019-04-19T01:20:54.243Z</updated>
   <id>http://www.kmmedia.top/</id>
   
   <author>
@@ -17,20 +17,34 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>test</title>
+    <link href="http://www.kmmedia.top/2019/04/19/test/"/>
+    <id>http://www.kmmedia.top/2019/04/19/test/</id>
+    <published>2019-04-19T01:20:54.000Z</published>
+    <updated>2019-04-19T01:20:54.243Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
     <title></title>
     <link href="http://www.kmmedia.top/2019/04/19/CentOS%E5%AE%89%E8%A3%85MariaDB/"/>
     <id>http://www.kmmedia.top/2019/04/19/CentOS安装MariaDB/</id>
     <published>2019-04-19T01:09:47.595Z</published>
-    <updated>2019-04-19T01:15:34.109Z</updated>
+    <updated>2019-04-19T01:17:34.583Z</updated>
     
-    <content type="html"><![CDATA[<p>title: CentOS 7 安装 mariadb</p><p>1、yum安装mariadb</p><blockquote><p>yum -y install mariadb-server</p></blockquote>]]></content>
+    <content type="html"><![CDATA[<p>title: CentOS 7 安装 MariaDB</p><p>1、yum安装MariaDB</p><blockquote><p>yum -y install mariadb-server</p></blockquote>]]></content>
     
     <summary type="html">
     
       
       
-        &lt;p&gt;title: CentOS 7 安装 mariadb&lt;/p&gt;
-&lt;p&gt;1、yum安装mariadb&lt;/p&gt;
+        &lt;p&gt;title: CentOS 7 安装 MariaDB&lt;/p&gt;
+&lt;p&gt;1、yum安装MariaDB&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;yum -y install mariadb-server&lt;/p&gt;
 &lt;/blockquote&gt;
