@@ -83,17 +83,17 @@
 
 
 
-<meta name="description" content="1、允许远程访问mysql  grant all privileges . to ‘root‘@’%’;  2、刷新权限  flush privileges;">
+<meta name="description" content="1、授权允许远程访问mysql  允许任意ip的主机访问本地mysql服务器   grant all privileges . to ‘root‘@’%’;   允许用户jack从ip为10.10.50.127的主机连接到mysql服务器，并使用123456作为密码   grant all privileges . to ‘jack‘@’10.10.50.127’ identified by ‘1">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Mysql 常用命令整理">
 <meta property="og:url" content="http://www.kmmedia.top/2019/04/19/Mysql-常用命令整理/index.html">
 <meta property="og:site_name" content="Cheney’s blog">
-<meta property="og:description" content="1、允许远程访问mysql  grant all privileges . to ‘root‘@’%’;  2、刷新权限  flush privileges;">
+<meta property="og:description" content="1、授权允许远程访问mysql  允许任意ip的主机访问本地mysql服务器   grant all privileges . to ‘root‘@’%’;   允许用户jack从ip为10.10.50.127的主机连接到mysql服务器，并使用123456作为密码   grant all privileges . to ‘jack‘@’10.10.50.127’ identified by ‘1">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-04-19T02:05:57.258Z">
+<meta property="og:updated_time" content="2019-04-19T02:11:57.608Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Mysql 常用命令整理">
-<meta name="twitter:description" content="1、允许远程访问mysql  grant all privileges . to ‘root‘@’%’;  2、刷新权限  flush privileges;">
+<meta name="twitter:description" content="1、授权允许远程访问mysql  允许任意ip的主机访问本地mysql服务器   grant all privileges . to ‘root‘@’%’;   允许用户jack从ip为10.10.50.127的主机连接到mysql服务器，并使用123456作为密码   grant all privileges . to ‘jack‘@’10.10.50.127’ identified by ‘1">
 
 
 
@@ -303,9 +303,24 @@
       
 
       
-        <p>1、允许远程访问mysql</p>
+        <p>1、授权允许远程访问mysql</p>
+<blockquote>
+<p>允许任意ip的主机访问本地mysql服务器</p>
+</blockquote>
 <blockquote>
 <p>grant all privileges <em>.</em> to ‘root‘@’%’;</p>
+</blockquote>
+<blockquote>
+<p>允许用户jack从ip为10.10.50.127的主机连接到mysql服务器，并使用123456作为密码</p>
+</blockquote>
+<blockquote>
+<p>grant all privileges <em>.</em> to ‘jack‘@’10.10.50.127’ identified by ‘123456’ with grant option;</p>
+</blockquote>
+<blockquote>
+<p>改表</p>
+</blockquote>
+<blockquote>
+<p>update user set host = ‘%’ where user = ‘root’;</p>
 </blockquote>
 <p>2、刷新权限</p>
 <blockquote>

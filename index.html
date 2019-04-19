@@ -305,9 +305,24 @@
       
         
           
-            <p>1、允许远程访问mysql</p>
+            <p>1、授权允许远程访问mysql</p>
+<blockquote>
+<p>允许任意ip的主机访问本地mysql服务器</p>
+</blockquote>
 <blockquote>
 <p>grant all privileges <em>.</em> to ‘root‘@’%’;</p>
+</blockquote>
+<blockquote>
+<p>允许用户jack从ip为10.10.50.127的主机连接到mysql服务器，并使用123456作为密码</p>
+</blockquote>
+<blockquote>
+<p>grant all privileges <em>.</em> to ‘jack‘@’10.10.50.127’ identified by ‘123456’ with grant option;</p>
+</blockquote>
+<blockquote>
+<p>改表</p>
+</blockquote>
+<blockquote>
+<p>update user set host = ‘%’ where user = ‘root’;</p>
 </blockquote>
 <p>2、刷新权限</p>
 <blockquote>
