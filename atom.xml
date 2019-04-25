@@ -277,31 +277,6 @@
   </entry>
   
   <entry>
-    <title>CentOS更换yum源</title>
-    <link href="http://www.kmmedia.top/2019/04/15/CentOS-%E6%9B%B4%E6%8D%A2yum%E6%BA%90/"/>
-    <id>http://www.kmmedia.top/2019/04/15/CentOS-更换yum源/</id>
-    <published>2019-04-15T11:41:02.000Z</published>
-    <updated>2019-04-19T01:29:27.293Z</updated>
-    
-    <content type="html"><![CDATA[<p>1、备份</p><blockquote><p>mv /etc/yum.repos.d/CentOS-Base.repo /etc/yum.repos.d/CentOS-Base.repo.backup</p></blockquote><p>2、下载新的centos-base.repo到/etc/yum.repos.d/</p><blockquote><p>阿里源地址：<a href="http://mirrors.aliyun.com/repo/" target="_blank" rel="noopener">http://mirrors.aliyun.com/repo/</a></p></blockquote><blockquote><p>wget -O /etc/yum.repos.d/CentOS-Base.repo <a href="http://mirrors.aliyun.com/repo/Centos-5/6/7.repo" target="_blank" rel="noopener">http://mirrors.aliyun.com/repo/Centos-5/6/7.repo</a></p></blockquote><p>3、清除缓存</p><blockquote><p>yum clean all</p></blockquote><p>4、更新本地yum缓存</p><blockquote><p>yum makecache</p></blockquote><p>5、更新yum软件库</p><blockquote><p>yum update -y</p></blockquote><p>6、查看已安装的服务</p><blockquote><p>yum list installed</p></blockquote>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;1、备份&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;mv /etc/yum.repos.d/CentOS-Base.repo /etc/yum.repos.d/CentOS-Base.repo.backup&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;2、下载新的centos-
-      
-    
-    </summary>
-    
-    
-  </entry>
-  
-  <entry>
     <title>CentOS FTP服务配置</title>
     <link href="http://www.kmmedia.top/2019/04/15/CentOS-FTP%E6%9C%8D%E5%8A%A1%E9%85%8D%E7%BD%AE/"/>
     <id>http://www.kmmedia.top/2019/04/15/CentOS-FTP服务配置/</id>
@@ -321,6 +296,31 @@
 &lt;p&gt;2、更改用户权限&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;限定用户test不能登录she
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>CentOS更换yum源</title>
+    <link href="http://www.kmmedia.top/2019/04/15/CentOS-%E6%9B%B4%E6%8D%A2yum%E6%BA%90/"/>
+    <id>http://www.kmmedia.top/2019/04/15/CentOS-更换yum源/</id>
+    <published>2019-04-15T11:41:02.000Z</published>
+    <updated>2019-04-19T01:29:27.293Z</updated>
+    
+    <content type="html"><![CDATA[<p>1、备份</p><blockquote><p>mv /etc/yum.repos.d/CentOS-Base.repo /etc/yum.repos.d/CentOS-Base.repo.backup</p></blockquote><p>2、下载新的centos-base.repo到/etc/yum.repos.d/</p><blockquote><p>阿里源地址：<a href="http://mirrors.aliyun.com/repo/" target="_blank" rel="noopener">http://mirrors.aliyun.com/repo/</a></p></blockquote><blockquote><p>wget -O /etc/yum.repos.d/CentOS-Base.repo <a href="http://mirrors.aliyun.com/repo/Centos-5/6/7.repo" target="_blank" rel="noopener">http://mirrors.aliyun.com/repo/Centos-5/6/7.repo</a></p></blockquote><p>3、清除缓存</p><blockquote><p>yum clean all</p></blockquote><p>4、更新本地yum缓存</p><blockquote><p>yum makecache</p></blockquote><p>5、更新yum软件库</p><blockquote><p>yum update -y</p></blockquote><p>6、查看已安装的服务</p><blockquote><p>yum list installed</p></blockquote>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;1、备份&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;mv /etc/yum.repos.d/CentOS-Base.repo /etc/yum.repos.d/CentOS-Base.repo.backup&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;2、下载新的centos-
       
     
     </summary>
