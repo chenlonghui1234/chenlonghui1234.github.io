@@ -43,6 +43,28 @@
   </entry>
   
   <entry>
+    <title>hexo添加下载功能</title>
+    <link href="http://www.kmmedia.top/2019/04/24/hexo%E6%B7%BB%E5%8A%A0%E4%B8%8B%E8%BD%BD%E5%8A%9F%E8%83%BD/"/>
+    <id>http://www.kmmedia.top/2019/04/24/hexo添加下载功能/</id>
+    <published>2019-04-24T01:15:24.000Z</published>
+    <updated>2019-04-25T02:16:08.446Z</updated>
+    
+    <content type="html"><![CDATA[<p>1、在source目录下新建download目录与_posts<code>About</code>tags<code></code>categories等目录并列。</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;1、在source目录下新建download目录与_posts&lt;code&gt;About&lt;/code&gt;tags&lt;code&gt;&lt;/code&gt;categories等目录并列。&lt;/p&gt;
+
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
     <title>Samba 协议工作流程</title>
     <link href="http://www.kmmedia.top/2019/04/24/Samba-%E5%8D%8F%E8%AE%AE%E5%B7%A5%E4%BD%9C%E6%B5%81%E7%A8%8B/"/>
     <id>http://www.kmmedia.top/2019/04/24/Samba-协议工作流程/</id>
@@ -68,16 +90,17 @@
     <link href="http://www.kmmedia.top/2019/04/24/NTLMv1%E3%80%81NTLMv2-%E6%95%B0%E6%8D%AE%E5%8C%85%E5%88%86%E6%9E%90/"/>
     <id>http://www.kmmedia.top/2019/04/24/NTLMv1、NTLMv2-数据包分析/</id>
     <published>2019-04-24T01:15:24.000Z</published>
-    <updated>2019-04-25T02:12:35.307Z</updated>
+    <updated>2019-04-25T02:18:17.198Z</updated>
     
-    <content type="html"><![CDATA[<p><a href="Sambatest/NTLMv1.pcapng" target="_blank">NTLMv1.pcapng</a></p><p> <a href="/download/NTLMv1.pcapng&quot;">NTLMv1.pcapng</a></p>]]></content>
+    <content type="html"><![CDATA[<p><a href="download/NTLMv1.pcapng" target="_blank">NTLMv1.pcapng</a></p><p> <a href="/download/NTLMv1.pcapng&quot;">NTLMv1.pcapng</a></p>]]></content>
     
     <summary type="html">
     
       
       
-        &lt;p&gt;&lt;a href=&quot;Sambatest/NTLMv1.pcapng&quot; target=&quot;_blank&quot;&gt;NTLMv1.pcapng&lt;/a&gt;&lt;/p&gt;
+        &lt;p&gt;&lt;a href=&quot;download/NTLMv1.pcapng&quot; target=&quot;_blank&quot;&gt;NTLMv1.pcapng&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt; &lt;a href=&quot;/download/NTLMv1.pcapng&amp;quot;&quot;&gt;NTLMv1.pcapng&lt;/a&gt;&lt;/p&gt;
+
       
     
     </summary>
@@ -262,21 +285,25 @@
   </entry>
   
   <entry>
-    <title>Linux常用命令整理</title>
-    <link href="http://www.kmmedia.top/2019/04/15/Linux-%E5%91%BD%E4%BB%A4%E6%95%B4%E7%90%86/"/>
-    <id>http://www.kmmedia.top/2019/04/15/Linux-命令整理/</id>
+    <title>CentOS FTP服务配置</title>
+    <link href="http://www.kmmedia.top/2019/04/15/CentOS-FTP%E6%9C%8D%E5%8A%A1%E9%85%8D%E7%BD%AE/"/>
+    <id>http://www.kmmedia.top/2019/04/15/CentOS-FTP服务配置/</id>
     <published>2019-04-15T11:41:02.000Z</published>
-    <updated>2019-04-19T01:28:01.311Z</updated>
+    <updated>2019-04-24T01:38:20.993Z</updated>
     
-    <content type="html"><![CDATA[<h1 id="一、lsof"><a href="#一、lsof" class="headerlink" title="一、lsof"></a>一、lsof</h1><p>1、列出本机正在运行的ipv4/ipv6协议服务</p><p>lsof -i 4/6</p><p>2、列出本机正在运行的tcp/udp服务</p><p>lsof -i tcp/udp</p><p>3、列出本机1-1024的开放端口</p><p>lsof -i :1-1024</p><p>4、列出本机用户的进程服务</p><p>lsfo -u user</p>]]></content>
+    <content type="html"><![CDATA[<p>1、创建FTP用户test并指定用户家目录</p><blockquote><p>useradd -d /home/test -m test</p></blockquote><p>2、更改用户权限</p><blockquote><p>限定用户test不能登录shell，只能ftp</p></blockquote><blockquote><p>usermod -s /sbin/nologin test</p></blockquote><blockquote><p>用户test恢复正常，允许登录shell</p></blockquote><blockquote><p>usermod -s /sbin/bahs test</p></blockquote><blockquote><p>更改用户test的主目录</p></blockquote><blockquote><p>usermod -d /home/test test</p></blockquote><p>3、修改/etc/vsftpd/vsftpd.conf，限制用户只能访问/home/test，不能访问其他地址</p><blockquote><p>禁止穿越到上级目录</p></blockquote><blockquote><p>chroot_list_enable=YES</p></blockquote>]]></content>
     
     <summary type="html">
     
       
       
-        &lt;h1 id=&quot;一、lsof&quot;&gt;&lt;a href=&quot;#一、lsof&quot; class=&quot;headerlink&quot; title=&quot;一、lsof&quot;&gt;&lt;/a&gt;一、lsof&lt;/h1&gt;&lt;p&gt;1、列出本机正在运行的ipv4/ipv6协议服务&lt;/p&gt;
-&lt;p&gt;lsof -i 4/6&lt;/p&gt;
-&lt;p&gt;2、列
+        &lt;p&gt;1、创建FTP用户test并指定用户家目录&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;useradd -d /home/test -m test&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;2、更改用户权限&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;限定用户test不能登录she
       
     
     </summary>
@@ -310,25 +337,21 @@
   </entry>
   
   <entry>
-    <title>CentOS FTP服务配置</title>
-    <link href="http://www.kmmedia.top/2019/04/15/CentOS-FTP%E6%9C%8D%E5%8A%A1%E9%85%8D%E7%BD%AE/"/>
-    <id>http://www.kmmedia.top/2019/04/15/CentOS-FTP服务配置/</id>
+    <title>Linux常用命令整理</title>
+    <link href="http://www.kmmedia.top/2019/04/15/Linux-%E5%91%BD%E4%BB%A4%E6%95%B4%E7%90%86/"/>
+    <id>http://www.kmmedia.top/2019/04/15/Linux-命令整理/</id>
     <published>2019-04-15T11:41:02.000Z</published>
-    <updated>2019-04-24T01:38:20.993Z</updated>
+    <updated>2019-04-19T01:28:01.311Z</updated>
     
-    <content type="html"><![CDATA[<p>1、创建FTP用户test并指定用户家目录</p><blockquote><p>useradd -d /home/test -m test</p></blockquote><p>2、更改用户权限</p><blockquote><p>限定用户test不能登录shell，只能ftp</p></blockquote><blockquote><p>usermod -s /sbin/nologin test</p></blockquote><blockquote><p>用户test恢复正常，允许登录shell</p></blockquote><blockquote><p>usermod -s /sbin/bahs test</p></blockquote><blockquote><p>更改用户test的主目录</p></blockquote><blockquote><p>usermod -d /home/test test</p></blockquote><p>3、修改/etc/vsftpd/vsftpd.conf，限制用户只能访问/home/test，不能访问其他地址</p><blockquote><p>禁止穿越到上级目录</p></blockquote><blockquote><p>chroot_list_enable=YES</p></blockquote>]]></content>
+    <content type="html"><![CDATA[<h1 id="一、lsof"><a href="#一、lsof" class="headerlink" title="一、lsof"></a>一、lsof</h1><p>1、列出本机正在运行的ipv4/ipv6协议服务</p><p>lsof -i 4/6</p><p>2、列出本机正在运行的tcp/udp服务</p><p>lsof -i tcp/udp</p><p>3、列出本机1-1024的开放端口</p><p>lsof -i :1-1024</p><p>4、列出本机用户的进程服务</p><p>lsfo -u user</p>]]></content>
     
     <summary type="html">
     
       
       
-        &lt;p&gt;1、创建FTP用户test并指定用户家目录&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;useradd -d /home/test -m test&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;2、更改用户权限&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;限定用户test不能登录she
+        &lt;h1 id=&quot;一、lsof&quot;&gt;&lt;a href=&quot;#一、lsof&quot; class=&quot;headerlink&quot; title=&quot;一、lsof&quot;&gt;&lt;/a&gt;一、lsof&lt;/h1&gt;&lt;p&gt;1、列出本机正在运行的ipv4/ipv6协议服务&lt;/p&gt;
+&lt;p&gt;lsof -i 4/6&lt;/p&gt;
+&lt;p&gt;2、列
       
     
     </summary>
