@@ -262,6 +262,33 @@
   </entry>
   
   <entry>
+    <title>CentOS FTP服务配置</title>
+    <link href="http://www.kmmedia.top/2019/04/15/CentOS-FTP%E6%9C%8D%E5%8A%A1%E9%85%8D%E7%BD%AE/"/>
+    <id>http://www.kmmedia.top/2019/04/15/CentOS-FTP服务配置/</id>
+    <published>2019-04-15T11:41:02.000Z</published>
+    <updated>2019-04-24T01:38:20.993Z</updated>
+    
+    <content type="html"><![CDATA[<p>1、创建FTP用户test并指定用户家目录</p><blockquote><p>useradd -d /home/test -m test</p></blockquote><p>2、更改用户权限</p><blockquote><p>限定用户test不能登录shell，只能ftp</p></blockquote><blockquote><p>usermod -s /sbin/nologin test</p></blockquote><blockquote><p>用户test恢复正常，允许登录shell</p></blockquote><blockquote><p>usermod -s /sbin/bahs test</p></blockquote><blockquote><p>更改用户test的主目录</p></blockquote><blockquote><p>usermod -d /home/test test</p></blockquote><p>3、修改/etc/vsftpd/vsftpd.conf，限制用户只能访问/home/test，不能访问其他地址</p><blockquote><p>禁止穿越到上级目录</p></blockquote><blockquote><p>chroot_list_enable=YES</p></blockquote>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;1、创建FTP用户test并指定用户家目录&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;useradd -d /home/test -m test&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;2、更改用户权限&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;限定用户test不能登录she
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
     <title>Linux常用命令整理</title>
     <link href="http://www.kmmedia.top/2019/04/15/Linux-%E5%91%BD%E4%BB%A4%E6%95%B4%E7%90%86/"/>
     <id>http://www.kmmedia.top/2019/04/15/Linux-命令整理/</id>
@@ -302,33 +329,6 @@
 &lt;p&gt;mv /etc/yum.repos.d/CentOS-Base.repo /etc/yum.repos.d/CentOS-Base.repo.backup&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;2、下载新的centos-
-      
-    
-    </summary>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>CentOS FTP服务配置</title>
-    <link href="http://www.kmmedia.top/2019/04/15/CentOS-FTP%E6%9C%8D%E5%8A%A1%E9%85%8D%E7%BD%AE/"/>
-    <id>http://www.kmmedia.top/2019/04/15/CentOS-FTP服务配置/</id>
-    <published>2019-04-15T11:41:02.000Z</published>
-    <updated>2019-04-24T01:38:20.993Z</updated>
-    
-    <content type="html"><![CDATA[<p>1、创建FTP用户test并指定用户家目录</p><blockquote><p>useradd -d /home/test -m test</p></blockquote><p>2、更改用户权限</p><blockquote><p>限定用户test不能登录shell，只能ftp</p></blockquote><blockquote><p>usermod -s /sbin/nologin test</p></blockquote><blockquote><p>用户test恢复正常，允许登录shell</p></blockquote><blockquote><p>usermod -s /sbin/bahs test</p></blockquote><blockquote><p>更改用户test的主目录</p></blockquote><blockquote><p>usermod -d /home/test test</p></blockquote><p>3、修改/etc/vsftpd/vsftpd.conf，限制用户只能访问/home/test，不能访问其他地址</p><blockquote><p>禁止穿越到上级目录</p></blockquote><blockquote><p>chroot_list_enable=YES</p></blockquote>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;1、创建FTP用户test并指定用户家目录&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;useradd -d /home/test -m test&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;2、更改用户权限&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;限定用户test不能登录she
       
     
     </summary>
