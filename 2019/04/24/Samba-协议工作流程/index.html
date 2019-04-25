@@ -81,16 +81,17 @@
 
 
 
-<meta name="description" content="Cheney&apos;blog">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Cheney’s blog">
-<meta property="og:url" content="http://www.kmmedia.top/archives/2019/index.html">
+<meta name="description" content="#一、Samba的工作流程主要为四个阶段： ##1、协议协商  客户端在访问Samba服务器时，首先由客户端发送一个SMB negprot请求数据包，并列出它所支持的所有SMB协议版本。  服务器在接受到请求信息吼开始响应请求，并列出希望使用的协议版本，选择最优的SMB类型。  如果没有可使用的协议版本则返回oXFFFFH信息，结束通信。   ##2、建立连接   当SMB协议版本确定后，客户端进">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Samba 协议工作流程">
+<meta property="og:url" content="http://www.kmmedia.top/2019/04/24/Samba-协议工作流程/index.html">
 <meta property="og:site_name" content="Cheney’s blog">
-<meta property="og:description" content="Cheney&apos;blog">
+<meta property="og:description" content="#一、Samba的工作流程主要为四个阶段： ##1、协议协商  客户端在访问Samba服务器时，首先由客户端发送一个SMB negprot请求数据包，并列出它所支持的所有SMB协议版本。  服务器在接受到请求信息吼开始响应请求，并列出希望使用的协议版本，选择最优的SMB类型。  如果没有可使用的协议版本则返回oXFFFFH信息，结束通信。   ##2、建立连接   当SMB协议版本确定后，客户端进">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2019-04-25T01:28:11.911Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Cheney’s blog">
-<meta name="twitter:description" content="Cheney&apos;blog">
+<meta name="twitter:title" content="Samba 协议工作流程">
+<meta name="twitter:description" content="#一、Samba的工作流程主要为四个阶段： ##1、协议协商  客户端在访问Samba服务器时，首先由客户端发送一个SMB negprot请求数据包，并列出它所支持的所有SMB协议版本。  服务器在接受到请求信息吼开始响应请求，并列出希望使用的协议版本，选择最优的SMB类型。  如果没有可使用的协议版本则返回oXFFFFH信息，结束通信。   ##2、建立连接   当SMB协议版本确定后，客户端进">
 
 
 
@@ -120,13 +121,13 @@
 
 
 
-  <link rel="canonical" href="http://www.kmmedia.top/archives/2019/">
+  <link rel="canonical" href="http://www.kmmedia.top/2019/04/24/Samba-协议工作流程/">
 
 
 
 
 
-  <title>归档 | Cheney’s blog</title>
+  <title>Samba 协议工作流程 | Cheney’s blog</title>
   
 
 
@@ -145,7 +146,7 @@
     
   
 
-  <div class="container sidebar-position-left page-archive">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -219,391 +220,196 @@
           <div id="content" class="content">
             
 
-  
-  
-  
-  <div class="post-block archive">
-    <div id="posts" class="posts-collapse">
-      <span class="archive-move-on"></span>
+  <div id="posts" class="posts-expand">
+    
 
-      <span class="archive-page-counter">
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://www.kmmedia.top/2019/04/24/Samba-协议工作流程/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Cheney先森">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Cheney’s blog">
+    </span>
+
+    
+      <header class="post-header">
+
         
         
+          <h1 class="post-title" itemprop="name headline">Samba 协议工作流程</h1>
         
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-04-24T09:15:24+08:00">
+                2019-04-24
+              </time>
+            
+
+            
+
+            
+          </span>
+
           
-        
-        嗯..! 目前共计 13 篇日志。 继续努力。
-      </span>
 
-      
-
-        
-        
-        
-
-        
           
-          <div class="collection-title">
-            <h1 class="archive-year" id="archive-year-2019">2019</h1>
-          </div>
-        
-        
+            
+          
 
-        
+          
+          
 
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+          
 
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2019/04/24/CentOS-Samba服务配置/" itemprop="url">
-              
-                <span itemprop="name">CentOS 5.5 Samba服务配置</span>
-              
-            </a>
-        
-      </h2>
+          
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-04-24T09:37:26+08:00" content="2019-04-24">
-          04-24
-        </time>
-      </div>
+          
 
-    </header>
-  </article>
+        </div>
+      </header>
+    
 
-
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2019/04/24/NTLMv1、NTLMv2-数据包分析/" itemprop="url">
-              
-                <span itemprop="name">NTLMv1、NTLMv2 数据包分析</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-04-24T09:15:24+08:00" content="2019-04-24">
-          04-24
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
       
 
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2019/04/24/Samba-协议工作流程/" itemprop="url">
-              
-                <span itemprop="name">Samba 协议工作流程</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-04-24T09:15:24+08:00" content="2019-04-24">
-          04-24
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
+      
+        <p>#一、Samba的工作流程主要为四个阶段：</p>
+<p>##1、协议协商</p>
+<ul>
+<li><p>客户端在访问Samba服务器时，首先由客户端发送一个SMB negprot请求数据包，并列出它所支持的所有SMB协议版本。</p>
+</li>
+<li><p>服务器在接受到请求信息吼开始响应请求，并列出希望使用的协议版本，选择最优的SMB类型。</p>
+</li>
+<li><p>如果没有可使用的协议版本则返回oXFFFFH信息，结束通信。</p>
+</li>
+</ul>
+<p>##2、建立连接 </p>
+<ul>
+<li><p>当SMB协议版本确定后，客户端进程向服务器发起一个用户或共享的认证，这个过程是通过发送SesssetupX请求数据报实现的。</p>
+</li>
+<li><p>客户端发送一对用户名和密码或一个简单密码到服务器，然后服务器通过发送一个SesssetupX请应答数据报来允许或拒绝本次连接。</p>
+</li>
+</ul>
+<p>##3、访问共享资源</p>
+<ul>
+<li>当客户端和服务器完成了协商和认证之后，它会发送一个Tcon或SMB TconX数据报并列出它想访问网络资源的名称，之后服务器会发送一个SMB TconX应答数据报以表示此次连接是否被接受或拒绝。</li>
+</ul>
+<p>##4、断开连接 </p>
+<ul>
+<li>连接到相应资源，SMB客户端就能够open SMB打开一个文件，通过read SMB读取文件，通过write SMB写入文件，通过close SMB关闭文件。</li>
+</ul>
+<p>#二、Net-NTMLMv1，Net-NTLMv2工作流程：</p>
+<p>##Net-NTLMv1的加密流程如下：</p>
+<blockquote>
+<p>1、客户端向服务器发送一个请求</p>
+</blockquote>
+<blockquote>
+<p>2、服务器接收到请求后，生成一个8位的Challenge，发送回客户端</p>
+</blockquote>
+<blockquote>
+<p>3、客户端接收到Challenge后，使用登录用户的密码hash对Challenge加密，作为response发送给服务器</p>
+</blockquote>
+<blockquote>
+<p>4、服务器校验response</p>
+</blockquote>
+<p>##对比Net-NTLMv1，Net-NTLMv2的加密流程如下：</p>
+<blockquote>
+<p>1、客户端向服务器发送一个请求</p>
+</blockquote>
+<blockquote>
+<p>2、服务器接收到请求后，生成一个16位的Challenge，发送回客户端</p>
+</blockquote>
+<blockquote>
+<p>3、客户端接收到Challenge后，使用登录用户的密码hash对Challenge加密，作为response发送给服务器</p>
+</blockquote>
+<blockquote>
+<p>4、服务器校验response</p>
+</blockquote>
 
       
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2019/04/21/堆栈笔记/" itemprop="url">
-              
-                <span itemprop="name">堆栈笔记</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-04-21T19:08:53+08:00" content="2019-04-21">
-          04-21
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2019/04/20/Kali-w3af工具使用/" itemprop="url">
-              
-                <span itemprop="name">Kali w3af工具使用</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-04-20T10:18:32+08:00" content="2019-04-20">
-          04-20
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2019/04/19/Windwos-搭建FTP服务器/" itemprop="url">
-              
-                <span itemprop="name">Windwos 搭建FTP服务器</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-04-19T14:44:33+08:00" content="2019-04-19">
-          04-19
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2019/04/19/Kali-更换源/" itemprop="url">
-              
-                <span itemprop="name">Kali 更换源</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-04-19T10:41:24+08:00" content="2019-04-19">
-          04-19
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2019/04/19/Kali-w3af工具安装/" itemprop="url">
-              
-                <span itemprop="name">Kali w3af工具安装</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-04-19T10:33:43+08:00" content="2019-04-19">
-          04-19
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2019/04/19/Mysql-常用命令整理/" itemprop="url">
-              
-                <span itemprop="name">Mysql 常用命令整理</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-04-19T10:02:59+08:00" content="2019-04-19">
-          04-19
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2019/04/19/CentOS-安装MariaDB/" itemprop="url">
-              
-                <span itemprop="name">CentOS 7 安装 MariaDB</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-04-19T09:20:54+08:00" content="2019-04-19">
-          04-19
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
     </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/04/21/堆栈笔记/" rel="next" title="堆栈笔记">
+                <i class="fa fa-chevron-left"></i> 堆栈笔记
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/04/24/NTLMv1、NTLMv2-数据包分析/" rel="prev" title="NTLMv1、NTLMv2 数据包分析">
+                NTLMv1、NTLMv2 数据包分析 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </div>
   
   
   
-
-  
-  <nav class="pagination">
-    <span class="page-number current">1</span><a class="page-number" href="/archives/2019/page/2/">2</a><a class="extend next" rel="next" href="/archives/2019/page/2/"><i class="fa fa-angle-right"></i></a>
-  </nav>
+  </article>
 
 
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -611,6 +417,10 @@
 
 
           
+
+  
+
+
 
         </div>
         
@@ -814,6 +624,10 @@
   
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
 
   
 

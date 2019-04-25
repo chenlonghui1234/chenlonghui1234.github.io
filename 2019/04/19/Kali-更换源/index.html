@@ -81,17 +81,17 @@
 
 
 
-<meta name="description" content="一、lsof1、列出本机正在运行的ipv4/ipv6协议服务 lsof -i 4/6 2、列出本机正在运行的tcp/udp服务 lsof -i tcp/udp 3、列出本机1-1024的开放端口 lsof -i :1-1024 4、列出本机用户的进程服务 lsfo -u user">
+<meta name="description" content="1、在/etc/apt/source.list中添加如下源  阿里源   deb http://mirrors.aliyun.com/kali kali-rolling main non-free contribdeb-src http://mirrors.aliyun.com/kali kali-rolling main non-free contribdeb http://mirrors.al">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Linux常用命令整理">
-<meta property="og:url" content="http://www.kmmedia.top/2019/04/15/Linux-命令整理/index.html">
+<meta property="og:title" content="Kali 更换源">
+<meta property="og:url" content="http://www.kmmedia.top/2019/04/19/Kali-更换源/index.html">
 <meta property="og:site_name" content="Cheney’s blog">
-<meta property="og:description" content="一、lsof1、列出本机正在运行的ipv4/ipv6协议服务 lsof -i 4/6 2、列出本机正在运行的tcp/udp服务 lsof -i tcp/udp 3、列出本机1-1024的开放端口 lsof -i :1-1024 4、列出本机用户的进程服务 lsfo -u user">
+<meta property="og:description" content="1、在/etc/apt/source.list中添加如下源  阿里源   deb http://mirrors.aliyun.com/kali kali-rolling main non-free contribdeb-src http://mirrors.aliyun.com/kali kali-rolling main non-free contribdeb http://mirrors.al">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-04-19T01:28:01.311Z">
+<meta property="og:updated_time" content="2019-04-19T08:23:03.708Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Linux常用命令整理">
-<meta name="twitter:description" content="一、lsof1、列出本机正在运行的ipv4/ipv6协议服务 lsof -i 4/6 2、列出本机正在运行的tcp/udp服务 lsof -i tcp/udp 3、列出本机1-1024的开放端口 lsof -i :1-1024 4、列出本机用户的进程服务 lsfo -u user">
+<meta name="twitter:title" content="Kali 更换源">
+<meta name="twitter:description" content="1、在/etc/apt/source.list中添加如下源  阿里源   deb http://mirrors.aliyun.com/kali kali-rolling main non-free contribdeb-src http://mirrors.aliyun.com/kali kali-rolling main non-free contribdeb http://mirrors.al">
 
 
 
@@ -121,13 +121,13 @@
 
 
 
-  <link rel="canonical" href="http://www.kmmedia.top/2019/04/15/Linux-命令整理/">
+  <link rel="canonical" href="http://www.kmmedia.top/2019/04/19/Kali-更换源/">
 
 
 
 
 
-  <title>Linux常用命令整理 | Cheney’s blog</title>
+  <title>Kali 更换源 | Cheney’s blog</title>
   
 
 
@@ -234,7 +234,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://www.kmmedia.top/2019/04/15/Linux-命令整理/">
+    <link itemprop="mainEntityOfPage" href="http://www.kmmedia.top/2019/04/19/Kali-更换源/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Cheney先森">
@@ -251,7 +251,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Linux常用命令整理</h1>
+          <h1 class="post-title" itemprop="name headline">Kali 更换源</h1>
         
 
         <div class="post-meta">
@@ -263,8 +263,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-04-15T19:41:02+08:00">
-                2019-04-15
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-04-19T10:41:24+08:00">
+                2019-04-19
               </time>
             
 
@@ -301,14 +301,83 @@
       
 
       
-        <h1 id="一、lsof"><a href="#一、lsof" class="headerlink" title="一、lsof"></a>一、lsof</h1><p>1、列出本机正在运行的ipv4/ipv6协议服务</p>
-<p>lsof -i 4/6</p>
-<p>2、列出本机正在运行的tcp/udp服务</p>
-<p>lsof -i tcp/udp</p>
-<p>3、列出本机1-1024的开放端口</p>
-<p>lsof -i :1-1024</p>
-<p>4、列出本机用户的进程服务</p>
-<p>lsfo -u user</p>
+        <p>1、在/etc/apt/source.list中添加如下源</p>
+<blockquote>
+<p>阿里源</p>
+</blockquote>
+<blockquote>
+<p>deb <a href="http://mirrors.aliyun.com/kali" target="_blank" rel="noopener">http://mirrors.aliyun.com/kali</a> kali-rolling main non-free contrib<br>deb-src <a href="http://mirrors.aliyun.com/kali" target="_blank" rel="noopener">http://mirrors.aliyun.com/kali</a> kali-rolling main non-free contrib<br>deb <a href="http://mirrors.aliyun.com/kali-security" target="_blank" rel="noopener">http://mirrors.aliyun.com/kali-security</a> kali-rolling/updates main contrib non-free</p>
+</blockquote>
+<blockquote>
+<p>中科大 </p>
+<p>deb <a href="http://mirrors.ustc.edu.cn/kali" target="_blank" rel="noopener">http://mirrors.ustc.edu.cn/kali</a> kali-rolling main non-free contrib<br>deb-src <a href="http://mirrors.ustc.edu.cn/kali" target="_blank" rel="noopener">http://mirrors.ustc.edu.cn/kali</a> kali-rolling main non-free contrib</p>
+</blockquote>
+<p>2、使用apt-get更新</p>
+<blockquote>
+<p>更新大系统版本并解决依赖</p>
+</blockquote>
+<blockquote>
+<p>apt-get dist-upgrade</p>
+</blockquote>
+<blockquote>
+<p>更新软件源中的软件列表</p>
+</blockquote>
+<blockquote>
+<p>apt-get update</p>
+</blockquote>
+<blockquote>
+<p>更新全部软件但不解决依赖问题</p>
+</blockquote>
+<blockquote>
+<p>apt-get upgrade</p>
+</blockquote>
+<blockquote>
+<p>安装软件</p>
+</blockquote>
+<blockquote>
+<p>apt-get install</p>
+</blockquote>
+<p>3、删除包缓存中的所有包</p>
+<blockquote>
+<p>apt-get clean</p>
+</blockquote>
+<p>4、将已经删除了的软件包的.deb安装文件从硬盘中删除</p>
+<blockquote>
+<p>apt-get autoclean</p>
+</blockquote>
+<p>5、删除为了满足其他软件包的依赖而安装的，当现在不需要的软件包</p>
+<blockquote>
+<p>apt-get autoremove</p>
+</blockquote>
+<p>6、删除已安装的软件包（保留配置）</p>
+<blockquote>
+<p>apt-get remove 软件包名</p>
+</blockquote>
+<p>7、删除已安装包（不保留配置）</p>
+<blockquote>
+<p>apt-get –purge remove 软件包名</p>
+</blockquote>
+<p>问题一：</p>
+<blockquote>
+<p>E: 仓库 “<a href="http://mirrors.aliyun.com/kali-security" target="_blank" rel="noopener">http://mirrors.aliyun.com/kali-security</a> kali-rolling/updates Release” 没有 Release 文件。 N: 无法安全地用该源进行更新，所以默认禁用该源。 N: 参见 apt-secure(8) 手册以了解仓库创建和用户配置方面的细节。</p>
+</blockquote>
+<blockquote>
+<p>获取:10 <a href="http://ppa.launchpad.net/hzwhuang/ss-qt5/ubuntu" target="_blank" rel="noopener">http://ppa.launchpad.net/hzwhuang/ss-qt5/ubuntu</a> trusty InRelease [21.4 kB]<br>错误:10 <a href="http://ppa.launchpad.net/hzwhuang/ss-qt5/ubuntu" target="_blank" rel="noopener">http://ppa.launchpad.net/hzwhuang/ss-qt5/ubuntu</a> trusty InRelease<br>  由于没有公钥，无法验证下列签名： NO_PUBKEY 6DA746A05F00FA99<br>正在读取软件包列表… 完成<br>W: GPG 错误：<a href="http://ppa.launchpad.net/hzwhuang/ss-qt5/ubuntu" target="_blank" rel="noopener">http://ppa.launchpad.net/hzwhuang/ss-qt5/ubuntu</a> trusty InRelease: 由于没有公钥，无法验证下列签名： NO_PUBKEY 6DA746A05F00FA99<br>E: 仓库 “<a href="http://ppa.launchpad.net/hzwhuang/ss-qt5/ubuntu" target="_blank" rel="noopener">http://ppa.launchpad.net/hzwhuang/ss-qt5/ubuntu</a> trusty InRelease” 没有数字签名。<br>N: 无法安全地用该源进行更新，所以默认禁用该源。<br>N: 参见 apt-secure(8) 手册以了解仓库创建和用户配置方面的细节。</p>
+</blockquote>
+<blockquote>
+<p>执行以下命令更新公钥</p>
+</blockquote>
+<blockquote>
+<p>apt-key adv –recv-keys –keyserver hkp://keyserver.ubuntu.com:80 6DA746A05F00FA99</p>
+</blockquote>
+<p>问题二：</p>
+<blockquote>
+<p>E: 仓库 “<a href="http://mirrors.aliyun.com/kali-security" target="_blank" rel="noopener">http://mirrors.aliyun.com/kali-security</a> kali-rolling/updates Release” 没有 Release 文件。<br>N: 无法安全地用该源进行更新，所以默认禁用该源。<br>N: 参见 apt-secure(8) 手册以了解仓库创建和用户配置方面的细节。</p>
+</blockquote>
+<blockquote>
+<p>在/etc/apt/source.list中禁止该源，更新成功</p>
+</blockquote>
+<p>原文：<a href="http://www.glacierluo.com/course/afterinstall/" target="_blank" rel="noopener">http://www.glacierluo.com/course/afterinstall/</a> </p>
 
       
     </div>
@@ -333,14 +402,18 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
+              <a href="/2019/04/19/Kali-w3af工具安装/" rel="next" title="Kali w3af工具安装">
+                <i class="fa fa-chevron-left"></i> Kali w3af工具安装
+              </a>
+            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2019/04/15/CentOS-更换yum源/" rel="prev" title="CentOS更换yum源">
-                CentOS更换yum源 <i class="fa fa-chevron-right"></i>
+              <a href="/2019/04/19/Windwos-搭建FTP服务器/" rel="prev" title="Windwos 搭建FTP服务器">
+                Windwos 搭建FTP服务器 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -393,17 +466,8 @@
       
 
       
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
-            文章目录
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
-            站点概览
-          </li>
-        </ul>
-      
 
-      <section class="site-overview-wrap sidebar-panel">
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -452,22 +516,6 @@
         </div>
       </section>
 
-      
-      <!--noindex-->
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-              
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#一、lsof"><span class="nav-number">1.</span> <span class="nav-text">一、lsof</span></a></li></ol></div>
-            
-
-          </div>
-        </section>
-      <!--/noindex-->
       
 
       
