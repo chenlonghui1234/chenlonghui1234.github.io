@@ -473,9 +473,7 @@
       
         
           
-            <p>#一、Samba的工作流程主要为四个阶段：</p>
-<p>##1、协议协商</p>
-<ul>
+            <h1 id="一、Samba的工作流程主要为四个阶段："><a href="#一、Samba的工作流程主要为四个阶段：" class="headerlink" title="一、Samba的工作流程主要为四个阶段："></a>一、Samba的工作流程主要为四个阶段：</h1><h2 id="1、协议协商"><a href="#1、协议协商" class="headerlink" title="1、协议协商"></a>1、协议协商</h2><ul>
 <li><p>客户端在访问Samba服务器时，首先由客户端发送一个SMB negprot请求数据包，并列出它所支持的所有SMB协议版本。</p>
 </li>
 <li><p>服务器在接受到请求信息吼开始响应请求，并列出希望使用的协议版本，选择最优的SMB类型。</p>
@@ -483,24 +481,19 @@
 <li><p>如果没有可使用的协议版本则返回oXFFFFH信息，结束通信。</p>
 </li>
 </ul>
-<p>##2、建立连接 </p>
-<ul>
+<h2 id="2、建立连接"><a href="#2、建立连接" class="headerlink" title="2、建立连接"></a>2、建立连接</h2><ul>
 <li><p>当SMB协议版本确定后，客户端进程向服务器发起一个用户或共享的认证，这个过程是通过发送SesssetupX请求数据报实现的。</p>
 </li>
 <li><p>客户端发送一对用户名和密码或一个简单密码到服务器，然后服务器通过发送一个SesssetupX请应答数据报来允许或拒绝本次连接。</p>
 </li>
 </ul>
-<p>##3、访问共享资源</p>
-<ul>
+<h2 id="3、访问共享资源"><a href="#3、访问共享资源" class="headerlink" title="3、访问共享资源"></a>3、访问共享资源</h2><ul>
 <li>当客户端和服务器完成了协商和认证之后，它会发送一个Tcon或SMB TconX数据报并列出它想访问网络资源的名称，之后服务器会发送一个SMB TconX应答数据报以表示此次连接是否被接受或拒绝。</li>
 </ul>
-<p>##4、断开连接 </p>
-<ul>
+<h2 id="4、断开连接"><a href="#4、断开连接" class="headerlink" title="4、断开连接"></a>4、断开连接</h2><ul>
 <li>连接到相应资源，SMB客户端就能够open SMB打开一个文件，通过read SMB读取文件，通过write SMB写入文件，通过close SMB关闭文件。</li>
 </ul>
-<p>#二、Net-NTMLMv1，Net-NTLMv2工作流程：</p>
-<p>##Net-NTLMv1的加密流程如下：</p>
-<blockquote>
+<h1 id="二、Net-NTMLMv1，Net-NTLMv2工作流程："><a href="#二、Net-NTMLMv1，Net-NTLMv2工作流程：" class="headerlink" title="二、Net-NTMLMv1，Net-NTLMv2工作流程："></a>二、Net-NTMLMv1，Net-NTLMv2工作流程：</h1><h2 id="Net-NTLMv1的加密流程如下："><a href="#Net-NTLMv1的加密流程如下：" class="headerlink" title="Net-NTLMv1的加密流程如下："></a>Net-NTLMv1的加密流程如下：</h2><blockquote>
 <p>1、客户端向服务器发送一个请求</p>
 </blockquote>
 <blockquote>
@@ -512,8 +505,7 @@
 <blockquote>
 <p>4、服务器校验response</p>
 </blockquote>
-<p>##对比Net-NTLMv1，Net-NTLMv2的加密流程如下：</p>
-<blockquote>
+<h2 id="对比Net-NTLMv1，Net-NTLMv2的加密流程如下："><a href="#对比Net-NTLMv1，Net-NTLMv2的加密流程如下：" class="headerlink" title="对比Net-NTLMv1，Net-NTLMv2的加密流程如下："></a>对比Net-NTLMv1，Net-NTLMv2的加密流程如下：</h2><blockquote>
 <p>1、客户端向服务器发送一个请求</p>
 </blockquote>
 <blockquote>
