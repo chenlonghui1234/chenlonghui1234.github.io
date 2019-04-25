@@ -65,27 +65,6 @@
   </entry>
   
   <entry>
-    <title>Samba 协议工作流程</title>
-    <link href="http://www.kmmedia.top/2019/04/24/Samba-%E5%8D%8F%E8%AE%AE%E5%B7%A5%E4%BD%9C%E6%B5%81%E7%A8%8B/"/>
-    <id>http://www.kmmedia.top/2019/04/24/Samba-协议工作流程/</id>
-    <published>2019-04-24T01:15:24.000Z</published>
-    <updated>2019-04-25T01:48:02.446Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="一、Samba的工作流程主要为四个阶段："><a href="#一、Samba的工作流程主要为四个阶段：" class="headerlink" title="一、Samba的工作流程主要为四个阶段："></a>一、Samba的工作流程主要为四个阶段：</h1><h2 id="1、协议协商"><a href="#1、协议协商" class="headerlink" title="1、协议协商"></a>1、协议协商</h2><ul><li><p>客户端在访问Samba服务器时，首先由客户端发送一个SMB negprot请求数据包，并列出它所支持的所有SMB协议版本。</p></li><li><p>服务器在接受到请求信息吼开始响应请求，并列出希望使用的协议版本，选择最优的SMB类型。</p></li><li><p>如果没有可使用的协议版本则返回oXFFFFH信息，结束通信。</p></li></ul><h2 id="2、建立连接"><a href="#2、建立连接" class="headerlink" title="2、建立连接"></a>2、建立连接</h2><ul><li><p>当SMB协议版本确定后，客户端进程向服务器发起一个用户或共享的认证，这个过程是通过发送SesssetupX请求数据报实现的。</p></li><li><p>客户端发送一对用户名和密码或一个简单密码到服务器，然后服务器通过发送一个SesssetupX请应答数据报来允许或拒绝本次连接。</p></li></ul><h2 id="3、访问共享资源"><a href="#3、访问共享资源" class="headerlink" title="3、访问共享资源"></a>3、访问共享资源</h2><ul><li>当客户端和服务器完成了协商和认证之后，它会发送一个Tcon或S·MB TconX数据报并列出它想访问网络资源的名称，之后服务器会发送一个SMB TconX应答数据报以表示此次连接是否被接受或拒绝。</li></ul><h2 id="4、断开连接"><a href="#4、断开连接" class="headerlink" title="4、断开连接"></a>4、断开连接</h2><ul><li>连接到相应资源，SMB客户端就能够open SMB打开一个文件，通过read SMB读取文件，通过write SMB写入文件，通过close SMB关闭文件。</li></ul><h1 id="二、Net-NTMLMv1，Net-NTLMv2工作流程："><a href="#二、Net-NTMLMv1，Net-NTLMv2工作流程：" class="headerlink" title="二、Net-NTMLMv1，Net-NTLMv2工作流程："></a>二、Net-NTMLMv1，Net-NTLMv2工作流程：</h1><h2 id="Net-NTLMv1的加密流程如下："><a href="#Net-NTLMv1的加密流程如下：" class="headerlink" title="Net-NTLMv1的加密流程如下："></a>Net-NTLMv1的加密流程如下：</h2><blockquote><p>1、客户端向服务器发送一个请求</p><p>2、服务器接收到请求后，生成一个8位的Challenge，发送回客户端</p><p>3、客户端接收到Challenge后，使用登录用户的密码hash对Challenge加密，作为response发送给服务器</p><p>4、服务器校验response</p></blockquote><h2 id="对比Net-NTLMv1，Net-NTLMv2的加密流程如下："><a href="#对比Net-NTLMv1，Net-NTLMv2的加密流程如下：" class="headerlink" title="对比Net-NTLMv1，Net-NTLMv2的加密流程如下："></a>对比Net-NTLMv1，Net-NTLMv2的加密流程如下：</h2><blockquote><p>1、客户端向服务器发送一个请求</p><p>2、服务器接收到请求后，生成一个16位的Challenge，发送回客户端</p><p>3、客户端接收到Challenge后，使用登录用户的密码hash对Challenge加密，作为response发送给服务器</p><p>4、服务器校验response</p></blockquote><h3 id="参考文章："><a href="#参考文章：" class="headerlink" title="参考文章："></a>参考文章：</h3><h4 id="https-zhuanlan-zhihu-com-p-41449862"><a href="#https-zhuanlan-zhihu-com-p-41449862" class="headerlink" title="https://zhuanlan.zhihu.com/p/41449862"></a><a href="https://zhuanlan.zhihu.com/p/41449862" target="_blank" rel="noopener">https://zhuanlan.zhihu.com/p/41449862</a></h4><h4 id="https-3gstudent-github-io-3gstudent-github-io-Windows-E4-B8-8B-E7-9A-84-E5-AF-86-E7-A0-81hash-Net-NTLMv1-E4-BB-8B-E7-BB-8D"><a href="#https-3gstudent-github-io-3gstudent-github-io-Windows-E4-B8-8B-E7-9A-84-E5-AF-86-E7-A0-81hash-Net-NTLMv1-E4-BB-8B-E7-BB-8D" class="headerlink" title="https://3gstudent.github.io/3gstudent.github.io/Windows%E4%B8%8B%E7%9A%84%E5%AF%86%E7%A0%81hash-Net-NTLMv1%E4%BB%8B%E7%BB%8D/"></a><a href="https://3gstudent.github.io/3gstudent.github.io/Windows%E4%B8%8B%E7%9A%84%E5%AF%86%E7%A0%81hash-Net-NTLMv1%E4%BB%8B%E7%BB%8D/" target="_blank" rel="noopener">https://3gstudent.github.io/3gstudent.github.io/Windows%E4%B8%8B%E7%9A%84%E5%AF%86%E7%A0%81hash-Net-NTLMv1%E4%BB%8B%E7%BB%8D/</a></h4>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h1 id=&quot;一、Samba的工作流程主要为四个阶段：&quot;&gt;&lt;a href=&quot;#一、Samba的工作流程主要为四个阶段：&quot; class=&quot;headerlink&quot; title=&quot;一、Samba的工作流程主要为四个阶段：&quot;&gt;&lt;/a&gt;一、Samba的工作流程主要为四个阶段：&lt;/h1&gt;&lt;
-      
-    
-    </summary>
-    
-    
-  </entry>
-  
-  <entry>
     <title>NTLMv1、NTLMv2 数据包分析</title>
     <link href="http://www.kmmedia.top/2019/04/24/NTLMv1%E3%80%81NTLMv2-%E6%95%B0%E6%8D%AE%E5%8C%85%E5%88%86%E6%9E%90/"/>
     <id>http://www.kmmedia.top/2019/04/24/NTLMv1、NTLMv2-数据包分析/</id>
@@ -101,6 +80,27 @@
         &lt;p&gt;&lt;a href=&quot;/download/NTLMv1.pcapng&quot; target=&quot;_blank&quot;&gt;NTLMv1.pcapng&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt; &lt;a href=&quot;download/NTLMv2.pcapng&quot;&gt;NTLMv2.pcapng&lt;/a&gt;&lt;/p&gt;
 
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Samba 协议工作流程</title>
+    <link href="http://www.kmmedia.top/2019/04/24/Samba-%E5%8D%8F%E8%AE%AE%E5%B7%A5%E4%BD%9C%E6%B5%81%E7%A8%8B/"/>
+    <id>http://www.kmmedia.top/2019/04/24/Samba-协议工作流程/</id>
+    <published>2019-04-24T01:15:24.000Z</published>
+    <updated>2019-04-25T01:48:02.446Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="一、Samba的工作流程主要为四个阶段："><a href="#一、Samba的工作流程主要为四个阶段：" class="headerlink" title="一、Samba的工作流程主要为四个阶段："></a>一、Samba的工作流程主要为四个阶段：</h1><h2 id="1、协议协商"><a href="#1、协议协商" class="headerlink" title="1、协议协商"></a>1、协议协商</h2><ul><li><p>客户端在访问Samba服务器时，首先由客户端发送一个SMB negprot请求数据包，并列出它所支持的所有SMB协议版本。</p></li><li><p>服务器在接受到请求信息吼开始响应请求，并列出希望使用的协议版本，选择最优的SMB类型。</p></li><li><p>如果没有可使用的协议版本则返回oXFFFFH信息，结束通信。</p></li></ul><h2 id="2、建立连接"><a href="#2、建立连接" class="headerlink" title="2、建立连接"></a>2、建立连接</h2><ul><li><p>当SMB协议版本确定后，客户端进程向服务器发起一个用户或共享的认证，这个过程是通过发送SesssetupX请求数据报实现的。</p></li><li><p>客户端发送一对用户名和密码或一个简单密码到服务器，然后服务器通过发送一个SesssetupX请应答数据报来允许或拒绝本次连接。</p></li></ul><h2 id="3、访问共享资源"><a href="#3、访问共享资源" class="headerlink" title="3、访问共享资源"></a>3、访问共享资源</h2><ul><li>当客户端和服务器完成了协商和认证之后，它会发送一个Tcon或S·MB TconX数据报并列出它想访问网络资源的名称，之后服务器会发送一个SMB TconX应答数据报以表示此次连接是否被接受或拒绝。</li></ul><h2 id="4、断开连接"><a href="#4、断开连接" class="headerlink" title="4、断开连接"></a>4、断开连接</h2><ul><li>连接到相应资源，SMB客户端就能够open SMB打开一个文件，通过read SMB读取文件，通过write SMB写入文件，通过close SMB关闭文件。</li></ul><h1 id="二、Net-NTMLMv1，Net-NTLMv2工作流程："><a href="#二、Net-NTMLMv1，Net-NTLMv2工作流程：" class="headerlink" title="二、Net-NTMLMv1，Net-NTLMv2工作流程："></a>二、Net-NTMLMv1，Net-NTLMv2工作流程：</h1><h2 id="Net-NTLMv1的加密流程如下："><a href="#Net-NTLMv1的加密流程如下：" class="headerlink" title="Net-NTLMv1的加密流程如下："></a>Net-NTLMv1的加密流程如下：</h2><blockquote><p>1、客户端向服务器发送一个请求</p><p>2、服务器接收到请求后，生成一个8位的Challenge，发送回客户端</p><p>3、客户端接收到Challenge后，使用登录用户的密码hash对Challenge加密，作为response发送给服务器</p><p>4、服务器校验response</p></blockquote><h2 id="对比Net-NTLMv1，Net-NTLMv2的加密流程如下："><a href="#对比Net-NTLMv1，Net-NTLMv2的加密流程如下：" class="headerlink" title="对比Net-NTLMv1，Net-NTLMv2的加密流程如下："></a>对比Net-NTLMv1，Net-NTLMv2的加密流程如下：</h2><blockquote><p>1、客户端向服务器发送一个请求</p><p>2、服务器接收到请求后，生成一个16位的Challenge，发送回客户端</p><p>3、客户端接收到Challenge后，使用登录用户的密码hash对Challenge加密，作为response发送给服务器</p><p>4、服务器校验response</p></blockquote><h3 id="参考文章："><a href="#参考文章：" class="headerlink" title="参考文章："></a>参考文章：</h3><h4 id="https-zhuanlan-zhihu-com-p-41449862"><a href="#https-zhuanlan-zhihu-com-p-41449862" class="headerlink" title="https://zhuanlan.zhihu.com/p/41449862"></a><a href="https://zhuanlan.zhihu.com/p/41449862" target="_blank" rel="noopener">https://zhuanlan.zhihu.com/p/41449862</a></h4><h4 id="https-3gstudent-github-io-3gstudent-github-io-Windows-E4-B8-8B-E7-9A-84-E5-AF-86-E7-A0-81hash-Net-NTLMv1-E4-BB-8B-E7-BB-8D"><a href="#https-3gstudent-github-io-3gstudent-github-io-Windows-E4-B8-8B-E7-9A-84-E5-AF-86-E7-A0-81hash-Net-NTLMv1-E4-BB-8B-E7-BB-8D" class="headerlink" title="https://3gstudent.github.io/3gstudent.github.io/Windows%E4%B8%8B%E7%9A%84%E5%AF%86%E7%A0%81hash-Net-NTLMv1%E4%BB%8B%E7%BB%8D/"></a><a href="https://3gstudent.github.io/3gstudent.github.io/Windows%E4%B8%8B%E7%9A%84%E5%AF%86%E7%A0%81hash-Net-NTLMv1%E4%BB%8B%E7%BB%8D/" target="_blank" rel="noopener">https://3gstudent.github.io/3gstudent.github.io/Windows%E4%B8%8B%E7%9A%84%E5%AF%86%E7%A0%81hash-Net-NTLMv1%E4%BB%8B%E7%BB%8D/</a></h4>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;一、Samba的工作流程主要为四个阶段：&quot;&gt;&lt;a href=&quot;#一、Samba的工作流程主要为四个阶段：&quot; class=&quot;headerlink&quot; title=&quot;一、Samba的工作流程主要为四个阶段：&quot;&gt;&lt;/a&gt;一、Samba的工作流程主要为四个阶段：&lt;/h1&gt;&lt;
       
     
     </summary>
@@ -285,6 +285,31 @@
   </entry>
   
   <entry>
+    <title>CentOS更换yum源</title>
+    <link href="http://www.kmmedia.top/2019/04/15/CentOS-%E6%9B%B4%E6%8D%A2yum%E6%BA%90/"/>
+    <id>http://www.kmmedia.top/2019/04/15/CentOS-更换yum源/</id>
+    <published>2019-04-15T11:41:02.000Z</published>
+    <updated>2019-04-19T01:29:27.293Z</updated>
+    
+    <content type="html"><![CDATA[<p>1、备份</p><blockquote><p>mv /etc/yum.repos.d/CentOS-Base.repo /etc/yum.repos.d/CentOS-Base.repo.backup</p></blockquote><p>2、下载新的centos-base.repo到/etc/yum.repos.d/</p><blockquote><p>阿里源地址：<a href="http://mirrors.aliyun.com/repo/" target="_blank" rel="noopener">http://mirrors.aliyun.com/repo/</a></p></blockquote><blockquote><p>wget -O /etc/yum.repos.d/CentOS-Base.repo <a href="http://mirrors.aliyun.com/repo/Centos-5/6/7.repo" target="_blank" rel="noopener">http://mirrors.aliyun.com/repo/Centos-5/6/7.repo</a></p></blockquote><p>3、清除缓存</p><blockquote><p>yum clean all</p></blockquote><p>4、更新本地yum缓存</p><blockquote><p>yum makecache</p></blockquote><p>5、更新yum软件库</p><blockquote><p>yum update -y</p></blockquote><p>6、查看已安装的服务</p><blockquote><p>yum list installed</p></blockquote>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;1、备份&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;mv /etc/yum.repos.d/CentOS-Base.repo /etc/yum.repos.d/CentOS-Base.repo.backup&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;2、下载新的centos-
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
     <title>CentOS FTP服务配置</title>
     <link href="http://www.kmmedia.top/2019/04/15/CentOS-FTP%E6%9C%8D%E5%8A%A1%E9%85%8D%E7%BD%AE/"/>
     <id>http://www.kmmedia.top/2019/04/15/CentOS-FTP服务配置/</id>
@@ -304,31 +329,6 @@
 &lt;p&gt;2、更改用户权限&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;限定用户test不能登录she
-      
-    
-    </summary>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>CentOS更换yum源</title>
-    <link href="http://www.kmmedia.top/2019/04/15/CentOS-%E6%9B%B4%E6%8D%A2yum%E6%BA%90/"/>
-    <id>http://www.kmmedia.top/2019/04/15/CentOS-更换yum源/</id>
-    <published>2019-04-15T11:41:02.000Z</published>
-    <updated>2019-04-19T01:29:27.293Z</updated>
-    
-    <content type="html"><![CDATA[<p>1、备份</p><blockquote><p>mv /etc/yum.repos.d/CentOS-Base.repo /etc/yum.repos.d/CentOS-Base.repo.backup</p></blockquote><p>2、下载新的centos-base.repo到/etc/yum.repos.d/</p><blockquote><p>阿里源地址：<a href="http://mirrors.aliyun.com/repo/" target="_blank" rel="noopener">http://mirrors.aliyun.com/repo/</a></p></blockquote><blockquote><p>wget -O /etc/yum.repos.d/CentOS-Base.repo <a href="http://mirrors.aliyun.com/repo/Centos-5/6/7.repo" target="_blank" rel="noopener">http://mirrors.aliyun.com/repo/Centos-5/6/7.repo</a></p></blockquote><p>3、清除缓存</p><blockquote><p>yum clean all</p></blockquote><p>4、更新本地yum缓存</p><blockquote><p>yum makecache</p></blockquote><p>5、更新yum软件库</p><blockquote><p>yum update -y</p></blockquote><p>6、查看已安装的服务</p><blockquote><p>yum list installed</p></blockquote>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;1、备份&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;mv /etc/yum.repos.d/CentOS-Base.repo /etc/yum.repos.d/CentOS-Base.repo.backup&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;2、下载新的centos-
       
     
     </summary>
