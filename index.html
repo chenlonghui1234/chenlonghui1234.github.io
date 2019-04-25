@@ -618,19 +618,7 @@
 <h2 id="4、断开连接"><a href="#4、断开连接" class="headerlink" title="4、断开连接"></a>4、断开连接</h2><ul>
 <li>连接到相应资源，SMB客户端就能够open SMB打开一个文件，通过read SMB读取文件，通过write SMB写入文件，通过close SMB关闭文件。</li>
 </ul>
-<h1 id="二、Net-NTMLMv1，Net-NTLMv2工作流程："><a href="#二、Net-NTMLMv1，Net-NTLMv2工作流程：" class="headerlink" title="二、Net-NTMLMv1，Net-NTLMv2工作流程："></a>二、Net-NTMLMv1，Net-NTLMv2工作流程：</h1><h2 id="Net-NTLMv1的加密流程如下："><a href="#Net-NTLMv1的加密流程如下：" class="headerlink" title="Net-NTLMv1的加密流程如下："></a>Net-NTLMv1的加密流程如下：</h2><blockquote>
-<p>1、客户端向服务器发送一个请求</p>
-<p>2、服务器接收到请求后，生成一个8位的Challenge，发送回客户端</p>
-<p>3、客户端接收到Challenge后，使用登录用户的密码hash对Challenge加密，作为response发送给服务器</p>
-<p>4、服务器校验response</p>
-</blockquote>
-<h2 id="对比Net-NTLMv1，Net-NTLMv2的加密流程如下："><a href="#对比Net-NTLMv1，Net-NTLMv2的加密流程如下：" class="headerlink" title="对比Net-NTLMv1，Net-NTLMv2的加密流程如下："></a>对比Net-NTLMv1，Net-NTLMv2的加密流程如下：</h2><blockquote>
-<p>1、客户端向服务器发送一个请求</p>
-<p>2、服务器接收到请求后，生成一个16位的Challenge，发送回客户端</p>
-<p>3、客户端接收到Challenge后，使用登录用户的密码hash对Challenge加密，作为response发送给服务器</p>
-<p>4、服务器校验response</p>
-</blockquote>
-<h3 id="参考文章："><a href="#参考文章：" class="headerlink" title="参考文章："></a>参考文章：</h3><h4 id="https-zhuanlan-zhihu-com-p-41449862"><a href="#https-zhuanlan-zhihu-com-p-41449862" class="headerlink" title="https://zhuanlan.zhihu.com/p/41449862"></a><a href="https://zhuanlan.zhihu.com/p/41449862" target="_blank" rel="noopener">https://zhuanlan.zhihu.com/p/41449862</a></h4><h4 id="https-3gstudent-github-io-3gstudent-github-io-Windows-E4-B8-8B-E7-9A-84-E5-AF-86-E7-A0-81hash-Net-NTLMv1-E4-BB-8B-E7-BB-8D"><a href="#https-3gstudent-github-io-3gstudent-github-io-Windows-E4-B8-8B-E7-9A-84-E5-AF-86-E7-A0-81hash-Net-NTLMv1-E4-BB-8B-E7-BB-8D" class="headerlink" title="https://3gstudent.github.io/3gstudent.github.io/Windows%E4%B8%8B%E7%9A%84%E5%AF%86%E7%A0%81hash-Net-NTLMv1%E4%BB%8B%E7%BB%8D/"></a><a href="https://3gstudent.github.io/3gstudent.github.io/Windows%E4%B8%8B%E7%9A%84%E5%AF%86%E7%A0%81hash-Net-NTLMv1%E4%BB%8B%E7%BB%8D/" target="_blank" rel="noopener">https://3gstudent.github.io/3gstudent.github.io/Windows%E4%B8%8B%E7%9A%84%E5%AF%86%E7%A0%81hash-Net-NTLMv1%E4%BB%8B%E7%BB%8D/</a></h4>
+<h3 id="参考文章："><a href="#参考文章：" class="headerlink" title="参考文章："></a>参考文章：</h3><h4 id="https-zhuanlan-zhihu-com-p-41449862"><a href="#https-zhuanlan-zhihu-com-p-41449862" class="headerlink" title="https://zhuanlan.zhihu.com/p/41449862"></a><a href="https://zhuanlan.zhihu.com/p/41449862" target="_blank" rel="noopener">https://zhuanlan.zhihu.com/p/41449862</a></h4>
           
         
       
@@ -697,7 +685,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2019/04/24/NTLMv1、NTLMv2-数据包分析/" itemprop="url">NTLMv1、NTLMv2 数据包分析</a></h1>
+                <a class="post-title-link" href="/2019/04/24/NTLMv1、NTLMv2-数据包分析/" itemprop="url">Net-NTLMv1、NTLMv2 数据包分析</a></h1>
         
 
         <div class="post-meta">
@@ -749,9 +737,28 @@
       
         
           
-            <p><a href="/download/NTLMv1.pcapng" target="_blank">NTLMv1.pcapng</a></p>
-<p><a href="/download/NTLMv2.pcapng" target="_blank">NTLMv2.pcapng</a></p>
-
+            <h1 id="一、Net-NTMLMv1，Net-NTLMv2工作流程："><a href="#一、Net-NTMLMv1，Net-NTLMv2工作流程：" class="headerlink" title="一、Net-NTMLMv1，Net-NTLMv2工作流程："></a>一、Net-NTMLMv1，Net-NTLMv2工作流程：</h1><h2 id="Net-NTLMv1的加密方法如下："><a href="#Net-NTLMv1的加密方法如下：" class="headerlink" title="Net-NTLMv1的加密方法如下："></a>Net-NTLMv1的加密方法如下：</h2><blockquote>
+<p>1、客户端向服务器发送一个请求</p>
+<p>2、服务器接收到请求后，生成一个8位的Challenge，发送回客户端</p>
+<p>3、客户端接收到Challenge后，使用登录用户的密码hash对Challenge加密，作为response发送给服务器</p>
+<p>4、服务器校验response</p>
+</blockquote>
+<h2 id="对比Net-NTLMv1，Net-NTLMv2的加密方法如下："><a href="#对比Net-NTLMv1，Net-NTLMv2的加密方法如下：" class="headerlink" title="对比Net-NTLMv1，Net-NTLMv2的加密方法如下："></a>对比Net-NTLMv1，Net-NTLMv2的加密方法如下：</h2><blockquote>
+<p>1、客户端向服务器发送一个请求</p>
+<p>2、服务器接收到请求后，生成一个16位的Challenge，发送回客户端</p>
+<p>3、客户端接收到Challenge后，使用登录用户的密码hash对Challenge加密，作为response发送给服务器</p>
+<p>4、服务器校验response ###</p>
+</blockquote>
+<p>两者的<strong>流程相同</strong>，但<strong>加密算法不同</strong>，Net-NTLMv1相对脆弱，Net-NTLMv1 response的计算方法比较简单，方法如下(目前LM hash很少接触，不考虑)：将用户的NTLM hash分成三组，每组7比特(长度不够末尾填0)，作为3DES加密算法的三组密钥，加密Server发来的Challenge</p>
+<h2 id="二、NTLMv1-数据包密码破解"><a href="#二、NTLMv1-数据包密码破解" class="headerlink" title="二、NTLMv1 数据包密码破解"></a>二、NTLMv1 数据包密码破解</h2><p>NTLMv1 数据包文件下载：<a href="/download/NTLMv1.pcapng" target="_blank">NTLMv1.pcapng</a></p>
+<blockquote>
+<p>密码hash固定拼接格式：username :: hostname : LM response : NTLM response : Server challenge</p>
+</blockquote>
+<p>NTLMv2 数据包文件下载：<a href="/download/NTLMv2.pcapng" target="_blank">NTLMv2.pcapng</a></p>
+<blockquote>
+<p>固定拼接格式：username :: domain : challenge : NTProofStr : NTLM Response - NTProofStr</p>
+</blockquote>
+<h4 id="参考文章："><a href="#参考文章：" class="headerlink" title="参考文章："></a>参考文章：</h4><h5 id="https-3gstudent-github-io-3gstudent-github-io-Windows-E4-B8-8B-E7-9A-84-E5-AF-86-E7-A0-81hash-Net-NTLMv1-E4-BB-8B-E7-BB-8D"><a href="#https-3gstudent-github-io-3gstudent-github-io-Windows-E4-B8-8B-E7-9A-84-E5-AF-86-E7-A0-81hash-Net-NTLMv1-E4-BB-8B-E7-BB-8D" class="headerlink" title="https://3gstudent.github.io/3gstudent.github.io/Windows%E4%B8%8B%E7%9A%84%E5%AF%86%E7%A0%81hash-Net-NTLMv1%E4%BB%8B%E7%BB%8D/"></a><a href="https://3gstudent.github.io/3gstudent.github.io/Windows%E4%B8%8B%E7%9A%84%E5%AF%86%E7%A0%81hash-Net-NTLMv1%E4%BB%8B%E7%BB%8D/" target="_blank" rel="noopener">https://3gstudent.github.io/3gstudent.github.io/Windows%E4%B8%8B%E7%9A%84%E5%AF%86%E7%A0%81hash-Net-NTLMv1%E4%BB%8B%E7%BB%8D/</a></h5>
           
         
       
