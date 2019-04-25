@@ -369,152 +369,6 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://www.kmmedia.top/2019/04/15/CentOS-更换yum源/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Cheney先森">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Cheney’s blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/04/15/CentOS-更换yum源/" itemprop="url">CentOS更换yum源</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-04-15T19:41:02+08:00">
-                2019-04-15
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>1、备份</p>
-<blockquote>
-<p>mv /etc/yum.repos.d/CentOS-Base.repo /etc/yum.repos.d/CentOS-Base.repo.backup</p>
-</blockquote>
-<p>2、下载新的centos-base.repo到/etc/yum.repos.d/</p>
-<blockquote>
-<p>阿里源地址：<a href="http://mirrors.aliyun.com/repo/" target="_blank" rel="noopener">http://mirrors.aliyun.com/repo/</a></p>
-</blockquote>
-<blockquote>
-<p>wget -O /etc/yum.repos.d/CentOS-Base.repo <a href="http://mirrors.aliyun.com/repo/Centos-5/6/7.repo" target="_blank" rel="noopener">http://mirrors.aliyun.com/repo/Centos-5/6/7.repo</a></p>
-</blockquote>
-<p>3、清除缓存</p>
-<blockquote>
-<p>yum clean all</p>
-</blockquote>
-<p>4、更新本地yum缓存</p>
-<blockquote>
-<p>yum makecache</p>
-</blockquote>
-<p>5、更新yum软件库</p>
-<blockquote>
-<p>yum update -y</p>
-</blockquote>
-<p>6、查看已安装的服务</p>
-<blockquote>
-<p>yum list installed</p>
-</blockquote>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://www.kmmedia.top/2019/04/15/CentOS-FTP服务配置/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -615,6 +469,152 @@
 </blockquote>
 <blockquote>
 <p>chroot_list_enable=YES</p>
+</blockquote>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://www.kmmedia.top/2019/04/15/CentOS-更换yum源/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Cheney先森">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Cheney’s blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/04/15/CentOS-更换yum源/" itemprop="url">CentOS更换yum源</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-04-15T19:41:02+08:00">
+                2019-04-15
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>1、备份</p>
+<blockquote>
+<p>mv /etc/yum.repos.d/CentOS-Base.repo /etc/yum.repos.d/CentOS-Base.repo.backup</p>
+</blockquote>
+<p>2、下载新的centos-base.repo到/etc/yum.repos.d/</p>
+<blockquote>
+<p>阿里源地址：<a href="http://mirrors.aliyun.com/repo/" target="_blank" rel="noopener">http://mirrors.aliyun.com/repo/</a></p>
+</blockquote>
+<blockquote>
+<p>wget -O /etc/yum.repos.d/CentOS-Base.repo <a href="http://mirrors.aliyun.com/repo/Centos-5/6/7.repo" target="_blank" rel="noopener">http://mirrors.aliyun.com/repo/Centos-5/6/7.repo</a></p>
+</blockquote>
+<p>3、清除缓存</p>
+<blockquote>
+<p>yum clean all</p>
+</blockquote>
+<p>4、更新本地yum缓存</p>
+<blockquote>
+<p>yum makecache</p>
+</blockquote>
+<p>5、更新yum软件库</p>
+<blockquote>
+<p>yum update -y</p>
+</blockquote>
+<p>6、查看已安装的服务</p>
+<blockquote>
+<p>yum list installed</p>
 </blockquote>
 
           
