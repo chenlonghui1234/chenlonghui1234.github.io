@@ -281,29 +281,6 @@
   </entry>
   
   <entry>
-    <title>Linux常用命令整理</title>
-    <link href="http://www.kmmedia.top/2019/04/15/Linux-%E5%91%BD%E4%BB%A4%E6%95%B4%E7%90%86/"/>
-    <id>http://www.kmmedia.top/2019/04/15/Linux-命令整理/</id>
-    <published>2019-04-15T11:41:02.000Z</published>
-    <updated>2019-04-19T01:28:01.311Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="一、lsof"><a href="#一、lsof" class="headerlink" title="一、lsof"></a>一、lsof</h1><p>1、列出本机正在运行的ipv4/ipv6协议服务</p><p>lsof -i 4/6</p><p>2、列出本机正在运行的tcp/udp服务</p><p>lsof -i tcp/udp</p><p>3、列出本机1-1024的开放端口</p><p>lsof -i :1-1024</p><p>4、列出本机用户的进程服务</p><p>lsfo -u user</p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h1 id=&quot;一、lsof&quot;&gt;&lt;a href=&quot;#一、lsof&quot; class=&quot;headerlink&quot; title=&quot;一、lsof&quot;&gt;&lt;/a&gt;一、lsof&lt;/h1&gt;&lt;p&gt;1、列出本机正在运行的ipv4/ipv6协议服务&lt;/p&gt;
-&lt;p&gt;lsof -i 4/6&lt;/p&gt;
-&lt;p&gt;2、列
-      
-    
-    </summary>
-    
-    
-  </entry>
-  
-  <entry>
     <title>CentOS更换yum源</title>
     <link href="http://www.kmmedia.top/2019/04/15/CentOS-%E6%9B%B4%E6%8D%A2yum%E6%BA%90/"/>
     <id>http://www.kmmedia.top/2019/04/15/CentOS-更换yum源/</id>
@@ -321,6 +298,29 @@
 &lt;p&gt;mv /etc/yum.repos.d/CentOS-Base.repo /etc/yum.repos.d/CentOS-Base.repo.backup&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;2、下载新的centos-
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Linux常用命令整理</title>
+    <link href="http://www.kmmedia.top/2019/04/15/Linux-%E5%91%BD%E4%BB%A4%E6%95%B4%E7%90%86/"/>
+    <id>http://www.kmmedia.top/2019/04/15/Linux-命令整理/</id>
+    <published>2019-04-15T11:41:02.000Z</published>
+    <updated>2019-04-19T01:28:01.311Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="一、lsof"><a href="#一、lsof" class="headerlink" title="一、lsof"></a>一、lsof</h1><p>1、列出本机正在运行的ipv4/ipv6协议服务</p><p>lsof -i 4/6</p><p>2、列出本机正在运行的tcp/udp服务</p><p>lsof -i tcp/udp</p><p>3、列出本机1-1024的开放端口</p><p>lsof -i :1-1024</p><p>4、列出本机用户的进程服务</p><p>lsfo -u user</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;一、lsof&quot;&gt;&lt;a href=&quot;#一、lsof&quot; class=&quot;headerlink&quot; title=&quot;一、lsof&quot;&gt;&lt;/a&gt;一、lsof&lt;/h1&gt;&lt;p&gt;1、列出本机正在运行的ipv4/ipv6协议服务&lt;/p&gt;
+&lt;p&gt;lsof -i 4/6&lt;/p&gt;
+&lt;p&gt;2、列
       
     
     </summary>
