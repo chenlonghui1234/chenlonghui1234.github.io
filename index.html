@@ -306,6 +306,203 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://www.kmmedia.top/2019/04/29/Telnet-允许root远程登录/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Cheney先森">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Cheney’s blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/04/29/Telnet-允许root远程登录/" itemprop="url">Telnet 允许root远程登录</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-04-29T14:45:30+08:00">
+                2019-04-29
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Linux-笔记/" itemprop="url" rel="index">
+                    <span itemprop="name">Linux 笔记</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/2019/04/29/Telnet-允许root远程登录/" class="leancloud_visitors" data-flag-title="Telnet 允许root远程登录">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  276
+                </span>
+              
+
+              
+
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>由于telnet采取明文传输的方式，极其不安全，所以telnet默禁止root远程telnet登录。</p>
+<p>但如果强行开启，也可以实现，方法如下。</p>
+<p>服务安装等就不重复赘述了，网上有很多教程，大家自行搜索。</p>
+<h4 id="一、修改如下两个配置文件关闭telnet服务安全认证"><a href="#一、修改如下两个配置文件关闭telnet服务安全认证" class="headerlink" title="一、修改如下两个配置文件关闭telnet服务安全认证"></a>一、修改如下两个配置文件关闭telnet服务安全认证</h4><p>1、/etc/pam.d/login</p>
+<blockquote>
+<p> #auth [user_unknown=ignore success=ok ignore=ignore default=bad] pam_securetty.so  \前面加#号注释此行</p>
+</blockquote>
+<p>2、/etc/pam.d/remote</p>
+<blockquote>
+<p> #auth required pam_securetty.so \前面加#号注释此行</p>
+</blockquote>
+<h4 id="二、telnet配置文件作用"><a href="#二、telnet配置文件作用" class="headerlink" title="二、telnet配置文件作用"></a>二、telnet配置文件作用</h4><p>1、/etc/xinetd.d/krb5-telnet</p>
+<blockquote>
+<p>使用kerberos协议进行认证，既可以使用明文传输，可以使用密文传输</p>
+</blockquote>
+<p>2、/etc/xinetd.d/ekrb5-telnet</p>
+<blockquote>
+<p>只能使用密文传输，使用kerberos 5协议进行认证。</p>
+<p>ekrb5-telnet可以用来提供加密的telnet服务，如果启用了ekrb5-telnet服务，但是又没有Kerberos服务器的话，那么在进行 telnet登录时，总是会报”Unencrypted connection refused. Goodbye.（未加密的连接，拒绝服务）”这个错误</p>
+</blockquote>
+<h4 id="三、参考文章"><a href="#三、参考文章" class="headerlink" title="三、参考文章"></a>三、参考文章</h4><blockquote>
+<p><a href="http://www.heminjie.com/system/linux/6233.html" target="_blank" rel="noopener">http://www.heminjie.com/system/linux/6233.html</a></p>
+<p><a href="http://blog.sina.com.cn/s/blog_60fd00bb0100shxx.html" target="_blank" rel="noopener">http://blog.sina.com.cn/s/blog_60fd00bb0100shxx.html</a></p>
+</blockquote>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://www.kmmedia.top/2019/04/24/CentOS-Samba服务配置/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -2035,198 +2232,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://www.kmmedia.top/2019/04/19/Mysql-常用命令整理/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Cheney先森">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Cheney’s blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/04/19/Mysql-常用命令整理/" itemprop="url">Mysql 常用命令整理</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-04-19T10:02:59+08:00">
-                2019-04-19
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Linux-笔记/" itemprop="url" rel="index">
-                    <span itemprop="name">Linux 笔记</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-             <span id="/2019/04/19/Mysql-常用命令整理/" class="leancloud_visitors" data-flag-title="Mysql 常用命令整理">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数&#58;</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">字数统计&#58;</span>
-                
-                <span title="字数统计">
-                  177
-                </span>
-              
-
-              
-
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>1、授权允许远程访问mysql</p>
-<blockquote>
-<p>允许任意ip的主机访问本地mysql服务器</p>
-<p>grant all privileges <em>.</em> to ‘root‘@’%’;</p>
-<p>允许用户jack从ip为10.10.50.127的主机连接到mysql服务器，并使用123456作为密码</p>
-<p>grant all privileges <em>.</em> to ‘jack‘@’10.10.50.127’ identified by ‘123456’ with grant option;</p>
-<p>改表</p>
-<p>update user set host = ‘%’ where user = ‘root’;</p>
-</blockquote>
-<p>2、删除用户</p>
-<blockquote>
-<p>delete from user where user = ‘root’ and host = ‘%’;</p>
-<p>drop user ‘root‘@’%’;</p>
-</blockquote>
-<p>drop不仅会将user表中的数据删除，还会删除其他权限表的内容。而delete只删除user表中的内容，所以使用delete删除用户后需要执行FLUSH PRIVILEGES;刷新权限，否则下次使用create语句创建用户时会报错。</p>
-<p>3、重新加载授权表</p>
-<blockquote>
-<p>flush privileges;</p>
-</blockquote>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -2277,7 +2282,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">14</span>
+                  <span class="site-state-item-count">15</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -2364,7 +2369,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">2.7k</span>
+    <span title="Site words total count">2.9k</span>
   
 </div>
 

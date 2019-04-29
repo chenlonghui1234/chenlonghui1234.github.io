@@ -306,6 +306,198 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://www.kmmedia.top/2019/04/19/Mysql-常用命令整理/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Cheney先森">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Cheney’s blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/04/19/Mysql-常用命令整理/" itemprop="url">Mysql 常用命令整理</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-04-19T10:02:59+08:00">
+                2019-04-19
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Linux-笔记/" itemprop="url" rel="index">
+                    <span itemprop="name">Linux 笔记</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/2019/04/19/Mysql-常用命令整理/" class="leancloud_visitors" data-flag-title="Mysql 常用命令整理">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  177
+                </span>
+              
+
+              
+
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>1、授权允许远程访问mysql</p>
+<blockquote>
+<p>允许任意ip的主机访问本地mysql服务器</p>
+<p>grant all privileges <em>.</em> to ‘root‘@’%’;</p>
+<p>允许用户jack从ip为10.10.50.127的主机连接到mysql服务器，并使用123456作为密码</p>
+<p>grant all privileges <em>.</em> to ‘jack‘@’10.10.50.127’ identified by ‘123456’ with grant option;</p>
+<p>改表</p>
+<p>update user set host = ‘%’ where user = ‘root’;</p>
+</blockquote>
+<p>2、删除用户</p>
+<blockquote>
+<p>delete from user where user = ‘root’ and host = ‘%’;</p>
+<p>drop user ‘root‘@’%’;</p>
+</blockquote>
+<p>drop不仅会将user表中的数据删除，还会删除其他权限表的内容。而delete只删除user表中的内容，所以使用delete删除用户后需要执行FLUSH PRIVILEGES;刷新权限，否则下次使用create语句创建用户时会报错。</p>
+<p>3、重新加载授权表</p>
+<blockquote>
+<p>flush privileges;</p>
+</blockquote>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://www.kmmedia.top/2019/04/19/CentOS-安装MariaDB/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -444,204 +636,6 @@
 <p>4、设置root密码等相关</p>
 <blockquote>
 <p>mysql_secure_installation</p>
-</blockquote>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://www.kmmedia.top/2019/04/15/CentOS-更换yum源/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Cheney先森">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Cheney’s blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/04/15/CentOS-更换yum源/" itemprop="url">CentOS更换yum源</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-04-15T19:41:02+08:00">
-                2019-04-15
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Linux-笔记/" itemprop="url" rel="index">
-                    <span itemprop="name">Linux 笔记</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-             <span id="/2019/04/15/CentOS-更换yum源/" class="leancloud_visitors" data-flag-title="CentOS更换yum源">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数&#58;</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">字数统计&#58;</span>
-                
-                <span title="字数统计">
-                  101
-                </span>
-              
-
-              
-
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>1、备份</p>
-<blockquote>
-<p>mv /etc/yum.repos.d/CentOS-Base.repo /etc/yum.repos.d/CentOS-Base.repo.backup</p>
-</blockquote>
-<p>2、下载新的centos-base.repo到/etc/yum.repos.d/</p>
-<blockquote>
-<p>阿里源地址：<a href="http://mirrors.aliyun.com/repo/" target="_blank" rel="noopener">http://mirrors.aliyun.com/repo/</a></p>
-<p>wget -O /etc/yum.repos.d/CentOS-Base.repo <a href="http://mirrors.aliyun.com/repo/Centos-5/6/7.repo" target="_blank" rel="noopener">http://mirrors.aliyun.com/repo/Centos-5/6/7.repo</a></p>
-</blockquote>
-<p>3、清除缓存</p>
-<blockquote>
-<p>yum clean all</p>
-</blockquote>
-<p>4、更新本地yum缓存</p>
-<blockquote>
-<p>yum makecache</p>
-</blockquote>
-<p>5、更新yum软件库</p>
-<blockquote>
-<p>yum update -y</p>
-</blockquote>
-<p>6、查看已安装的服务</p>
-<blockquote>
-<p>yum list installed</p>
 </blockquote>
 
           
@@ -980,7 +974,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  70
+                  84
                 </span>
               
 
@@ -1022,6 +1016,208 @@
 <p>4、列出本机用户的进程服务</p>
 <blockquote>
 <p>lsfo -u user</p>
+</blockquote>
+<h1 id="二、chkconfig"><a href="#二、chkconfig" class="headerlink" title="二、chkconfig"></a>二、chkconfig</h1><p>1、列出所有程序开启状态</p>
+<blockquote>
+<p>chkconfig –list</p>
+</blockquote>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://www.kmmedia.top/2019/04/15/CentOS-更换yum源/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Cheney先森">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Cheney’s blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/04/15/CentOS-更换yum源/" itemprop="url">CentOS更换yum源</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-04-15T19:41:02+08:00">
+                2019-04-15
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Linux-笔记/" itemprop="url" rel="index">
+                    <span itemprop="name">Linux 笔记</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/2019/04/15/CentOS-更换yum源/" class="leancloud_visitors" data-flag-title="CentOS更换yum源">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  101
+                </span>
+              
+
+              
+
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>1、备份</p>
+<blockquote>
+<p>mv /etc/yum.repos.d/CentOS-Base.repo /etc/yum.repos.d/CentOS-Base.repo.backup</p>
+</blockquote>
+<p>2、下载新的centos-base.repo到/etc/yum.repos.d/</p>
+<blockquote>
+<p>阿里源地址：<a href="http://mirrors.aliyun.com/repo/" target="_blank" rel="noopener">http://mirrors.aliyun.com/repo/</a></p>
+<p>wget -O /etc/yum.repos.d/CentOS-Base.repo <a href="http://mirrors.aliyun.com/repo/Centos-5/6/7.repo" target="_blank" rel="noopener">http://mirrors.aliyun.com/repo/Centos-5/6/7.repo</a></p>
+</blockquote>
+<p>3、清除缓存</p>
+<blockquote>
+<p>yum clean all</p>
+</blockquote>
+<p>4、更新本地yum缓存</p>
+<blockquote>
+<p>yum makecache</p>
+</blockquote>
+<p>5、更新yum软件库</p>
+<blockquote>
+<p>yum update -y</p>
+</blockquote>
+<p>6、查看已安装的服务</p>
+<blockquote>
+<p>yum list installed</p>
 </blockquote>
 
           
@@ -1110,7 +1306,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">14</span>
+                  <span class="site-state-item-count">15</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -1197,7 +1393,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">2.7k</span>
+    <span title="Site words total count">2.9k</span>
   
 </div>
 

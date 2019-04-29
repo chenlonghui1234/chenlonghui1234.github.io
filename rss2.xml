@@ -8,8 +8,30 @@
     <atom:link href="/rss2.xml" rel="self" type="application/rss+xml"/>
     
     <description>Cheney&#39;blog</description>
-    <pubDate>Thu, 25 Apr 2019 13:12:00 GMT</pubDate>
+    <pubDate>Mon, 29 Apr 2019 07:40:47 GMT</pubDate>
     <generator>http://hexo.io/</generator>
+    
+    <item>
+      <title>Telnet 允许root远程登录</title>
+      <link>http://www.kmmedia.top/2019/04/29/Telnet-%E5%85%81%E8%AE%B8root%E8%BF%9C%E7%A8%8B%E7%99%BB%E5%BD%95/</link>
+      <guid>http://www.kmmedia.top/2019/04/29/Telnet-%E5%85%81%E8%AE%B8root%E8%BF%9C%E7%A8%8B%E7%99%BB%E5%BD%95/</guid>
+      <pubDate>Mon, 29 Apr 2019 06:45:30 GMT</pubDate>
+      <description>
+      
+        
+        
+          &lt;p&gt;由于telnet采取明文传输的方式，极其不安全，所以telnet默禁止root远程telnet登录。&lt;/p&gt;
+&lt;p&gt;但如果强行开启，也可以实现，方法如下。&lt;/p&gt;
+&lt;p&gt;服务安装等就不重复赘述了，网上有很多教程，大家自行搜索。&lt;/p&gt;
+&lt;h4 id=&quot;一、修改如下两个配置文
+        
+      
+      </description>
+      
+      <content:encoded><![CDATA[<p>由于telnet采取明文传输的方式，极其不安全，所以telnet默禁止root远程telnet登录。</p><p>但如果强行开启，也可以实现，方法如下。</p><p>服务安装等就不重复赘述了，网上有很多教程，大家自行搜索。</p><h4 id="一、修改如下两个配置文件关闭telnet服务安全认证"><a href="#一、修改如下两个配置文件关闭telnet服务安全认证" class="headerlink" title="一、修改如下两个配置文件关闭telnet服务安全认证"></a>一、修改如下两个配置文件关闭telnet服务安全认证</h4><p>1、/etc/pam.d/login</p><blockquote><p> #auth [user_unknown=ignore success=ok ignore=ignore default=bad] pam_securetty.so  \前面加#号注释此行</p></blockquote><p>2、/etc/pam.d/remote</p><blockquote><p> #auth required pam_securetty.so \前面加#号注释此行</p></blockquote><h4 id="二、telnet配置文件作用"><a href="#二、telnet配置文件作用" class="headerlink" title="二、telnet配置文件作用"></a>二、telnet配置文件作用</h4><p>1、/etc/xinetd.d/krb5-telnet</p><blockquote><p>使用kerberos协议进行认证，既可以使用明文传输，可以使用密文传输</p></blockquote><p>2、/etc/xinetd.d/ekrb5-telnet</p><blockquote><p>只能使用密文传输，使用kerberos 5协议进行认证。</p><p>ekrb5-telnet可以用来提供加密的telnet服务，如果启用了ekrb5-telnet服务，但是又没有Kerberos服务器的话，那么在进行 telnet登录时，总是会报”Unencrypted connection refused. Goodbye.（未加密的连接，拒绝服务）”这个错误</p></blockquote><h4 id="三、参考文章"><a href="#三、参考文章" class="headerlink" title="三、参考文章"></a>三、参考文章</h4><blockquote><p><a href="http://www.heminjie.com/system/linux/6233.html" target="_blank" rel="noopener">http://www.heminjie.com/system/linux/6233.html</a></p><p><a href="http://blog.sina.com.cn/s/blog_60fd00bb0100shxx.html" target="_blank" rel="noopener">http://blog.sina.com.cn/s/blog_60fd00bb0100shxx.html</a></p></blockquote>]]></content:encoded>
+      
+      <comments>http://www.kmmedia.top/2019/04/29/Telnet-%E5%85%81%E8%AE%B8root%E8%BF%9C%E7%A8%8B%E7%99%BB%E5%BD%95/#disqus_thread</comments>
+    </item>
     
     <item>
       <title>CentOS 5.5 Samba服务配置</title>
@@ -203,29 +225,6 @@
       <content:encoded><![CDATA[<p>1、安装环境配置</p><blockquote><p>apt-get install git</p><p>apt-get install python-pip</p></blockquote><p>2、kali下载w3af工具</p><blockquote><p>git clone <a href="https://github.com/andresriancho/w3af.git" target="_blank" rel="noopener">https://github.com/andresriancho/w3af.git</a></p></blockquote><p>3、进入目录执行w3af_console文件</p><blockquote><p>cd w3af</p><p>./w3af_console</p></blockquote><p>参考文章：</p><blockquote><p><a href="https://y-hkl.github.io/2017/11/28/Web%E5%AE%89%E5%85%A8%E5%B7%A5%E5%85%B7%E2%80%94%E2%80%94w3af%E6%95%99%E7%A8%8B/" target="_blank" rel="noopener">https://y-hkl.github.io/2017/11/28/Web%E5%AE%89%E5%85%A8%E5%B7%A5%E5%85%B7%E2%80%94%E2%80%94w3af%E6%95%99%E7%A8%8B/</a></p><p><a href="https://github.com/andresriancho/w3af/issues/14190" target="_blank" rel="noopener">https://github.com/andresriancho/w3af/issues/14190</a></p></blockquote>]]></content:encoded>
       
       <comments>http://www.kmmedia.top/2019/04/19/Kali-w3af%E5%B7%A5%E5%85%B7%E5%AE%89%E8%A3%85/#disqus_thread</comments>
-    </item>
-    
-    <item>
-      <title>Mysql 常用命令整理</title>
-      <link>http://www.kmmedia.top/2019/04/19/Mysql-%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4%E6%95%B4%E7%90%86/</link>
-      <guid>http://www.kmmedia.top/2019/04/19/Mysql-%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4%E6%95%B4%E7%90%86/</guid>
-      <pubDate>Fri, 19 Apr 2019 02:02:59 GMT</pubDate>
-      <description>
-      
-        
-        
-          &lt;p&gt;1、授权允许远程访问mysql&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;允许任意ip的主机访问本地mysql服务器&lt;/p&gt;
-&lt;p&gt;grant all privileges &lt;em&gt;.&lt;/em&gt; to ‘root‘@’%’;&lt;/p&gt;
-&lt;p&gt;允许用户jack从ip为10.10.
-        
-      
-      </description>
-      
-      <content:encoded><![CDATA[<p>1、授权允许远程访问mysql</p><blockquote><p>允许任意ip的主机访问本地mysql服务器</p><p>grant all privileges <em>.</em> to ‘root‘@’%’;</p><p>允许用户jack从ip为10.10.50.127的主机连接到mysql服务器，并使用123456作为密码</p><p>grant all privileges <em>.</em> to ‘jack‘@’10.10.50.127’ identified by ‘123456’ with grant option;</p><p>改表</p><p>update user set host = ‘%’ where user = ‘root’;</p></blockquote><p>2、删除用户</p><blockquote><p>delete from user where user = ‘root’ and host = ‘%’;</p><p>drop user ‘root‘@’%’;</p></blockquote><p>drop不仅会将user表中的数据删除，还会删除其他权限表的内容。而delete只删除user表中的内容，所以使用delete删除用户后需要执行FLUSH PRIVILEGES;刷新权限，否则下次使用create语句创建用户时会报错。</p><p>3、重新加载授权表</p><blockquote><p>flush privileges;</p></blockquote>]]></content:encoded>
-      
-      <comments>http://www.kmmedia.top/2019/04/19/Mysql-%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4%E6%95%B4%E7%90%86/#disqus_thread</comments>
     </item>
     
   </channel>

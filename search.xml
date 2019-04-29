@@ -1,6 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[Telnet 允许root远程登录]]></title>
+    <url>%2F2019%2F04%2F29%2FTelnet-%E5%85%81%E8%AE%B8root%E8%BF%9C%E7%A8%8B%E7%99%BB%E5%BD%95%2F</url>
+    <content type="text"><![CDATA[由于telnet采取明文传输的方式，极其不安全，所以telnet默禁止root远程telnet登录。 但如果强行开启，也可以实现，方法如下。 服务安装等就不重复赘述了，网上有很多教程，大家自行搜索。 一、修改如下两个配置文件关闭telnet服务安全认证1、/etc/pam.d/login #auth [user_unknown=ignore success=ok ignore=ignore default=bad] pam_securetty.so \前面加#号注释此行 2、/etc/pam.d/remote #auth required pam_securetty.so \前面加#号注释此行 二、telnet配置文件作用1、/etc/xinetd.d/krb5-telnet 使用kerberos协议进行认证，既可以使用明文传输，可以使用密文传输 2、/etc/xinetd.d/ekrb5-telnet 只能使用密文传输，使用kerberos 5协议进行认证。 ekrb5-telnet可以用来提供加密的telnet服务，如果启用了ekrb5-telnet服务，但是又没有Kerberos服务器的话，那么在进行 telnet登录时，总是会报”Unencrypted connection refused. Goodbye.（未加密的连接，拒绝服务）”这个错误 三、参考文章 http://www.heminjie.com/system/linux/6233.html http://blog.sina.com.cn/s/blog_60fd00bb0100shxx.html]]></content>
+      <categories>
+        <category>Linux 笔记</category>
+      </categories>
+  </entry>
+  <entry>
     <title><![CDATA[CentOS 5.5 Samba服务配置]]></title>
     <url>%2F2019%2F04%2F24%2FCentOS-Samba%E6%9C%8D%E5%8A%A1%E9%85%8D%E7%BD%AE%2F</url>
     <content type="text"><![CDATA[1、安装samba服务 yum install samba system-config-samba samba-client samba-common 2、创建samba用户 useradd samba mkdir -p /home/smbtest chmod 777 /home/smbtest chown -R samba:samba /home/smbtest 3、修改配置文件 [global] security = user [smbtest] path = /home/smbtest writable = yes #写入权限 create mask = 0644 #上传权限 directory mask = 0755 #下载权限 4、linux访问smb服务器 smbclient //192.168.199.30/smbtest -U username put test.txt #上传文件 get test.txt #下载文件]]></content>
@@ -86,14 +94,6 @@
       </categories>
   </entry>
   <entry>
-    <title><![CDATA[CentOS更换yum源]]></title>
-    <url>%2F2019%2F04%2F15%2FCentOS-%E6%9B%B4%E6%8D%A2yum%E6%BA%90%2F</url>
-    <content type="text"><![CDATA[1、备份 mv /etc/yum.repos.d/CentOS-Base.repo /etc/yum.repos.d/CentOS-Base.repo.backup 2、下载新的centos-base.repo到/etc/yum.repos.d/ 阿里源地址：http://mirrors.aliyun.com/repo/ wget -O /etc/yum.repos.d/CentOS-Base.repo http://mirrors.aliyun.com/repo/Centos-5/6/7.repo 3、清除缓存 yum clean all 4、更新本地yum缓存 yum makecache 5、更新yum软件库 yum update -y 6、查看已安装的服务 yum list installed]]></content>
-      <categories>
-        <category>Linux 笔记</category>
-      </categories>
-  </entry>
-  <entry>
     <title><![CDATA[CentOS FTP服务配置]]></title>
     <url>%2F2019%2F04%2F15%2FCentOS-FTP%E6%9C%8D%E5%8A%A1%E9%85%8D%E7%BD%AE%2F</url>
     <content type="text"><![CDATA[1、创建FTP用户test并指定用户家目录 useradd -d /home/test -m test 2、更改用户权限 限定用户test不能登录shell，只能ftp usermod -s /sbin/nologin test 用户test恢复正常，允许登录shell usermod -s /sbin/bahs test 更改用户test的主目录 usermod -d /home/test test 3、修改/etc/vsftpd/vsftpd.conf，限制用户只能访问/home/test，不能访问其他地址 禁止穿越到上级目录 chroot_list_enable=YES]]></content>
@@ -104,7 +104,15 @@
   <entry>
     <title><![CDATA[Linux常用命令整理]]></title>
     <url>%2F2019%2F04%2F15%2FLinux-%E5%91%BD%E4%BB%A4%E6%95%B4%E7%90%86%2F</url>
-    <content type="text"><![CDATA[一、lsof1、列出本机正在运行的ipv4/ipv6协议服务 lsof -i 4/6 2、列出本机正在运行的tcp/udp服务 lsof -i tcp/udp 3、列出本机1-1024的开放端口 lsof -i :1-1024 4、列出本机用户的进程服务 lsfo -u user]]></content>
+    <content type="text"><![CDATA[一、lsof1、列出本机正在运行的ipv4/ipv6协议服务 lsof -i 4/6 2、列出本机正在运行的tcp/udp服务 lsof -i tcp/udp 3、列出本机1-1024的开放端口 lsof -i :1-1024 4、列出本机用户的进程服务 lsfo -u user 二、chkconfig1、列出所有程序开启状态 chkconfig –list]]></content>
+      <categories>
+        <category>Linux 笔记</category>
+      </categories>
+  </entry>
+  <entry>
+    <title><![CDATA[CentOS更换yum源]]></title>
+    <url>%2F2019%2F04%2F15%2FCentOS-%E6%9B%B4%E6%8D%A2yum%E6%BA%90%2F</url>
+    <content type="text"><![CDATA[1、备份 mv /etc/yum.repos.d/CentOS-Base.repo /etc/yum.repos.d/CentOS-Base.repo.backup 2、下载新的centos-base.repo到/etc/yum.repos.d/ 阿里源地址：http://mirrors.aliyun.com/repo/ wget -O /etc/yum.repos.d/CentOS-Base.repo http://mirrors.aliyun.com/repo/Centos-5/6/7.repo 3、清除缓存 yum clean all 4、更新本地yum缓存 yum makecache 5、更新yum软件库 yum update -y 6、查看已安装的服务 yum list installed]]></content>
       <categories>
         <category>Linux 笔记</category>
       </categories>
