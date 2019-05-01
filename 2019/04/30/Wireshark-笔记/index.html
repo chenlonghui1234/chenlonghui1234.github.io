@@ -81,17 +81,17 @@
 
 
 
-<meta name="description" content="1、安装samba服务   yum install samba system-config-samba samba-client samba-common  2、创建samba用户  useradd samba mkdir -p /home/smbtest chmod 777 /home/smbtest chown -R samba:samba /home/smbtest  3、修改配置文件  [">
+<meta name="description" content="一、Sqlmap抓包过滤关键信息1、枚举所有数据库  sqlmap -u “url” –dbs  过滤条件：(ip.addr == IP and http) or http.reponse 因为sqlmap的url查询语句中有schema_name的关键词，所以搜索关键词也能快速找到关键数据包。 对所选数据包追踪TCP流，在服务器回复信息中找到由前后各5个混淆码的字符串，中间的即为需要的数据库名，">
 <meta property="og:type" content="article">
-<meta property="og:title" content="CentOS 5.5 Samba服务配置">
-<meta property="og:url" content="http://www.kmmedia.top/2019/04/24/CentOS-Samba服务配置/index.html">
+<meta property="og:title" content="Wireshark 笔记">
+<meta property="og:url" content="http://www.kmmedia.top/2019/04/30/Wireshark-笔记/index.html">
 <meta property="og:site_name" content="Cheney’s blog">
-<meta property="og:description" content="1、安装samba服务   yum install samba system-config-samba samba-client samba-common  2、创建samba用户  useradd samba mkdir -p /home/smbtest chmod 777 /home/smbtest chown -R samba:samba /home/smbtest  3、修改配置文件  [">
+<meta property="og:description" content="一、Sqlmap抓包过滤关键信息1、枚举所有数据库  sqlmap -u “url” –dbs  过滤条件：(ip.addr == IP and http) or http.reponse 因为sqlmap的url查询语句中有schema_name的关键词，所以搜索关键词也能快速找到关键数据包。 对所选数据包追踪TCP流，在服务器回复信息中找到由前后各5个混淆码的字符串，中间的即为需要的数据库名，">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-04-25T13:12:00.826Z">
+<meta property="og:updated_time" content="2019-05-01T12:18:13.902Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="CentOS 5.5 Samba服务配置">
-<meta name="twitter:description" content="1、安装samba服务   yum install samba system-config-samba samba-client samba-common  2、创建samba用户  useradd samba mkdir -p /home/smbtest chmod 777 /home/smbtest chown -R samba:samba /home/smbtest  3、修改配置文件  [">
+<meta name="twitter:title" content="Wireshark 笔记">
+<meta name="twitter:description" content="一、Sqlmap抓包过滤关键信息1、枚举所有数据库  sqlmap -u “url” –dbs  过滤条件：(ip.addr == IP and http) or http.reponse 因为sqlmap的url查询语句中有schema_name的关键词，所以搜索关键词也能快速找到关键数据包。 对所选数据包追踪TCP流，在服务器回复信息中找到由前后各5个混淆码的字符串，中间的即为需要的数据库名，">
 
 
 
@@ -121,13 +121,13 @@
 
 
 
-  <link rel="canonical" href="http://www.kmmedia.top/2019/04/24/CentOS-Samba服务配置/">
+  <link rel="canonical" href="http://www.kmmedia.top/2019/04/30/Wireshark-笔记/">
 
 
 
 
 
-  <title>CentOS 5.5 Samba服务配置 | Cheney’s blog</title>
+  <title>Wireshark 笔记 | Cheney’s blog</title>
   
 
 
@@ -306,7 +306,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://www.kmmedia.top/2019/04/24/CentOS-Samba服务配置/">
+    <link itemprop="mainEntityOfPage" href="http://www.kmmedia.top/2019/04/30/Wireshark-笔记/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Cheney先森">
@@ -323,7 +323,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">CentOS 5.5 Samba服务配置</h1>
+          <h1 class="post-title" itemprop="name headline">Wireshark 笔记</h1>
         
 
         <div class="post-meta">
@@ -335,8 +335,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-04-24T09:37:26+08:00">
-                2019-04-24
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-04-30T20:34:40+08:00">
+                2019-04-30
               </time>
             
 
@@ -358,8 +358,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Linux-笔记/" itemprop="url" rel="index">
-                    <span itemprop="name">Linux 笔记</span>
+                  <a href="/categories/数据包分析/" itemprop="url" rel="index">
+                    <span itemprop="name">数据包分析</span>
                   </a>
                 </span>
 
@@ -375,7 +375,7 @@
 
           
           
-             <span id="/2019/04/24/CentOS-Samba服务配置/" class="leancloud_visitors" data-flag-title="CentOS 5.5 Samba服务配置">
+             <span id="/2019/04/30/Wireshark-笔记/" class="leancloud_visitors" data-flag-title="Wireshark 笔记">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -400,7 +400,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  101
+                  250
                 </span>
               
 
@@ -425,33 +425,30 @@
       
 
       
-        <p>1、安装samba服务</p>
+        <h3 id="一、Sqlmap抓包过滤关键信息"><a href="#一、Sqlmap抓包过滤关键信息" class="headerlink" title="一、Sqlmap抓包过滤关键信息"></a>一、Sqlmap抓包过滤关键信息</h3><p>1、枚举所有数据库</p>
 <blockquote>
-<p> yum install samba system-config-samba samba-client samba-common</p>
+<p>sqlmap -u “url” –dbs</p>
 </blockquote>
-<p>2、创建samba用户</p>
+<p>过滤条件：(ip.addr == IP and http) or http.reponse</p>
+<p>因为sqlmap的url查询语句中有schema_name的关键词，所以搜索关键词也能快速找到关键数据包。</p>
+<p>对所选数据包追踪TCP流，在服务器回复信息中找到由前后各5个混淆码的字符串，中间的即为需要的数据库名，如上一个个找出所有数据库名即可。</p>
+<p>2、枚举用户</p>
 <blockquote>
-<p>useradd samba</p>
-<p>mkdir -p /home/smbtest</p>
-<p>chmod 777 /home/smbtest</p>
-<p>chown -R samba:samba /home/smbtest</p>
+<p>sqlmap -u “url” –users</p>
 </blockquote>
-<p>3、修改配置文件</p>
+<p>过滤条件：(ip.addr == IP and http) or http.reponse</p>
+<p>搜索查询语句中的user关键词快速找到所需数据包。</p>
+<p>3、枚举当前数据库</p>
 <blockquote>
-<p>[global]</p>
-<p>security = user</p>
-<p>[smbtest]</p>
-<p>path = /home/smbtest</p>
-<p>writable = yes #写入权限</p>
-<p>create mask = 0644 #上传权限</p>
-<p>directory mask = 0755 #下载权限</p>
+<p>sqlmap -u “url” –current-db</p>
 </blockquote>
-<p>4、linux访问smb服务器</p>
+<p>过滤条件：(ip.addr == IP and http) or http.reponse</p>
+<p>搜索查询语句中的database关键词快速找到所需数据包。</p>
+<p>4、枚举当前数据库用户</p>
 <blockquote>
-<p>smbclient //192.168.199.30/smbtest -U username</p>
-<p>put test.txt #上传文件</p>
-<p>get test.txt #下载文件</p>
+<p>sqlmap -u “url” –current-user</p>
 </blockquote>
+<p>搜索查询语句中的user关键词快速找到所需数据包。</p>
 
       
     </div>
@@ -481,7 +478,7 @@
   </li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="http://www.kmmedia.top/2019/04/24/CentOS-Samba服务配置/" title="CentOS 5.5 Samba服务配置">http://www.kmmedia.top/2019/04/24/CentOS-Samba服务配置/</a>
+    <a href="http://www.kmmedia.top/2019/04/30/Wireshark-笔记/" title="Wireshark 笔记">http://www.kmmedia.top/2019/04/30/Wireshark-笔记/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>
@@ -503,8 +500,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/04/24/Samba-协议工作流程/" rel="next" title="Samba 协议工作流程">
-                <i class="fa fa-chevron-left"></i> Samba 协议工作流程
+              <a href="/2019/04/30/Windows-数据执行保护/" rel="next" title="Windows 数据执行保护">
+                <i class="fa fa-chevron-left"></i> Windows 数据执行保护
               </a>
             
           </div>
@@ -512,10 +509,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/04/29/Telnet-允许root远程登录/" rel="prev" title="Telnet 允许root远程登录">
-                Telnet 允许root远程登录 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -567,8 +560,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -642,6 +644,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#一、Sqlmap抓包过滤关键信息"><span class="nav-number">1.</span> <span class="nav-text">一、Sqlmap抓包过滤关键信息</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       

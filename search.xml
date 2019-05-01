@@ -1,6 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[Wireshark 笔记]]></title>
+    <url>%2F2019%2F04%2F30%2FWireshark-%E7%AC%94%E8%AE%B0%2F</url>
+    <content type="text"><![CDATA[一、Sqlmap抓包过滤关键信息1、枚举所有数据库 sqlmap -u “url” –dbs 过滤条件：(ip.addr == IP and http) or http.reponse 因为sqlmap的url查询语句中有schema_name的关键词，所以搜索关键词也能快速找到关键数据包。 对所选数据包追踪TCP流，在服务器回复信息中找到由前后各5个混淆码的字符串，中间的即为需要的数据库名，如上一个个找出所有数据库名即可。 2、枚举用户 sqlmap -u “url” –users 过滤条件：(ip.addr == IP and http) or http.reponse 搜索查询语句中的user关键词快速找到所需数据包。 3、枚举当前数据库 sqlmap -u “url” –current-db 过滤条件：(ip.addr == IP and http) or http.reponse 搜索查询语句中的database关键词快速找到所需数据包。 4、枚举当前数据库用户 sqlmap -u “url” –current-user 搜索查询语句中的user关键词快速找到所需数据包。]]></content>
+      <categories>
+        <category>数据包分析</category>
+      </categories>
+  </entry>
+  <entry>
+    <title><![CDATA[Windows 数据执行保护]]></title>
+    <url>%2F2019%2F04%2F30%2FWindows-%E6%95%B0%E6%8D%AE%E6%89%A7%E8%A1%8C%E4%BF%9D%E6%8A%A4%2F</url>
+    <content type="text"><![CDATA[数据执行保护简介DEP - 数据执行保护的缩写，Data Execution Prevention。数据执行保护 (DEP) 是一套软硬件技术，能够在内存上执行额外检查以帮助防止在系统上运行恶意代码。 在 Microsoft Windows XP Service Pack 2、 Microsoft Windows Server 2003 Service Pack 1 、Microsoft Windows XP Tablet PC Edition 2005 、 Microsoft Windows Vista 和 Microsoft windows7 中，由硬件和 软件一起强制实施 DEP。 DEP关闭方法： 开始菜单 &gt; 设置 &gt; 控制面板 &gt; 系统 &gt; 高级 &gt; 启动和故障恢复 &gt; 设置 &gt; 编辑 &gt; 修改文件 multi(0)disk(0)rdisk(0)partition(1)\WINDOWS=”Windows Server 2003, Enterprise” /noexecute=AlwaysOff /fastdetect /DETECTHAL 修改 /noexecute=optout 为 /noexecute=AlwaysOff 添加 /DETECTHAL detecthal用于强制窗口自动检测硬件抽象层 /NOEXECUTE 指定数据执行保护（EDEP）的类型，只适用于32位系统。64位系统的DEP总是打开，有以下几种类型： 1、/NOEXECUTE = OPTIN 针对系统核心和指定的映像文件打开DEP功能 2、/NOEXECUTE = OPTOUT 针对指定的映像文件以外的打开DEP功能 3、/NOEXECUTE = ALWAYSON 总是打开DEP功能 4、/NOEXECUTE = ALWAYSOFF 关闭DEP，同/EXECUTE /EXECUTE 禁止数据执行保护功能，适用版本XP SP2,2003SP1 /DETECTHAL 用于Windows Vista中，将自动检测HAL的类型4 扩展：HAL硬件抽象层： 是软件层的例行程序包，用于模拟特定系统平台的细节使程序可以直接访问硬件的资源。 主要作用为增强硬件的可移植性，保护程序免受变化的冲击，不受硬件的更新换代而重写整个程序，极大的减少了多余的重复操作。 文章参考http://www.voidcn.com/article/p-hjusefhg-ok.html]]></content>
+      <categories>
+        <category>Windows 笔记</category>
+      </categories>
+  </entry>
+  <entry>
+    <title><![CDATA[位 字节 字]]></title>
+    <url>%2F2019%2F04%2F30%2F%E4%BD%8D-%E5%AD%97%E8%8A%82-%E5%AD%97%2F</url>
+    <content type="text"><![CDATA[一、计算机单位简要概述1、位（bit）：来自英文bit，音译为“比特”， 表示二进制位。主要被用来作为数据的传输单位。 位是计算机内部数据存储最小单位，11010100是一个8位二进制数。一个二进制位只可以表示0和1两种状态；两个二进制位可以表示00、01、10、11四种状态；三位二进制可以表示八种状态。 2、字节（Byte）：习惯上用大写的B表示，主要被用来作为数据的存储单位。 字节是计算机中数据处理的基本单位。计算机中以字节位单位存储和解释信息，规定一个字节由由八个二进制位构成， 即一个字节等于8个比特。八位二进制数最小为00000000， 最大为11111111；通常一个字节可以存入一个ASCII码，2个字节可以存放一个汉字国标码。 3、字（word）：计算机进行数据处理时， 一次存取、加工和传送的数据长度称为字（word）。一个字通常由一个或多个（一般是字节的整数位）字节构成。例如286微机由2个字节组成，它的字长为16；486微机的字由四个字节组成，它的字长为32位机。 计算机的字长决定了其cpu一次操作处理实际位数的多少，由此可见计算机的字越大， 其性能越优越。 4、字长：字长是ALU（算术逻辑部件），在一个时钟周期内最多能运算的二进制位数。 计算机的每个字所包含的位数称为字长。根据计算机的不同，字长有固定的和可变的两种。固定字长，即字长度不论什么情况都是固定不变的；可变字长，则在一定范围内， 其长度是可变的。 计算机的字长是指它一次可以处理的二进制数字的数目。计算机处理数据的速率，自然和它一次能加工的位数以及进行运算的快慢有关。如果一台计算机的字长是另一台计算机的两倍，即使两台计算机速度相同，在相同的时间内，前者能做的工作是后者的两倍。 一般的，大型计算机的字长位32-64位，小型计算机位12-32位，而微型计算机位4-16位。字长是行两计算机性能的一个重要因素。 二、位单位换算计算机位数的单位是 “比特” ，也就是 “位”（bit，简称b），它表示 1 个二进制位。1 比特就是 1 位 字长的字节数（Byte） = 计算机位数（bit） / 8 三、字节单位换算一个英文字母（不分大小写）占一个字节的空间，一个中文汉字占两个字节的空间。英文标点占一个字节，中文标点占两个字节。 字长的字节数单位是 “字节”（byte，简称B），它表示 8 个二进制位。 B=字节 KB=千字节 MB=兆字节 GB=千兆字节 由于计算机内部采用万能的二进制，而 2 的 10 次方 1024 又非常接近 1000 ，于是很自然的就采用了 1k = 1024 这种换算方式，非常方便。 1 字节（Byte） = 8 位（Bits） 1 千字节（KB） = 1024 字节（Bytes） 1 兆字节（MB） = 1024 千字节（KB） 1 千兆字节（GB） = 1024 兆字节（MB）]]></content>
+      <categories>
+        <category>计算机基础</category>
+      </categories>
+  </entry>
+  <entry>
     <title><![CDATA[Telnet 允许root远程登录]]></title>
     <url>%2F2019%2F04%2F29%2FTelnet-%E5%85%81%E8%AE%B8root%E8%BF%9C%E7%A8%8B%E7%99%BB%E5%BD%95%2F</url>
     <content type="text"><![CDATA[由于telnet采取明文传输的方式，极其不安全，所以telnet默禁止root远程telnet登录。 但如果强行开启，也可以实现，方法如下。 服务安装等就不重复赘述了，网上有很多教程，大家自行搜索。 一、修改如下两个配置文件关闭telnet服务安全认证1、/etc/pam.d/login #auth [user_unknown=ignore success=ok ignore=ignore default=bad] pam_securetty.so \前面加#号注释此行 2、/etc/pam.d/remote #auth required pam_securetty.so \前面加#号注释此行 二、telnet配置文件作用1、/etc/xinetd.d/krb5-telnet 使用kerberos协议进行认证，既可以使用明文传输，可以使用密文传输 2、/etc/xinetd.d/ekrb5-telnet 只能使用密文传输，使用kerberos 5协议进行认证。 ekrb5-telnet可以用来提供加密的telnet服务，如果启用了ekrb5-telnet服务，但是又没有Kerberos服务器的话，那么在进行 telnet登录时，总是会报”Unencrypted connection refused. Goodbye.（未加密的连接，拒绝服务）”这个错误 三、参考文章 http://www.heminjie.com/system/linux/6233.html http://blog.sina.com.cn/s/blog_60fd00bb0100shxx.html]]></content>
@@ -17,14 +41,6 @@
       </categories>
   </entry>
   <entry>
-    <title><![CDATA[hexo添加下载功能]]></title>
-    <url>%2F2019%2F04%2F24%2Fhexo%E6%B7%BB%E5%8A%A0%E4%B8%8B%E8%BD%BD%E5%8A%9F%E8%83%BD%2F</url>
-    <content type="text"><![CDATA[1、在source目录下新建download目录与_postsAbouttagscategories等目录并列。 2、将文件放入download目录下 3、在需要下载的文章中写入如下html超链接语句，但需要在github或者coding上同步博客文件才可正常下载。 NTLMv1.pcapng 文章参考：https://www.cnblogs.com/yanh0606/p/10488356.htmlhttp://yanng.cc/2018/03/18/hexo%E6%B7%BB%E5%8A%A0%E4%B8%8B%E8%BD%BD%E5%8A%9F%E8%83%BD/]]></content>
-      <categories>
-        <category>hexo 笔记</category>
-      </categories>
-  </entry>
-  <entry>
     <title><![CDATA[Samba 协议工作流程]]></title>
     <url>%2F2019%2F04%2F24%2FSamba-%E5%8D%8F%E8%AE%AE%E5%B7%A5%E4%BD%9C%E6%B5%81%E7%A8%8B%2F</url>
     <content type="text"><![CDATA[一、Samba的工作流程主要为四个阶段：1、协议协商 客户端在访问Samba服务器时，首先由客户端发送一个SMB negprot请求数据包，并列出它所支持的所有SMB协议版本。 服务器在接受到请求信息吼开始响应请求，并列出希望使用的协议版本，选择最优的SMB类型。 如果没有可使用的协议版本则返回oXFFFFH信息，结束通信。 2、建立连接 当SMB协议版本确定后，客户端进程向服务器发起一个用户或共享的认证，这个过程是通过发送SesssetupX请求数据报实现的。 客户端发送一对用户名和密码或一个简单密码到服务器，然后服务器通过发送一个SesssetupX请应答数据报来允许或拒绝本次连接。 3、访问共享资源 当客户端和服务器完成了协商和认证之后，它会发送一个Tcon或S·MB TconX数据报并列出它想访问网络资源的名称，之后服务器会发送一个SMB TconX应答数据报以表示此次连接是否被接受或拒绝。 4、断开连接 连接到相应资源，SMB客户端就能够open SMB打开一个文件，通过read SMB读取文件，通过write SMB写入文件，通过close SMB关闭文件。 参考文章：https://zhuanlan.zhihu.com/p/41449862]]></content>
@@ -38,6 +54,14 @@
     <content type="text"><![CDATA[一、Net-NTMLMv1，Net-NTLMv2工作流程：Net-NTLMv1的加密方法如下： 1、客户端向服务器发送一个请求 2、服务器接收到请求后，生成一个8位的Challenge，发送回客户端 3、客户端接收到Challenge后，使用登录用户的密码hash对Challenge加密，作为response发送给服务器 4、服务器校验response 对比Net-NTLMv1，Net-NTLMv2的加密方法如下： 1、客户端向服务器发送一个请求 2、服务器接收到请求后，生成一个16位的Challenge，发送回客户端 3、客户端接收到Challenge后，使用登录用户的密码hash对Challenge加密，作为response发送给服务器 4、服务器校验response 两者的流程相同，但加密算法不同，Net-NTLMv1相对脆弱，Net-NTLMv1 response的计算方法比较简单，方法如下(目前LM hash很少接触，不考虑)：将用户的NTLM hash分成三组，每组7比特(长度不够末尾填0)，作为3DES加密算法的三组密钥，加密Server发来的Challenge 二、数据包密码破解Net-NTLMv1NTLMv1 数据包文件下载：NTLMv1.pcapng 客户端：192.168.199.59 服务器：192.168.199.210 Net-NTLMv1的加密流程 1、客户端向服务器发送一个请求 2、服务器接收到请求后，生成一个8位的Challenge，发送回客户端 3、客户端接收到Challenge后，使用登录用户的密码hash对Challenge加密，作为response发送给服务器 4、服务器校验response 密码hash固定拼接格式：username :: hostname : LM response : NTLM response : Server challenge NTLM Server Challenge: f9c7fc816b991824 Lan Manager Response: c67ee888f6b41a4400000000000000000000000000000000 NTLM Response: 293b99da834c86c6e37c37a20920b41581be32740a5e062e User name: asd Host name: QWE-C78DBB1CBD0 拼接后字符串为：asd::QWE-C78DBB1CBD0:c67ee888f6b41a4400000000000000000000000000000000:293b99da834c86c6e37c37a20920b41581be32740a5e062e:f9c7fc816b991824 使用hashcat破解密码： hashcat -m 5500 拼接字符串或字符串文件 密码字典 –force hashcat -m 5500 拼接字符串或字符串文件 密码字典 –force –show 显示破解密码 Net-NTLMv2解析NTLMv2 数据包文件下载：NTLMv2.pcapng 1、客户端向服务器发送一个请求 2、服务器接收到请求后，生成一个16位的Challenge，发送回客户端 3、客户端接收到Challenge后，使用登录用户的密码hash对Challenge加密，作为response发送给服务器 4、服务器校验response 密码hash固定拼接格式：username :: domain : challenge : NTProofStr : NTLM Response - NTProofStr NTLM Server Challenge: f12d23c3e60843cc 32a48adf53baf6ef888482d94e2220010101000000000000e844288052f7d40108c126eda5b696d60000000002001e004d0058002d0041003200390033004600450037003400370037004300420001001e004d0058002d0041003200390033004600450037003400370037004300420004001e006d0078002d0061003200390033006600650037003400370037006300620003001e006d0078002d0061003200390033006600650037003400370037006300620008003000300000000000000000000000000000009cde6da7297d9f2a9087cd22f3bc9e914a6894544023040d6979fffc8bd2b6290a001000000000000000000000000000000000000900260063006900660073002f003100390032002e003100360038002e00310033002e0031003200390000000000 NTProofStr: 32a48adf53baf6ef888482d94e222001 Domain name: WORKGROUP User name: www.ld80.cn 使用hashcat破解密码： hashcat -m 指定hash类型 5600（NTLMv2） 拼接字符串 密码字典 –force 开始破解 hashcat -m 指定hash类型 5600（NTLMv2） 拼接字符串 密码字典 –force –show 显示破解密码 hashcat –help | grep NTLM 过滤出相关协议 三、总结这篇文章花了两天的时间把它给写完了，刚开始做了很多实验，一直很困惑这个协议是如何运作，如今终于搞明白了。 当然这在计算机网络中只是很渺小的一部分，今后还应该继续努力。 参考文章：https://3gstudent.github.io/3gstudent.github.io/Windows%E4%B8%8B%E7%9A%84%E5%AF%86%E7%A0%81hash-Net-NTLMv1%E4%BB%8B%E7%BB%8D/]]></content>
       <categories>
         <category>数据包协议分析</category>
+      </categories>
+  </entry>
+  <entry>
+    <title><![CDATA[hexo添加下载功能]]></title>
+    <url>%2F2019%2F04%2F24%2Fhexo%E6%B7%BB%E5%8A%A0%E4%B8%8B%E8%BD%BD%E5%8A%9F%E8%83%BD%2F</url>
+    <content type="text"><![CDATA[1、在source目录下新建download目录与_postsAbouttagscategories等目录并列。 2、将文件放入download目录下 3、在需要下载的文章中写入如下html超链接语句，但需要在github或者coding上同步博客文件才可正常下载。 NTLMv1.pcapng 文章参考：https://www.cnblogs.com/yanh0606/p/10488356.htmlhttp://yanng.cc/2018/03/18/hexo%E6%B7%BB%E5%8A%A0%E4%B8%8B%E8%BD%BD%E5%8A%9F%E8%83%BD/]]></content>
+      <categories>
+        <category>hexo 笔记</category>
       </categories>
   </entry>
   <entry>
@@ -94,14 +118,6 @@
       </categories>
   </entry>
   <entry>
-    <title><![CDATA[CentOS FTP服务配置]]></title>
-    <url>%2F2019%2F04%2F15%2FCentOS-FTP%E6%9C%8D%E5%8A%A1%E9%85%8D%E7%BD%AE%2F</url>
-    <content type="text"><![CDATA[1、创建FTP用户test并指定用户家目录 useradd -d /home/test -m test 2、更改用户权限 限定用户test不能登录shell，只能ftp usermod -s /sbin/nologin test 用户test恢复正常，允许登录shell usermod -s /sbin/bahs test 更改用户test的主目录 usermod -d /home/test test 3、修改/etc/vsftpd/vsftpd.conf，限制用户只能访问/home/test，不能访问其他地址 禁止穿越到上级目录 chroot_list_enable=YES]]></content>
-      <categories>
-        <category>Linux 笔记</category>
-      </categories>
-  </entry>
-  <entry>
     <title><![CDATA[Linux常用命令整理]]></title>
     <url>%2F2019%2F04%2F15%2FLinux-%E5%91%BD%E4%BB%A4%E6%95%B4%E7%90%86%2F</url>
     <content type="text"><![CDATA[一、lsof1、列出本机正在运行的ipv4/ipv6协议服务 lsof -i 4/6 2、列出本机正在运行的tcp/udp服务 lsof -i tcp/udp 3、列出本机1-1024的开放端口 lsof -i :1-1024 4、列出本机用户的进程服务 lsfo -u user 二、chkconfig1、列出所有程序开启状态 chkconfig –list]]></content>
@@ -113,6 +129,14 @@
     <title><![CDATA[CentOS更换yum源]]></title>
     <url>%2F2019%2F04%2F15%2FCentOS-%E6%9B%B4%E6%8D%A2yum%E6%BA%90%2F</url>
     <content type="text"><![CDATA[1、备份 mv /etc/yum.repos.d/CentOS-Base.repo /etc/yum.repos.d/CentOS-Base.repo.backup 2、下载新的centos-base.repo到/etc/yum.repos.d/ 阿里源地址：http://mirrors.aliyun.com/repo/ wget -O /etc/yum.repos.d/CentOS-Base.repo http://mirrors.aliyun.com/repo/Centos-5/6/7.repo 3、清除缓存 yum clean all 4、更新本地yum缓存 yum makecache 5、更新yum软件库 yum update -y 6、查看已安装的服务 yum list installed]]></content>
+      <categories>
+        <category>Linux 笔记</category>
+      </categories>
+  </entry>
+  <entry>
+    <title><![CDATA[CentOS FTP服务配置]]></title>
+    <url>%2F2019%2F04%2F15%2FCentOS-FTP%E6%9C%8D%E5%8A%A1%E9%85%8D%E7%BD%AE%2F</url>
+    <content type="text"><![CDATA[1、创建FTP用户test并指定用户家目录 useradd -d /home/test -m test 2、更改用户权限 限定用户test不能登录shell，只能ftp usermod -s /sbin/nologin test 用户test恢复正常，允许登录shell usermod -s /sbin/bahs test 更改用户test的主目录 usermod -d /home/test test 3、修改/etc/vsftpd/vsftpd.conf，限制用户只能访问/home/test，不能访问其他地址 禁止穿越到上级目录 chroot_list_enable=YES]]></content>
       <categories>
         <category>Linux 笔记</category>
       </categories>

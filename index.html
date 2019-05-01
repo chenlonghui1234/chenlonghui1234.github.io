@@ -306,6 +306,614 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://www.kmmedia.top/2019/04/30/Wireshark-笔记/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Cheney先森">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Cheney’s blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/04/30/Wireshark-笔记/" itemprop="url">Wireshark 笔记</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-04-30T20:34:40+08:00">
+                2019-04-30
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/数据包分析/" itemprop="url" rel="index">
+                    <span itemprop="name">数据包分析</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/2019/04/30/Wireshark-笔记/" class="leancloud_visitors" data-flag-title="Wireshark 笔记">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  250
+                </span>
+              
+
+              
+
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h3 id="一、Sqlmap抓包过滤关键信息"><a href="#一、Sqlmap抓包过滤关键信息" class="headerlink" title="一、Sqlmap抓包过滤关键信息"></a>一、Sqlmap抓包过滤关键信息</h3><p>1、枚举所有数据库</p>
+<blockquote>
+<p>sqlmap -u “url” –dbs</p>
+</blockquote>
+<p>过滤条件：(ip.addr == IP and http) or http.reponse</p>
+<p>因为sqlmap的url查询语句中有schema_name的关键词，所以搜索关键词也能快速找到关键数据包。</p>
+<p>对所选数据包追踪TCP流，在服务器回复信息中找到由前后各5个混淆码的字符串，中间的即为需要的数据库名，如上一个个找出所有数据库名即可。</p>
+<p>2、枚举用户</p>
+<blockquote>
+<p>sqlmap -u “url” –users</p>
+</blockquote>
+<p>过滤条件：(ip.addr == IP and http) or http.reponse</p>
+<p>搜索查询语句中的user关键词快速找到所需数据包。</p>
+<p>3、枚举当前数据库</p>
+<blockquote>
+<p>sqlmap -u “url” –current-db</p>
+</blockquote>
+<p>过滤条件：(ip.addr == IP and http) or http.reponse</p>
+<p>搜索查询语句中的database关键词快速找到所需数据包。</p>
+<p>4、枚举当前数据库用户</p>
+<blockquote>
+<p>sqlmap -u “url” –current-user</p>
+</blockquote>
+<p>搜索查询语句中的user关键词快速找到所需数据包。</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://www.kmmedia.top/2019/04/30/Windows-数据执行保护/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Cheney先森">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Cheney’s blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/04/30/Windows-数据执行保护/" itemprop="url">Windows 数据执行保护</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-04-30T14:48:47+08:00">
+                2019-04-30
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Windows-笔记/" itemprop="url" rel="index">
+                    <span itemprop="name">Windows 笔记</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/2019/04/30/Windows-数据执行保护/" class="leancloud_visitors" data-flag-title="Windows 数据执行保护">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  431
+                </span>
+              
+
+              
+
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h3 id="数据执行保护简介"><a href="#数据执行保护简介" class="headerlink" title="数据执行保护简介"></a>数据执行保护简介</h3><p>DEP - 数据执行保护的缩写，Data Execution Prevention。<br>数据执行保护 (DEP) 是一套软硬件技术，能够在内存上执行额外检查以帮助防止在系统上运行恶意代码。</p>
+<blockquote>
+<p>在 Microsoft Windows XP Service Pack 2、 Microsoft Windows Server 2003 Service Pack 1 、Microsoft Windows XP Tablet PC Edition 2005 、 Microsoft Windows Vista 和 Microsoft windows7 中，由硬件和 软件一起强制实施 DEP。</p>
+</blockquote>
+<p>DEP关闭方法：</p>
+<p><strong>开始菜单 &gt; 设置 &gt; 控制面板 &gt; 系统 &gt; 高级 &gt; 启动和故障恢复 &gt; 设置 &gt; 编辑 &gt; 修改文件</strong></p>
+<blockquote>
+<p>multi(0)disk(0)rdisk(0)partition(1)\WINDOWS=”Windows Server 2003, Enterprise” /noexecute=AlwaysOff /fastdetect /DETECTHAL</p>
+</blockquote>
+<p>修改 /noexecute=optout 为 /noexecute=AlwaysOff</p>
+<p>添加 /DETECTHAL detecthal用于强制窗口自动检测硬件抽象层</p>
+<p><strong>/NOEXECUTE</strong></p>
+<p>指定数据执行保护（EDEP）的类型，只适用于32位系统。64位系统的DEP总是打开，有以下几种类型：</p>
+<blockquote>
+<p>1、/NOEXECUTE = OPTIN</p>
+<p>针对系统核心和指定的映像文件打开DEP功能 </p>
+</blockquote>
+<blockquote>
+<p>2、/NOEXECUTE = OPTOUT</p>
+<p>针对指定的映像文件以外的打开DEP功能</p>
+</blockquote>
+<blockquote>
+<p>3、/NOEXECUTE = ALWAYSON</p>
+<p>总是打开DEP功能</p>
+</blockquote>
+<blockquote>
+<p>4、/NOEXECUTE = ALWAYSOFF</p>
+<p>关闭DEP，同/EXECUTE</p>
+</blockquote>
+<p><strong>/EXECUTE</strong></p>
+<p>禁止数据执行保护功能，适用版本XP SP2,2003SP1</p>
+<p><strong>/DETECTHAL</strong></p>
+<p>用于Windows Vista中，将自动检测HAL的类型4</p>
+<h5 id="扩展："><a href="#扩展：" class="headerlink" title="扩展："></a>扩展：</h5><p>HAL硬件抽象层：</p>
+<p>是软件层的例行程序包，用于模拟特定系统平台的细节使程序可以直接访问硬件的资源。</p>
+<p>主要作用为增强硬件的可移植性，保护程序免受变化的冲击，不受硬件的更新换代而重写整个程序，极大的减少了多余的重复操作。</p>
+<h3 id="文章参考"><a href="#文章参考" class="headerlink" title="文章参考"></a>文章参考</h3><p><a href="http://www.voidcn.com/article/p-hjusefhg-ok.html" target="_blank" rel="noopener">http://www.voidcn.com/article/p-hjusefhg-ok.html</a></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://www.kmmedia.top/2019/04/30/位-字节-字/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Cheney先森">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Cheney’s blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/04/30/位-字节-字/" itemprop="url">位 字节 字</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-04-30T10:41:53+08:00">
+                2019-04-30
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/计算机基础/" itemprop="url" rel="index">
+                    <span itemprop="name">计算机基础</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/2019/04/30/位-字节-字/" class="leancloud_visitors" data-flag-title="位 字节 字">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  886
+                </span>
+              
+
+              
+
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h3 id="一、计算机单位简要概述"><a href="#一、计算机单位简要概述" class="headerlink" title="一、计算机单位简要概述"></a>一、计算机单位简要概述</h3><h5 id="1、位（bit）："><a href="#1、位（bit）：" class="headerlink" title="1、位（bit）："></a>1、位（bit）：</h5><p>来自英文bit，音译为“比特”， 表示二进制位。<strong>主要被用来作为数据的传输单位。</strong></p>
+<p><strong>位是计算机内部数据存储最小单位</strong>，11010100是一个8位二进制数。一个二进制位只可以表示0和1两种状态；两个二进制位可以表示00、01、10、11四种状态；三位二进制可以表示八种状态。 </p>
+<h5 id="2、字节（Byte）："><a href="#2、字节（Byte）：" class="headerlink" title="2、字节（Byte）："></a>2、字节（Byte）：</h5><p><strong>习惯上用大写的B表示，主要被用来作为数据的存储单位。</strong></p>
+<p>字节是计算机中数据处理的基本单位。计算机中以字节位单位存储和解释信息，规定一个字节由由八个二进制位构成， 即一个字节等于8个比特。八位二进制数最小为00000000， 最大为11111111；通常一个字节可以存入一个ASCII码，2个字节可以存放一个汉字国标码。 </p>
+<h5 id="3、字（word）："><a href="#3、字（word）：" class="headerlink" title="3、字（word）："></a>3、字（word）：</h5><p>计算机进行数据处理时， 一次存取、加工和传送的数据长度称为字（word）。一个字通常由一个或多个（一般是字节的整数位）字节构成。例如286微机由2个字节组成，它的字长为16；486微机的字由四个字节组成，它的字长为32位机。 </p>
+<p>计算机的字长决定了其cpu一次操作处理实际位数的多少，由此可见<strong>计算机的字越大， 其性能越优越。</strong> </p>
+<h5 id="4、字长："><a href="#4、字长：" class="headerlink" title="4、字长："></a>4、字长：</h5><p><strong>字长是ALU（算术逻辑部件），在一个时钟周期内最多能运算的二进制位数。</strong></p>
+<p>计算机的每个字所包含的位数称为字长。根据计算机的不同，字长有固定的和可变的两种。固定字长，即字长度不论什么情况都是固定不变的；可变字长，则在一定范围内， 其长度是可变的。 </p>
+<p>计算机的字长是指它一次可以处理的二进制数字的数目。计算机处理数据的速率，自然和它一次能加工的位数以及进行运算的快慢有关。如果一台计算机的字长是另一台计算机的两倍，即使两台计算机速度相同，在相同的时间内，前者能做的工作是后者的两倍。 </p>
+<p>一般的，大型计算机的字长位32-64位，小型计算机位12-32位，而微型计算机位4-16位。<strong>字长是行两计算机性能的一个重要因素。</strong></p>
+<h3 id="二、位单位换算"><a href="#二、位单位换算" class="headerlink" title="二、位单位换算"></a>二、位单位换算</h3><p>计算机位数的单位是 “比特” ，也就是 “位”（bit，简称b），它表示 1 个二进制位。1 比特就是 1 位</p>
+<p>字长的字节数（Byte） = 计算机位数（bit） / 8</p>
+<h3 id="三、字节单位换算"><a href="#三、字节单位换算" class="headerlink" title="三、字节单位换算"></a>三、字节单位换算</h3><p>一个英文字母（不分大小写）占一个字节的空间，一个中文汉字占两个字节的空间。英文标点占一个字节，中文标点占两个字节。</p>
+<p>字长的字节数单位是 “字节”（byte，简称B），它表示 8 个二进制位。</p>
+<p>B=字节    KB=千字节    MB=兆字节    GB=千兆字节</p>
+<p>由于计算机内部采用万能的二进制，而 2 的 10 次方 1024 又非常接近 1000 ，于是很自然的就采用了 1k = 1024 这种换算方式，非常方便。</p>
+<blockquote>
+<p>1 字节（Byte） = 8 位（Bits）</p>
+</blockquote>
+<blockquote>
+<p>1 千字节（KB） = 1024 字节（Bytes）</p>
+</blockquote>
+<blockquote>
+<p>1 兆字节（MB） = 1024 千字节（KB）</p>
+</blockquote>
+<blockquote>
+<p>1 千兆字节（GB） = 1024 兆字节（MB）</p>
+</blockquote>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://www.kmmedia.top/2019/04/29/Telnet-允许root远程登录/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -654,185 +1262,6 @@
 <p>get test.txt #下载文件</p>
 </blockquote>
 
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://www.kmmedia.top/2019/04/24/hexo添加下载功能/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Cheney先森">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Cheney’s blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/04/24/hexo添加下载功能/" itemprop="url">hexo添加下载功能</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-04-24T09:15:24+08:00">
-                2019-04-24
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/hexo-笔记/" itemprop="url" rel="index">
-                    <span itemprop="name">hexo 笔记</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-             <span id="/2019/04/24/hexo添加下载功能/" class="leancloud_visitors" data-flag-title="hexo添加下载功能">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数&#58;</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">字数统计&#58;</span>
-                
-                <span title="字数统计">
-                  104
-                </span>
-              
-
-              
-
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>1、在source目录下新建download目录与_posts<code>About</code>tags<code></code>categories等目录并列。</p>
-<p>2、将文件放入download目录下</p>
-<p>3、在需要下载的文章中写入如下html超链接语句，但需要在github或者coding上同步博客文件才可正常下载。</p>
-<blockquote>
-<p><a href="/download/NTLMv1.pcapng" target="_blank">NTLMv1.pcapng</a></p>
-</blockquote>
-<h4 id="文章参考："><a href="#文章参考：" class="headerlink" title="文章参考："></a>文章参考：</h4><h5 id="https-www-cnblogs-com-yanh0606-p-10488356-html"><a href="#https-www-cnblogs-com-yanh0606-p-10488356-html" class="headerlink" title="https://www.cnblogs.com/yanh0606/p/10488356.html"></a><a href="https://www.cnblogs.com/yanh0606/p/10488356.html" target="_blank" rel="noopener">https://www.cnblogs.com/yanh0606/p/10488356.html</a></h5><h5 id="http-yanng-cc-2018-03-18-hexo-E6-B7-BB-E5-8A-A0-E4-B8-8B-E8-BD-BD-E5-8A-9F-E8-83-BD"><a href="#http-yanng-cc-2018-03-18-hexo-E6-B7-BB-E5-8A-A0-E4-B8-8B-E8-BD-BD-E5-8A-9F-E8-83-BD" class="headerlink" title="http://yanng.cc/2018/03/18/hexo%E6%B7%BB%E5%8A%A0%E4%B8%8B%E8%BD%BD%E5%8A%9F%E8%83%BD/"></a><a href="http://yanng.cc/2018/03/18/hexo%E6%B7%BB%E5%8A%A0%E4%B8%8B%E8%BD%BD%E5%8A%9F%E8%83%BD/" target="_blank" rel="noopener">http://yanng.cc/2018/03/18/hexo%E6%B7%BB%E5%8A%A0%E4%B8%8B%E8%BD%BD%E5%8A%9F%E8%83%BD/</a></h5>
           
         
       
@@ -1311,6 +1740,185 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://www.kmmedia.top/2019/04/24/hexo添加下载功能/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Cheney先森">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Cheney’s blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/04/24/hexo添加下载功能/" itemprop="url">hexo添加下载功能</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-04-24T09:15:24+08:00">
+                2019-04-24
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/hexo-笔记/" itemprop="url" rel="index">
+                    <span itemprop="name">hexo 笔记</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/2019/04/24/hexo添加下载功能/" class="leancloud_visitors" data-flag-title="hexo添加下载功能">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  104
+                </span>
+              
+
+              
+
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>1、在source目录下新建download目录与_posts<code>About</code>tags<code></code>categories等目录并列。</p>
+<p>2、将文件放入download目录下</p>
+<p>3、在需要下载的文章中写入如下html超链接语句，但需要在github或者coding上同步博客文件才可正常下载。</p>
+<blockquote>
+<p><a href="/download/NTLMv1.pcapng" target="_blank">NTLMv1.pcapng</a></p>
+</blockquote>
+<h4 id="文章参考："><a href="#文章参考：" class="headerlink" title="文章参考："></a>文章参考：</h4><h5 id="https-www-cnblogs-com-yanh0606-p-10488356-html"><a href="#https-www-cnblogs-com-yanh0606-p-10488356-html" class="headerlink" title="https://www.cnblogs.com/yanh0606/p/10488356.html"></a><a href="https://www.cnblogs.com/yanh0606/p/10488356.html" target="_blank" rel="noopener">https://www.cnblogs.com/yanh0606/p/10488356.html</a></h5><h5 id="http-yanng-cc-2018-03-18-hexo-E6-B7-BB-E5-8A-A0-E4-B8-8B-E8-BD-BD-E5-8A-9F-E8-83-BD"><a href="#http-yanng-cc-2018-03-18-hexo-E6-B7-BB-E5-8A-A0-E4-B8-8B-E8-BD-BD-E5-8A-9F-E8-83-BD" class="headerlink" title="http://yanng.cc/2018/03/18/hexo%E6%B7%BB%E5%8A%A0%E4%B8%8B%E8%BD%BD%E5%8A%9F%E8%83%BD/"></a><a href="http://yanng.cc/2018/03/18/hexo%E6%B7%BB%E5%8A%A0%E4%B8%8B%E8%BD%BD%E5%8A%9F%E8%83%BD/" target="_blank" rel="noopener">http://yanng.cc/2018/03/18/hexo%E6%B7%BB%E5%8A%A0%E4%B8%8B%E8%BD%BD%E5%8A%9F%E8%83%BD/</a></h5>
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://www.kmmedia.top/2019/04/21/堆栈笔记/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1625,613 +2233,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://www.kmmedia.top/2019/04/19/Windwos-搭建FTP服务器/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Cheney先森">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Cheney’s blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/04/19/Windwos-搭建FTP服务器/" itemprop="url">Windwos 搭建FTP服务器</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-04-19T14:44:33+08:00">
-                2019-04-19
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Windows-笔记/" itemprop="url" rel="index">
-                    <span itemprop="name">Windows 笔记</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-             <span id="/2019/04/19/Windwos-搭建FTP服务器/" class="leancloud_visitors" data-flag-title="Windwos 搭建FTP服务器">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数&#58;</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">字数统计&#58;</span>
-                
-                <span title="字数统计">
-                  117
-                </span>
-              
-
-              
-
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>1、安装Windows2003 IIS中的FTP组件</p>
-<blockquote>
-<p>控制面板——添加或删除程序——添加/删除Windows组件——应用程序服务器——Internet 信息服务（IIS）——文件传输协议（FTP）服务</p>
-</blockquote>
-<p>2、创建ftp用户</p>
-<blockquote>
-<p>管理工具——计算机管理——本地用户和组——用户——创建新用户</p>
-<p>Win+R——cmd——net user ftpuser ftpuser /add</p>
-</blockquote>
-<p>3、配置ftp服务器</p>
-<blockquote>
-<p>Win+R——inetmgr（Internet信息服务（IIS）管理器</p>
-<p>右键默认FTP站点——新建——虚拟目录</p>
-</blockquote>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://www.kmmedia.top/2019/04/19/Kali-更换源/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Cheney先森">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Cheney’s blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/04/19/Kali-更换源/" itemprop="url">Kali 更换源</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-04-19T10:41:24+08:00">
-                2019-04-19
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Kali-笔记/" itemprop="url" rel="index">
-                    <span itemprop="name">Kali 笔记</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-             <span id="/2019/04/19/Kali-更换源/" class="leancloud_visitors" data-flag-title="Kali 更换源">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数&#58;</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">字数统计&#58;</span>
-                
-                <span title="字数统计">
-                  583
-                </span>
-              
-
-              
-
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>1、在/etc/apt/source.list中添加如下源</p>
-<p>阿里源</p>
-<blockquote>
-<p>deb <a href="http://mirrors.aliyun.com/kali" target="_blank" rel="noopener">http://mirrors.aliyun.com/kali</a> kali-rolling main non-free contrib<br>deb-src <a href="http://mirrors.aliyun.com/kali" target="_blank" rel="noopener">http://mirrors.aliyun.com/kali</a> kali-rolling main non-free contrib<br>deb <a href="http://mirrors.aliyun.com/kali-security" target="_blank" rel="noopener">http://mirrors.aliyun.com/kali-security</a> kali-rolling/updates main contrib non-free</p>
-</blockquote>
-<p>中科大</p>
-<blockquote>
-<p>deb <a href="http://mirrors.ustc.edu.cn/kali" target="_blank" rel="noopener">http://mirrors.ustc.edu.cn/kali</a> kali-rolling main non-free contrib<br>deb-src <a href="http://mirrors.ustc.edu.cn/kali" target="_blank" rel="noopener">http://mirrors.ustc.edu.cn/kali</a> kali-rolling main non-free contrib</p>
-</blockquote>
-<p>2、使用apt-get更新</p>
-<blockquote>
-<p>更新大系统版本并解决依赖</p>
-<p>apt-get dist-upgrade</p>
-<p>更新软件源中的软件列表</p>
-<p>apt-get update</p>
-<p>更新全部软件但不解决依赖问题</p>
-<p>apt-get upgrade</p>
-<p>安装软件</p>
-<p>apt-get install</p>
-</blockquote>
-<p>3、删除包缓存中的所有包</p>
-<blockquote>
-<p>apt-get clean</p>
-</blockquote>
-<p>4、将已经删除了的软件包的.deb安装文件从硬盘中删除</p>
-<blockquote>
-<p>apt-get autoclean</p>
-</blockquote>
-<p>5、删除为了满足其他软件包的依赖而安装的，当现在不需要的软件包</p>
-<blockquote>
-<p>apt-get autoremove</p>
-</blockquote>
-<p>6、删除已安装的软件包（保留配置）</p>
-<blockquote>
-<p>apt-get remove 软件包名</p>
-</blockquote>
-<p>7、删除已安装包（不保留配置）</p>
-<blockquote>
-<p>apt-get –purge remove 软件包名</p>
-</blockquote>
-<p>问题一：</p>
-<blockquote>
-<p>E: 仓库 “<a href="http://mirrors.aliyun.com/kali-security" target="_blank" rel="noopener">http://mirrors.aliyun.com/kali-security</a> kali-rolling/updates Release” 没有 Release 文件。 N: 无法安全地用该源进行更新，所以默认禁用该源。 N: 参见 apt-secure(8) 手册以了解仓库创建和用户配置方面的细节。</p>
-<p>获取:10 <a href="http://ppa.launchpad.net/hzwhuang/ss-qt5/ubuntu" target="_blank" rel="noopener">http://ppa.launchpad.net/hzwhuang/ss-qt5/ubuntu</a> trusty InRelease [21.4 kB]<br>错误:10 <a href="http://ppa.launchpad.net/hzwhuang/ss-qt5/ubuntu" target="_blank" rel="noopener">http://ppa.launchpad.net/hzwhuang/ss-qt5/ubuntu</a> trusty InRelease<br>由于没有公钥，无法验证下列签名： NO_PUBKEY 6DA746A05F00FA99<br>正在读取软件包列表… 完成<br>W: GPG 错误：<a href="http://ppa.launchpad.net/hzwhuang/ss-qt5/ubuntu" target="_blank" rel="noopener">http://ppa.launchpad.net/hzwhuang/ss-qt5/ubuntu</a> trusty InRelease: 由于没有公钥，无法验证下列签名： NO_PUBKEY 6DA746A05F00FA99<br>E: 仓库 “<a href="http://ppa.launchpad.net/hzwhuang/ss-qt5/ubuntu" target="_blank" rel="noopener">http://ppa.launchpad.net/hzwhuang/ss-qt5/ubuntu</a> trusty InRelease” 没有数字签名。<br>N: 无法安全地用该源进行更新，所以默认禁用该源。<br>N: 参见 apt-secure(8) 手册以了解仓库创建和用户配置方面的细节。</p>
-</blockquote>
-<blockquote>
-<p>执行以下命令更新公钥</p>
-<p>apt-key adv –recv-keys –keyserver hkp://keyserver.ubuntu.com:80 6DA746A05F00FA99</p>
-</blockquote>
-<p>问题二：</p>
-<blockquote>
-<p>E: 仓库 “<a href="http://mirrors.aliyun.com/kali-security" target="_blank" rel="noopener">http://mirrors.aliyun.com/kali-security</a> kali-rolling/updates Release” 没有 Release 文件。<br>N: 无法安全地用该源进行更新，所以默认禁用该源。<br>N: 参见 apt-secure(8) 手册以了解仓库创建和用户配置方面的细节。</p>
-</blockquote>
-<p>在/etc/apt/source.list中禁止该源，更新成功</p>
-<p>原文：<a href="http://www.glacierluo.com/course/afterinstall/" target="_blank" rel="noopener">http://www.glacierluo.com/course/afterinstall/</a> </p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://www.kmmedia.top/2019/04/19/Kali-w3af工具安装/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Cheney先森">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Cheney’s blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/04/19/Kali-w3af工具安装/" itemprop="url">Kali w3af工具安装</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-04-19T10:33:43+08:00">
-                2019-04-19
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Kali-笔记/" itemprop="url" rel="index">
-                    <span itemprop="name">Kali 笔记</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-             <span id="/2019/04/19/Kali-w3af工具安装/" class="leancloud_visitors" data-flag-title="Kali w3af工具安装">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数&#58;</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">字数统计&#58;</span>
-                
-                <span title="字数统计">
-                  87
-                </span>
-              
-
-              
-
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>1、安装环境配置</p>
-<blockquote>
-<p>apt-get install git</p>
-<p>apt-get install python-pip</p>
-</blockquote>
-<p>2、kali下载w3af工具</p>
-<blockquote>
-<p>git clone <a href="https://github.com/andresriancho/w3af.git" target="_blank" rel="noopener">https://github.com/andresriancho/w3af.git</a></p>
-</blockquote>
-<p>3、进入目录执行w3af_console文件</p>
-<blockquote>
-<p>cd w3af</p>
-<p>./w3af_console</p>
-</blockquote>
-<p>参考文章：</p>
-<blockquote>
-<p><a href="https://y-hkl.github.io/2017/11/28/Web%E5%AE%89%E5%85%A8%E5%B7%A5%E5%85%B7%E2%80%94%E2%80%94w3af%E6%95%99%E7%A8%8B/" target="_blank" rel="noopener">https://y-hkl.github.io/2017/11/28/Web%E5%AE%89%E5%85%A8%E5%B7%A5%E5%85%B7%E2%80%94%E2%80%94w3af%E6%95%99%E7%A8%8B/</a></p>
-<p><a href="https://github.com/andresriancho/w3af/issues/14190" target="_blank" rel="noopener">https://github.com/andresriancho/w3af/issues/14190</a></p>
-</blockquote>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -2282,7 +2283,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">15</span>
+                  <span class="site-state-item-count">18</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -2293,7 +2294,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-count">7</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -2369,7 +2370,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">2.9k</span>
+    <span title="Site words total count">4.5k</span>
   
 </div>
 

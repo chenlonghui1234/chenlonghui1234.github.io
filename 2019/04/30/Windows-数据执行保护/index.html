@@ -81,17 +81,17 @@
 
 
 
-<meta name="description" content="1、安装samba服务   yum install samba system-config-samba samba-client samba-common  2、创建samba用户  useradd samba mkdir -p /home/smbtest chmod 777 /home/smbtest chown -R samba:samba /home/smbtest  3、修改配置文件  [">
+<meta name="description" content="数据执行保护简介DEP - 数据执行保护的缩写，Data Execution Prevention。数据执行保护 (DEP) 是一套软硬件技术，能够在内存上执行额外检查以帮助防止在系统上运行恶意代码。  在 Microsoft Windows XP Service Pack 2、 Microsoft Windows Server 2003 Service Pack 1 、Microsoft Win">
 <meta property="og:type" content="article">
-<meta property="og:title" content="CentOS 5.5 Samba服务配置">
-<meta property="og:url" content="http://www.kmmedia.top/2019/04/24/CentOS-Samba服务配置/index.html">
+<meta property="og:title" content="Windows 数据执行保护">
+<meta property="og:url" content="http://www.kmmedia.top/2019/04/30/Windows-数据执行保护/index.html">
 <meta property="og:site_name" content="Cheney’s blog">
-<meta property="og:description" content="1、安装samba服务   yum install samba system-config-samba samba-client samba-common  2、创建samba用户  useradd samba mkdir -p /home/smbtest chmod 777 /home/smbtest chown -R samba:samba /home/smbtest  3、修改配置文件  [">
+<meta property="og:description" content="数据执行保护简介DEP - 数据执行保护的缩写，Data Execution Prevention。数据执行保护 (DEP) 是一套软硬件技术，能够在内存上执行额外检查以帮助防止在系统上运行恶意代码。  在 Microsoft Windows XP Service Pack 2、 Microsoft Windows Server 2003 Service Pack 1 、Microsoft Win">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-04-25T13:12:00.826Z">
+<meta property="og:updated_time" content="2019-05-01T01:45:07.384Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="CentOS 5.5 Samba服务配置">
-<meta name="twitter:description" content="1、安装samba服务   yum install samba system-config-samba samba-client samba-common  2、创建samba用户  useradd samba mkdir -p /home/smbtest chmod 777 /home/smbtest chown -R samba:samba /home/smbtest  3、修改配置文件  [">
+<meta name="twitter:title" content="Windows 数据执行保护">
+<meta name="twitter:description" content="数据执行保护简介DEP - 数据执行保护的缩写，Data Execution Prevention。数据执行保护 (DEP) 是一套软硬件技术，能够在内存上执行额外检查以帮助防止在系统上运行恶意代码。  在 Microsoft Windows XP Service Pack 2、 Microsoft Windows Server 2003 Service Pack 1 、Microsoft Win">
 
 
 
@@ -121,13 +121,13 @@
 
 
 
-  <link rel="canonical" href="http://www.kmmedia.top/2019/04/24/CentOS-Samba服务配置/">
+  <link rel="canonical" href="http://www.kmmedia.top/2019/04/30/Windows-数据执行保护/">
 
 
 
 
 
-  <title>CentOS 5.5 Samba服务配置 | Cheney’s blog</title>
+  <title>Windows 数据执行保护 | Cheney’s blog</title>
   
 
 
@@ -306,7 +306,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://www.kmmedia.top/2019/04/24/CentOS-Samba服务配置/">
+    <link itemprop="mainEntityOfPage" href="http://www.kmmedia.top/2019/04/30/Windows-数据执行保护/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Cheney先森">
@@ -323,7 +323,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">CentOS 5.5 Samba服务配置</h1>
+          <h1 class="post-title" itemprop="name headline">Windows 数据执行保护</h1>
         
 
         <div class="post-meta">
@@ -335,8 +335,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-04-24T09:37:26+08:00">
-                2019-04-24
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-04-30T14:48:47+08:00">
+                2019-04-30
               </time>
             
 
@@ -358,8 +358,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Linux-笔记/" itemprop="url" rel="index">
-                    <span itemprop="name">Linux 笔记</span>
+                  <a href="/categories/Windows-笔记/" itemprop="url" rel="index">
+                    <span itemprop="name">Windows 笔记</span>
                   </a>
                 </span>
 
@@ -375,7 +375,7 @@
 
           
           
-             <span id="/2019/04/24/CentOS-Samba服务配置/" class="leancloud_visitors" data-flag-title="CentOS 5.5 Samba服务配置">
+             <span id="/2019/04/30/Windows-数据执行保护/" class="leancloud_visitors" data-flag-title="Windows 数据执行保护">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -400,7 +400,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  101
+                  431
                 </span>
               
 
@@ -425,33 +425,43 @@
       
 
       
-        <p>1、安装samba服务</p>
+        <h3 id="数据执行保护简介"><a href="#数据执行保护简介" class="headerlink" title="数据执行保护简介"></a>数据执行保护简介</h3><p>DEP - 数据执行保护的缩写，Data Execution Prevention。<br>数据执行保护 (DEP) 是一套软硬件技术，能够在内存上执行额外检查以帮助防止在系统上运行恶意代码。</p>
 <blockquote>
-<p> yum install samba system-config-samba samba-client samba-common</p>
+<p>在 Microsoft Windows XP Service Pack 2、 Microsoft Windows Server 2003 Service Pack 1 、Microsoft Windows XP Tablet PC Edition 2005 、 Microsoft Windows Vista 和 Microsoft windows7 中，由硬件和 软件一起强制实施 DEP。</p>
 </blockquote>
-<p>2、创建samba用户</p>
+<p>DEP关闭方法：</p>
+<p><strong>开始菜单 &gt; 设置 &gt; 控制面板 &gt; 系统 &gt; 高级 &gt; 启动和故障恢复 &gt; 设置 &gt; 编辑 &gt; 修改文件</strong></p>
 <blockquote>
-<p>useradd samba</p>
-<p>mkdir -p /home/smbtest</p>
-<p>chmod 777 /home/smbtest</p>
-<p>chown -R samba:samba /home/smbtest</p>
+<p>multi(0)disk(0)rdisk(0)partition(1)\WINDOWS=”Windows Server 2003, Enterprise” /noexecute=AlwaysOff /fastdetect /DETECTHAL</p>
 </blockquote>
-<p>3、修改配置文件</p>
+<p>修改 /noexecute=optout 为 /noexecute=AlwaysOff</p>
+<p>添加 /DETECTHAL detecthal用于强制窗口自动检测硬件抽象层</p>
+<p><strong>/NOEXECUTE</strong></p>
+<p>指定数据执行保护（EDEP）的类型，只适用于32位系统。64位系统的DEP总是打开，有以下几种类型：</p>
 <blockquote>
-<p>[global]</p>
-<p>security = user</p>
-<p>[smbtest]</p>
-<p>path = /home/smbtest</p>
-<p>writable = yes #写入权限</p>
-<p>create mask = 0644 #上传权限</p>
-<p>directory mask = 0755 #下载权限</p>
+<p>1、/NOEXECUTE = OPTIN</p>
+<p>针对系统核心和指定的映像文件打开DEP功能 </p>
 </blockquote>
-<p>4、linux访问smb服务器</p>
 <blockquote>
-<p>smbclient //192.168.199.30/smbtest -U username</p>
-<p>put test.txt #上传文件</p>
-<p>get test.txt #下载文件</p>
+<p>2、/NOEXECUTE = OPTOUT</p>
+<p>针对指定的映像文件以外的打开DEP功能</p>
 </blockquote>
+<blockquote>
+<p>3、/NOEXECUTE = ALWAYSON</p>
+<p>总是打开DEP功能</p>
+</blockquote>
+<blockquote>
+<p>4、/NOEXECUTE = ALWAYSOFF</p>
+<p>关闭DEP，同/EXECUTE</p>
+</blockquote>
+<p><strong>/EXECUTE</strong></p>
+<p>禁止数据执行保护功能，适用版本XP SP2,2003SP1</p>
+<p><strong>/DETECTHAL</strong></p>
+<p>用于Windows Vista中，将自动检测HAL的类型4</p>
+<h5 id="扩展："><a href="#扩展：" class="headerlink" title="扩展："></a>扩展：</h5><p>HAL硬件抽象层：</p>
+<p>是软件层的例行程序包，用于模拟特定系统平台的细节使程序可以直接访问硬件的资源。</p>
+<p>主要作用为增强硬件的可移植性，保护程序免受变化的冲击，不受硬件的更新换代而重写整个程序，极大的减少了多余的重复操作。</p>
+<h3 id="文章参考"><a href="#文章参考" class="headerlink" title="文章参考"></a>文章参考</h3><p><a href="http://www.voidcn.com/article/p-hjusefhg-ok.html" target="_blank" rel="noopener">http://www.voidcn.com/article/p-hjusefhg-ok.html</a></p>
 
       
     </div>
@@ -481,7 +491,7 @@
   </li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="http://www.kmmedia.top/2019/04/24/CentOS-Samba服务配置/" title="CentOS 5.5 Samba服务配置">http://www.kmmedia.top/2019/04/24/CentOS-Samba服务配置/</a>
+    <a href="http://www.kmmedia.top/2019/04/30/Windows-数据执行保护/" title="Windows 数据执行保护">http://www.kmmedia.top/2019/04/30/Windows-数据执行保护/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>
@@ -503,8 +513,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/04/24/Samba-协议工作流程/" rel="next" title="Samba 协议工作流程">
-                <i class="fa fa-chevron-left"></i> Samba 协议工作流程
+              <a href="/2019/04/30/位-字节-字/" rel="next" title="位 字节 字">
+                <i class="fa fa-chevron-left"></i> 位 字节 字
               </a>
             
           </div>
@@ -513,8 +523,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2019/04/29/Telnet-允许root远程登录/" rel="prev" title="Telnet 允许root远程登录">
-                Telnet 允许root远程登录 <i class="fa fa-chevron-right"></i>
+              <a href="/2019/04/30/Wireshark-笔记/" rel="prev" title="Wireshark 笔记">
+                Wireshark 笔记 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -567,8 +577,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -642,6 +661,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#数据执行保护简介"><span class="nav-number">1.</span> <span class="nav-text">数据执行保护简介</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#扩展："><span class="nav-number">1.0.1.</span> <span class="nav-text">扩展：</span></a></li></ol></li></ol><li class="nav-item nav-level-3"><a class="nav-link" href="#文章参考"><span class="nav-number">2.</span> <span class="nav-text">文章参考</span></a></li></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
