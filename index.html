@@ -360,8 +360,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/数据包分析/" itemprop="url" rel="index">
-                    <span itemprop="name">数据包分析</span>
+                  <a href="/categories/数据包协议分析/" itemprop="url" rel="index">
+                    <span itemprop="name">数据包协议分析</span>
                   </a>
                 </span>
 
@@ -1311,199 +1311,6 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://www.kmmedia.top/2019/04/24/Samba-协议工作流程/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Cheney先森">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Cheney’s blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/04/24/Samba-协议工作流程/" itemprop="url">Samba 协议工作流程</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-04-24T09:15:24+08:00">
-                2019-04-24
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/数据包协议分析/" itemprop="url" rel="index">
-                    <span itemprop="name">数据包协议分析</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-             <span id="/2019/04/24/Samba-协议工作流程/" class="leancloud_visitors" data-flag-title="Samba 协议工作流程">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数&#58;</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">字数统计&#58;</span>
-                
-                <span title="字数统计">
-                  371
-                </span>
-              
-
-              
-
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h1 id="一、Samba的工作流程主要为四个阶段："><a href="#一、Samba的工作流程主要为四个阶段：" class="headerlink" title="一、Samba的工作流程主要为四个阶段："></a>一、Samba的工作流程主要为四个阶段：</h1><h2 id="1、协议协商"><a href="#1、协议协商" class="headerlink" title="1、协议协商"></a>1、协议协商</h2><ul>
-<li><p>客户端在访问Samba服务器时，首先由客户端发送一个SMB negprot请求数据包，并列出它所支持的所有SMB协议版本。</p>
-</li>
-<li><p>服务器在接受到请求信息吼开始响应请求，并列出希望使用的协议版本，选择最优的SMB类型。</p>
-</li>
-<li><p>如果没有可使用的协议版本则返回oXFFFFH信息，结束通信。</p>
-</li>
-</ul>
-<h2 id="2、建立连接"><a href="#2、建立连接" class="headerlink" title="2、建立连接"></a>2、建立连接</h2><ul>
-<li><p>当SMB协议版本确定后，客户端进程向服务器发起一个用户或共享的认证，这个过程是通过发送SesssetupX请求数据报实现的。</p>
-</li>
-<li><p>客户端发送一对用户名和密码或一个简单密码到服务器，然后服务器通过发送一个SesssetupX请应答数据报来允许或拒绝本次连接。</p>
-</li>
-</ul>
-<h2 id="3、访问共享资源"><a href="#3、访问共享资源" class="headerlink" title="3、访问共享资源"></a>3、访问共享资源</h2><ul>
-<li>当客户端和服务器完成了协商和认证之后，它会发送一个Tcon或S·MB TconX数据报并列出它想访问网络资源的名称，之后服务器会发送一个SMB TconX应答数据报以表示此次连接是否被接受或拒绝。</li>
-</ul>
-<h2 id="4、断开连接"><a href="#4、断开连接" class="headerlink" title="4、断开连接"></a>4、断开连接</h2><ul>
-<li>连接到相应资源，SMB客户端就能够open SMB打开一个文件，通过read SMB读取文件，通过write SMB写入文件，通过close SMB关闭文件。</li>
-</ul>
-<h3 id="参考文章："><a href="#参考文章：" class="headerlink" title="参考文章："></a>参考文章：</h3><h4 id="https-zhuanlan-zhihu-com-p-41449862"><a href="#https-zhuanlan-zhihu-com-p-41449862" class="headerlink" title="https://zhuanlan.zhihu.com/p/41449862"></a><a href="https://zhuanlan.zhihu.com/p/41449862" target="_blank" rel="noopener">https://zhuanlan.zhihu.com/p/41449862</a></h4>
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://www.kmmedia.top/2019/04/24/NTLMv1、NTLMv2-数据包分析/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1870,6 +1677,199 @@
 <p><a href="/download/NTLMv1.pcapng" target="_blank">NTLMv1.pcapng</a></p>
 </blockquote>
 <h4 id="文章参考："><a href="#文章参考：" class="headerlink" title="文章参考："></a>文章参考：</h4><h5 id="https-www-cnblogs-com-yanh0606-p-10488356-html"><a href="#https-www-cnblogs-com-yanh0606-p-10488356-html" class="headerlink" title="https://www.cnblogs.com/yanh0606/p/10488356.html"></a><a href="https://www.cnblogs.com/yanh0606/p/10488356.html" target="_blank" rel="noopener">https://www.cnblogs.com/yanh0606/p/10488356.html</a></h5><h5 id="http-yanng-cc-2018-03-18-hexo-E6-B7-BB-E5-8A-A0-E4-B8-8B-E8-BD-BD-E5-8A-9F-E8-83-BD"><a href="#http-yanng-cc-2018-03-18-hexo-E6-B7-BB-E5-8A-A0-E4-B8-8B-E8-BD-BD-E5-8A-9F-E8-83-BD" class="headerlink" title="http://yanng.cc/2018/03/18/hexo%E6%B7%BB%E5%8A%A0%E4%B8%8B%E8%BD%BD%E5%8A%9F%E8%83%BD/"></a><a href="http://yanng.cc/2018/03/18/hexo%E6%B7%BB%E5%8A%A0%E4%B8%8B%E8%BD%BD%E5%8A%9F%E8%83%BD/" target="_blank" rel="noopener">http://yanng.cc/2018/03/18/hexo%E6%B7%BB%E5%8A%A0%E4%B8%8B%E8%BD%BD%E5%8A%9F%E8%83%BD/</a></h5>
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://www.kmmedia.top/2019/04/24/Samba-协议工作流程/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Cheney先森">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Cheney’s blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/04/24/Samba-协议工作流程/" itemprop="url">Samba 协议工作流程</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-04-24T09:15:24+08:00">
+                2019-04-24
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/数据包协议分析/" itemprop="url" rel="index">
+                    <span itemprop="name">数据包协议分析</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/2019/04/24/Samba-协议工作流程/" class="leancloud_visitors" data-flag-title="Samba 协议工作流程">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  371
+                </span>
+              
+
+              
+
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="一、Samba的工作流程主要为四个阶段："><a href="#一、Samba的工作流程主要为四个阶段：" class="headerlink" title="一、Samba的工作流程主要为四个阶段："></a>一、Samba的工作流程主要为四个阶段：</h1><h2 id="1、协议协商"><a href="#1、协议协商" class="headerlink" title="1、协议协商"></a>1、协议协商</h2><ul>
+<li><p>客户端在访问Samba服务器时，首先由客户端发送一个SMB negprot请求数据包，并列出它所支持的所有SMB协议版本。</p>
+</li>
+<li><p>服务器在接受到请求信息吼开始响应请求，并列出希望使用的协议版本，选择最优的SMB类型。</p>
+</li>
+<li><p>如果没有可使用的协议版本则返回oXFFFFH信息，结束通信。</p>
+</li>
+</ul>
+<h2 id="2、建立连接"><a href="#2、建立连接" class="headerlink" title="2、建立连接"></a>2、建立连接</h2><ul>
+<li><p>当SMB协议版本确定后，客户端进程向服务器发起一个用户或共享的认证，这个过程是通过发送SesssetupX请求数据报实现的。</p>
+</li>
+<li><p>客户端发送一对用户名和密码或一个简单密码到服务器，然后服务器通过发送一个SesssetupX请应答数据报来允许或拒绝本次连接。</p>
+</li>
+</ul>
+<h2 id="3、访问共享资源"><a href="#3、访问共享资源" class="headerlink" title="3、访问共享资源"></a>3、访问共享资源</h2><ul>
+<li>当客户端和服务器完成了协商和认证之后，它会发送一个Tcon或S·MB TconX数据报并列出它想访问网络资源的名称，之后服务器会发送一个SMB TconX应答数据报以表示此次连接是否被接受或拒绝。</li>
+</ul>
+<h2 id="4、断开连接"><a href="#4、断开连接" class="headerlink" title="4、断开连接"></a>4、断开连接</h2><ul>
+<li>连接到相应资源，SMB客户端就能够open SMB打开一个文件，通过read SMB读取文件，通过write SMB写入文件，通过close SMB关闭文件。</li>
+</ul>
+<h3 id="参考文章："><a href="#参考文章：" class="headerlink" title="参考文章："></a>参考文章：</h3><h4 id="https-zhuanlan-zhihu-com-p-41449862"><a href="#https-zhuanlan-zhihu-com-p-41449862" class="headerlink" title="https://zhuanlan.zhihu.com/p/41449862"></a><a href="https://zhuanlan.zhihu.com/p/41449862" target="_blank" rel="noopener">https://zhuanlan.zhihu.com/p/41449862</a></h4>
           
         
       
@@ -2294,7 +2294,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">7</span>
+                  <span class="site-state-item-count">6</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
