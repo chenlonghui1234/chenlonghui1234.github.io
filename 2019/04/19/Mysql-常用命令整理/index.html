@@ -81,17 +81,17 @@
 
 
 
-<meta name="description" content="1、授权允许远程访问mysql  允许任意ip的主机访问本地mysql服务器 grant all privileges . to ‘root‘@’%’; 允许用户jack从ip为10.10.50.127的主机连接到mysql服务器，并使用123456作为密码 grant all privileges . to ‘jack‘@’10.10.50.127’ identified by ‘123456’">
+<meta name="description" content="一、数据库操作1、创建数据库  create database database_name;  2、删除数据库  drop database database_name;  二、表操作1、创建表  caeate table if not exists table_name( id int(3) auto_increment, username char(20) not null, password">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Mysql 常用命令整理">
 <meta property="og:url" content="http://www.kmmedia.top/2019/04/19/Mysql-常用命令整理/index.html">
 <meta property="og:site_name" content="Cheney’s blog">
-<meta property="og:description" content="1、授权允许远程访问mysql  允许任意ip的主机访问本地mysql服务器 grant all privileges . to ‘root‘@’%’; 允许用户jack从ip为10.10.50.127的主机连接到mysql服务器，并使用123456作为密码 grant all privileges . to ‘jack‘@’10.10.50.127’ identified by ‘123456’">
+<meta property="og:description" content="一、数据库操作1、创建数据库  create database database_name;  2、删除数据库  drop database database_name;  二、表操作1、创建表  caeate table if not exists table_name( id int(3) auto_increment, username char(20) not null, password">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-04-25T13:19:12.010Z">
+<meta property="og:updated_time" content="2019-05-13T02:50:40.155Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Mysql 常用命令整理">
-<meta name="twitter:description" content="1、授权允许远程访问mysql  允许任意ip的主机访问本地mysql服务器 grant all privileges . to ‘root‘@’%’; 允许用户jack从ip为10.10.50.127的主机连接到mysql服务器，并使用123456作为密码 grant all privileges . to ‘jack‘@’10.10.50.127’ identified by ‘123456’">
+<meta name="twitter:description" content="一、数据库操作1、创建数据库  create database database_name;  2、删除数据库  drop database database_name;  二、表操作1、创建表  caeate table if not exists table_name( id int(3) auto_increment, username char(20) not null, password">
 
 
 
@@ -400,7 +400,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  177
+                  324
                 </span>
               
 
@@ -425,22 +425,74 @@
       
 
       
-        <p>1、授权允许远程访问mysql</p>
+        <h3 id="一、数据库操作"><a href="#一、数据库操作" class="headerlink" title="一、数据库操作"></a>一、数据库操作</h3><p>1、创建数据库</p>
 <blockquote>
-<p>允许任意ip的主机访问本地mysql服务器</p>
+<p>create database database_name;</p>
+</blockquote>
+<p>2、删除数据库</p>
+<blockquote>
+<p>drop database database_name;</p>
+</blockquote>
+<h3 id="二、表操作"><a href="#二、表操作" class="headerlink" title="二、表操作"></a>二、表操作</h3><p>1、创建表</p>
+<blockquote>
+<p>caeate table if not exists table_name(</p>
+<p>id int(3) auto_increment,</p>
+<p>username char(20) not null,</p>
+<p>password char(20) not null,</p>
+<p>promary key(id)</p>
+<p>);</p>
+</blockquote>
+<p>2、添加索引</p>
+<blockquote>
+<p>alter table users add index index_name(column_name); </p>
+</blockquote>
+<p>3、查看表结构</p>
+<blockquote>
+<p>desc table_name;</p>
+</blockquote>
+<p>4、删除索引</p>
+<blockquote>
+<p>drop index index_name(column_name) on table_name;</p>
+</blockquote>
+<p>5、删除表</p>
+<blockquote>
+<p>drop table table_name;</p>
+</blockquote>
+<p>6、添加主键</p>
+<blockquote>
+<p>alter table users add primary key(column_name);</p>
+</blockquote>
+<p>7、删除主键</p>
+<blockquote>
+<p>alter table testalter_tbl drop primary key; </p>
+</blockquote>
+<h4 id="三、表数据操作"><a href="#三、表数据操作" class="headerlink" title="三、表数据操作"></a>三、表数据操作</h4><p>1、插入数据</p>
+<blockquote>
+<p>alter table table_name add column_name column_type;</p>
+</blockquote>
+<h3 id="四、用户配置"><a href="#四、用户配置" class="headerlink" title="四、用户配置"></a>四、用户配置</h3><p>1、创建用户和密码</p>
+<blockquote>
+<p>create user ‘username‘@’host’ identified by password (‘password’);</p>
+</blockquote>
+<p>2、允许任意ip的主机访问本地mysql服务器</p>
+<blockquote>
 <p>grant all privileges <em>.</em> to ‘root‘@’%’;</p>
-<p>允许用户jack从ip为10.10.50.127的主机连接到mysql服务器，并使用123456作为密码</p>
+</blockquote>
+<p>3、允许用户jack从ip为10.10.50.127的主机连接到mysql服务器，并使用123456作为密码</p>
+<blockquote>
 <p>grant all privileges <em>.</em> to ‘jack‘@’10.10.50.127’ identified by ‘123456’ with grant option;</p>
-<p>改表</p>
+</blockquote>
+<p>4、改表</p>
+<blockquote>
 <p>update user set host = ‘%’ where user = ‘root’;</p>
 </blockquote>
-<p>2、删除用户</p>
+<p>5、删除用户</p>
 <blockquote>
 <p>delete from user where user = ‘root’ and host = ‘%’;</p>
 <p>drop user ‘root‘@’%’;</p>
 </blockquote>
 <p>drop不仅会将user表中的数据删除，还会删除其他权限表的内容。而delete只删除user表中的内容，所以使用delete删除用户后需要执行FLUSH PRIVILEGES;刷新权限，否则下次使用create语句创建用户时会报错。</p>
-<p>3、重新加载授权表</p>
+<p>6、重新加载授权表</p>
 <blockquote>
 <p>flush privileges;</p>
 </blockquote>
@@ -559,8 +611,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -575,7 +636,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">18</span>
+                  <span class="site-state-item-count">22</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -635,6 +696,22 @@
       </section>
 
       
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#一、数据库操作"><span class="nav-number">1.</span> <span class="nav-text">一、数据库操作</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#二、表操作"><span class="nav-number">2.</span> <span class="nav-text">二、表操作</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#三、表数据操作"><span class="nav-number">2.1.</span> <span class="nav-text">三、表数据操作</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#四、用户配置"><span class="nav-number">3.</span> <span class="nav-text">四、用户配置</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
 
       
 
@@ -662,7 +739,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">4.5k</span>
+    <span title="Site words total count">5k</span>
   
 </div>
 

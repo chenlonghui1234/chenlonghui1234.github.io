@@ -88,7 +88,7 @@
 <meta property="og:site_name" content="Cheney’s blog">
 <meta property="og:description" content="1、安装samba服务   yum install samba system-config-samba samba-client samba-common  2、创建samba用户  useradd samba mkdir -p /home/smbtest chmod 777 /home/smbtest chown -R samba:samba /home/smbtest  3、修改配置文件  [">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-04-25T13:12:00.826Z">
+<meta property="og:updated_time" content="2019-05-12T01:57:46.266Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="CentOS 5.5 Samba服务配置">
 <meta name="twitter:description" content="1、安装samba服务   yum install samba system-config-samba samba-client samba-common  2、创建samba用户  useradd samba mkdir -p /home/smbtest chmod 777 /home/smbtest chown -R samba:samba /home/smbtest  3、修改配置文件  [">
@@ -400,7 +400,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  101
+                  159
                 </span>
               
 
@@ -451,6 +451,14 @@
 <p>smbclient //192.168.199.30/smbtest -U username</p>
 <p>put test.txt #上传文件</p>
 <p>get test.txt #下载文件</p>
+</blockquote>
+<p>注意：创建的共享目录上级目录用户必须有权限访问，否则将会报错，目录权限问题报错信息</p>
+<blockquote>
+<p>tree connect failed: NT_STATUS_BAD_NETWORK_NAME</p>
+</blockquote>
+<p>用户权限问题报错提示信息：</p>
+<blockquote>
+<p>session setup failed: NT_STATUS_LOGON_FAILURE</p>
 </blockquote>
 
       
@@ -503,8 +511,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/04/24/hexo添加下载功能/" rel="next" title="hexo添加下载功能">
-                <i class="fa fa-chevron-left"></i> hexo添加下载功能
+              <a href="/2019/04/24/NTLMv1、NTLMv2-数据包分析/" rel="next" title="Net-NTLMv1、NTLMv2 数据包分析">
+                <i class="fa fa-chevron-left"></i> Net-NTLMv1、NTLMv2 数据包分析
               </a>
             
           </div>
@@ -583,7 +591,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">18</span>
+                  <span class="site-state-item-count">22</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -670,7 +678,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">4.5k</span>
+    <span title="Site words total count">5k</span>
   
 </div>
 

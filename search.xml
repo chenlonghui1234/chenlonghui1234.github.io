@@ -1,6 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[内核提权]]></title>
+    <url>%2F2019%2F05%2F10%2F%E5%86%85%E6%A0%B8%E6%8F%90%E6%9D%83%2F</url>
+    <content type="text"><![CDATA[1、信息收集，获取当前系统的内核版本信息 查看发行版本 cat /etc/issue cat /etc/*-release 查看内核版本 uname -a 2、kali搜索可用的本地提权漏洞利用代码 searchspoit linux kernel 2.6.18]]></content>
+  </entry>
+  <entry>
+    <title><![CDATA[渗透笔记]]></title>
+    <url>%2F2019%2F05%2F09%2F%E6%B8%97%E9%80%8F%E7%AC%94%E8%AE%B0%2F</url>
+    <content type="text"><![CDATA[一、信息收集1、内网存活主机扫描 netdiscovery -r 192.168.199.0/24 arp-scan 192.168.199.0/24 2、nmap信息收集扫描 nmap -n -A -p0-65535 -oX result.xml IP msf &gt; db_import result.txt msf &gt; db_nmap -n -A -p 0-65535 IP]]></content>
+  </entry>
+  <entry>
+    <title><![CDATA[Docker 常用命令]]></title>
+    <url>%2F2019%2F05%2F05%2FDocker-%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4%2F</url>
+    <content type="text"><![CDATA[查看docker版本等信息 docker –version docker-compose –version docker-machine –version docker info 查看正在运行中的容器 docker ps 从仓库抓取镜像文件到本地 docker image pull hello-world 运行容器分配一个tty终端并使用bash命令行 docker run -it centos bash 查看所有镜像 docker image ls –all docker image ls docker images 查看所有容器 docker container ls –all 运行服务 docker run 停止和启动webserver服务 docker stop/start webserver 停止并删除正在运行的容器，这将删除容器，而不是镜像 docker rm -f webserver 删除不在需要的镜像 docker rmi nginx]]></content>
+  </entry>
+  <entry>
+    <title><![CDATA[Netcat 使用笔记]]></title>
+    <url>%2F2019%2F05%2F04%2FNetcat-%E4%BD%BF%E7%94%A8%E7%AC%94%E8%AE%B0%2F</url>
+    <content type="text"><![CDATA[攻击机Kali：192.168.199.43 中间代理Centos：192.168.199.32 目标机Centos：192.168.199.19]]></content>
+  </entry>
+  <entry>
+    <title><![CDATA[Linux 标准目录结构 FHS]]></title>
+    <url>%2F2019%2F05%2F03%2FLinux-%E6%A0%87%E5%87%86%E7%9B%AE%E5%BD%95%E7%BB%93%E6%9E%84-FHS%2F</url>
+    <content type="text"></content>
+  </entry>
+  <entry>
     <title><![CDATA[Sqlmap 数据包分析]]></title>
     <url>%2F2019%2F04%2F30%2FWireshark-%E7%AC%94%E8%AE%B0%2F</url>
     <content type="text"><![CDATA[一、Sqlmap抓包过滤关键信息1、枚举所有数据库 sqlmap -u “url” –dbs 过滤条件：(ip.addr == IP and http) or http.reponse 因为sqlmap的url查询语句中有schema_name的关键词，所以搜索关键词也能快速找到关键数据包。 对所选数据包追踪TCP流，在服务器回复信息中找到由前后各5个混淆码的字符串，中间的即为需要的数据库名，如上一个个找出所有数据库名即可。 2、枚举用户 sqlmap -u “url” –users 过滤条件：(ip.addr == IP and http) or http.reponse 搜索查询语句中的user关键词快速找到所需数据包。 3、枚举当前数据库 sqlmap -u “url” –current-db 过滤条件：(ip.addr == IP and http) or http.reponse 搜索查询语句中的database关键词快速找到所需数据包。 4、枚举当前数据库用户 sqlmap -u “url” –current-user 搜索查询语句中的user关键词快速找到所需数据包。]]></content>
@@ -35,9 +60,17 @@
   <entry>
     <title><![CDATA[CentOS 5.5 Samba服务配置]]></title>
     <url>%2F2019%2F04%2F24%2FCentOS-Samba%E6%9C%8D%E5%8A%A1%E9%85%8D%E7%BD%AE%2F</url>
-    <content type="text"><![CDATA[1、安装samba服务 yum install samba system-config-samba samba-client samba-common 2、创建samba用户 useradd samba mkdir -p /home/smbtest chmod 777 /home/smbtest chown -R samba:samba /home/smbtest 3、修改配置文件 [global] security = user [smbtest] path = /home/smbtest writable = yes #写入权限 create mask = 0644 #上传权限 directory mask = 0755 #下载权限 4、linux访问smb服务器 smbclient //192.168.199.30/smbtest -U username put test.txt #上传文件 get test.txt #下载文件]]></content>
+    <content type="text"><![CDATA[1、安装samba服务 yum install samba system-config-samba samba-client samba-common 2、创建samba用户 useradd samba mkdir -p /home/smbtest chmod 777 /home/smbtest chown -R samba:samba /home/smbtest 3、修改配置文件 [global] security = user [smbtest] path = /home/smbtest writable = yes #写入权限 create mask = 0644 #上传权限 directory mask = 0755 #下载权限 4、linux访问smb服务器 smbclient //192.168.199.30/smbtest -U username put test.txt #上传文件 get test.txt #下载文件 注意：创建的共享目录上级目录用户必须有权限访问，否则将会报错，目录权限问题报错信息 tree connect failed: NT_STATUS_BAD_NETWORK_NAME 用户权限问题报错提示信息： session setup failed: NT_STATUS_LOGON_FAILURE]]></content>
       <categories>
         <category>Linux 笔记</category>
+      </categories>
+  </entry>
+  <entry>
+    <title><![CDATA[Net-NTLMv1、NTLMv2 数据包分析]]></title>
+    <url>%2F2019%2F04%2F24%2FNTLMv1%E3%80%81NTLMv2-%E6%95%B0%E6%8D%AE%E5%8C%85%E5%88%86%E6%9E%90%2F</url>
+    <content type="text"><![CDATA[一、Net-NTMLMv1，Net-NTLMv2工作流程：Net-NTLMv1的加密方法如下： 1、客户端向服务器发送一个请求 2、服务器接收到请求后，生成一个8位的Challenge，发送回客户端 3、客户端接收到Challenge后，使用登录用户的密码hash对Challenge加密，作为response发送给服务器 4、服务器校验response 对比Net-NTLMv1，Net-NTLMv2的加密方法如下： 1、客户端向服务器发送一个请求 2、服务器接收到请求后，生成一个16位的Challenge，发送回客户端 3、客户端接收到Challenge后，使用登录用户的密码hash对Challenge加密，作为response发送给服务器 4、服务器校验response 两者的流程相同，但加密算法不同，Net-NTLMv1相对脆弱，Net-NTLMv1 response的计算方法比较简单，方法如下(目前LM hash很少接触，不考虑)：将用户的NTLM hash分成三组，每组7比特(长度不够末尾填0)，作为3DES加密算法的三组密钥，加密Server发来的Challenge 二、数据包密码破解Net-NTLMv1NTLMv1 数据包文件下载：NTLMv1.pcapng 客户端：192.168.199.59 服务器：192.168.199.210 Net-NTLMv1的加密流程 1、客户端向服务器发送一个请求 2、服务器接收到请求后，生成一个8位的Challenge，发送回客户端 3、客户端接收到Challenge后，使用登录用户的密码hash对Challenge加密，作为response发送给服务器 4、服务器校验response 密码hash固定拼接格式：username :: hostname : LM response : NTLM response : Server challenge NTLM Server Challenge: f9c7fc816b991824 Lan Manager Response: c67ee888f6b41a4400000000000000000000000000000000 NTLM Response: 293b99da834c86c6e37c37a20920b41581be32740a5e062e User name: asd Host name: QWE-C78DBB1CBD0 拼接后字符串为：asd::QWE-C78DBB1CBD0:c67ee888f6b41a4400000000000000000000000000000000:293b99da834c86c6e37c37a20920b41581be32740a5e062e:f9c7fc816b991824 使用hashcat破解密码： hashcat -m 5500 拼接字符串或字符串文件 密码字典 –force hashcat -m 5500 拼接字符串或字符串文件 密码字典 –force –show 显示破解密码 Net-NTLMv2解析NTLMv2 数据包文件下载：NTLMv2.pcapng 1、客户端向服务器发送一个请求 2、服务器接收到请求后，生成一个16位的Challenge，发送回客户端 3、客户端接收到Challenge后，使用登录用户的密码hash对Challenge加密，作为response发送给服务器 4、服务器校验response 密码hash固定拼接格式：username :: domain : challenge : NTProofStr : NTLM Response - NTProofStr NTLM Server Challenge: f12d23c3e60843cc 32a48adf53baf6ef888482d94e2220010101000000000000e844288052f7d40108c126eda5b696d60000000002001e004d0058002d0041003200390033004600450037003400370037004300420001001e004d0058002d0041003200390033004600450037003400370037004300420004001e006d0078002d0061003200390033006600650037003400370037006300620003001e006d0078002d0061003200390033006600650037003400370037006300620008003000300000000000000000000000000000009cde6da7297d9f2a9087cd22f3bc9e914a6894544023040d6979fffc8bd2b6290a001000000000000000000000000000000000000900260063006900660073002f003100390032002e003100360038002e00310033002e0031003200390000000000 NTProofStr: 32a48adf53baf6ef888482d94e222001 Domain name: WORKGROUP User name: www.ld80.cn 使用hashcat破解密码： hashcat -m 指定hash类型 5600（NTLMv2） 拼接字符串 密码字典 –force 开始破解 hashcat -m 指定hash类型 5600（NTLMv2） 拼接字符串 密码字典 –force –show 显示破解密码 hashcat –help | grep NTLM 过滤出相关协议 三、总结这篇文章花了两天的时间把它给写完了，刚开始做了很多实验，一直很困惑这个协议是如何运作，如今终于搞明白了。 当然这在计算机网络中只是很渺小的一部分，今后还应该继续努力。 参考文章：https://3gstudent.github.io/3gstudent.github.io/Windows%E4%B8%8B%E7%9A%84%E5%AF%86%E7%A0%81hash-Net-NTLMv1%E4%BB%8B%E7%BB%8D/]]></content>
+      <categories>
+        <category>数据包协议分析</category>
       </categories>
   </entry>
   <entry>
@@ -55,19 +88,6 @@
       <categories>
         <category>数据包协议分析</category>
       </categories>
-  </entry>
-  <entry>
-    <title><![CDATA[Net-NTLMv1、NTLMv2 数据包分析]]></title>
-    <url>%2F2019%2F04%2F24%2FNTLMv1%E3%80%81NTLMv2-%E6%95%B0%E6%8D%AE%E5%8C%85%E5%88%86%E6%9E%90%2F</url>
-    <content type="text"><![CDATA[一、Net-NTMLMv1，Net-NTLMv2工作流程：Net-NTLMv1的加密方法如下： 1、客户端向服务器发送一个请求 2、服务器接收到请求后，生成一个8位的Challenge，发送回客户端 3、客户端接收到Challenge后，使用登录用户的密码hash对Challenge加密，作为response发送给服务器 4、服务器校验response 对比Net-NTLMv1，Net-NTLMv2的加密方法如下： 1、客户端向服务器发送一个请求 2、服务器接收到请求后，生成一个16位的Challenge，发送回客户端 3、客户端接收到Challenge后，使用登录用户的密码hash对Challenge加密，作为response发送给服务器 4、服务器校验response 两者的流程相同，但加密算法不同，Net-NTLMv1相对脆弱，Net-NTLMv1 response的计算方法比较简单，方法如下(目前LM hash很少接触，不考虑)：将用户的NTLM hash分成三组，每组7比特(长度不够末尾填0)，作为3DES加密算法的三组密钥，加密Server发来的Challenge 二、数据包密码破解Net-NTLMv1NTLMv1 数据包文件下载：NTLMv1.pcapng 客户端：192.168.199.59 服务器：192.168.199.210 Net-NTLMv1的加密流程 1、客户端向服务器发送一个请求 2、服务器接收到请求后，生成一个8位的Challenge，发送回客户端 3、客户端接收到Challenge后，使用登录用户的密码hash对Challenge加密，作为response发送给服务器 4、服务器校验response 密码hash固定拼接格式：username :: hostname : LM response : NTLM response : Server challenge NTLM Server Challenge: f9c7fc816b991824 Lan Manager Response: c67ee888f6b41a4400000000000000000000000000000000 NTLM Response: 293b99da834c86c6e37c37a20920b41581be32740a5e062e User name: asd Host name: QWE-C78DBB1CBD0 拼接后字符串为：asd::QWE-C78DBB1CBD0:c67ee888f6b41a4400000000000000000000000000000000:293b99da834c86c6e37c37a20920b41581be32740a5e062e:f9c7fc816b991824 使用hashcat破解密码： hashcat -m 5500 拼接字符串或字符串文件 密码字典 –force hashcat -m 5500 拼接字符串或字符串文件 密码字典 –force –show 显示破解密码 Net-NTLMv2解析NTLMv2 数据包文件下载：NTLMv2.pcapng 1、客户端向服务器发送一个请求 2、服务器接收到请求后，生成一个16位的Challenge，发送回客户端 3、客户端接收到Challenge后，使用登录用户的密码hash对Challenge加密，作为response发送给服务器 4、服务器校验response 密码hash固定拼接格式：username :: domain : challenge : NTProofStr : NTLM Response - NTProofStr NTLM Server Challenge: f12d23c3e60843cc 32a48adf53baf6ef888482d94e2220010101000000000000e844288052f7d40108c126eda5b696d60000000002001e004d0058002d0041003200390033004600450037003400370037004300420001001e004d0058002d0041003200390033004600450037003400370037004300420004001e006d0078002d0061003200390033006600650037003400370037006300620003001e006d0078002d0061003200390033006600650037003400370037006300620008003000300000000000000000000000000000009cde6da7297d9f2a9087cd22f3bc9e914a6894544023040d6979fffc8bd2b6290a001000000000000000000000000000000000000900260063006900660073002f003100390032002e003100360038002e00310033002e0031003200390000000000 NTProofStr: 32a48adf53baf6ef888482d94e222001 Domain name: WORKGROUP User name: www.ld80.cn 使用hashcat破解密码： hashcat -m 指定hash类型 5600（NTLMv2） 拼接字符串 密码字典 –force 开始破解 hashcat -m 指定hash类型 5600（NTLMv2） 拼接字符串 密码字典 –force –show 显示破解密码 hashcat –help | grep NTLM 过滤出相关协议 三、总结这篇文章花了两天的时间把它给写完了，刚开始做了很多实验，一直很困惑这个协议是如何运作，如今终于搞明白了。 当然这在计算机网络中只是很渺小的一部分，今后还应该继续努力。 参考文章：https://3gstudent.github.io/3gstudent.github.io/Windows%E4%B8%8B%E7%9A%84%E5%AF%86%E7%A0%81hash-Net-NTLMv1%E4%BB%8B%E7%BB%8D/]]></content>
-      <categories>
-        <category>数据包协议分析</category>
-      </categories>
-  </entry>
-  <entry>
-    <title><![CDATA[堆栈笔记]]></title>
-    <url>%2F2019%2F04%2F21%2F%E5%A0%86%E6%A0%88%E7%AC%94%E8%AE%B0%2F</url>
-    <content type="text"><![CDATA[内存是高高低低 堆栈是低低高高]]></content>
   </entry>
   <entry>
     <title><![CDATA[Kali w3af工具使用]]></title>
@@ -104,7 +124,7 @@
   <entry>
     <title><![CDATA[Mysql 常用命令整理]]></title>
     <url>%2F2019%2F04%2F19%2FMysql-%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4%E6%95%B4%E7%90%86%2F</url>
-    <content type="text"><![CDATA[1、授权允许远程访问mysql 允许任意ip的主机访问本地mysql服务器 grant all privileges . to ‘root‘@’%’; 允许用户jack从ip为10.10.50.127的主机连接到mysql服务器，并使用123456作为密码 grant all privileges . to ‘jack‘@’10.10.50.127’ identified by ‘123456’ with grant option; 改表 update user set host = ‘%’ where user = ‘root’; 2、删除用户 delete from user where user = ‘root’ and host = ‘%’; drop user ‘root‘@’%’; drop不仅会将user表中的数据删除，还会删除其他权限表的内容。而delete只删除user表中的内容，所以使用delete删除用户后需要执行FLUSH PRIVILEGES;刷新权限，否则下次使用create语句创建用户时会报错。 3、重新加载授权表 flush privileges;]]></content>
+    <content type="text"><![CDATA[一、数据库操作1、创建数据库 create database database_name; 2、删除数据库 drop database database_name; 二、表操作1、创建表 caeate table if not exists table_name( id int(3) auto_increment, username char(20) not null, password char(20) not null, promary key(id) ); 2、添加索引 alter table users add index index_name(column_name); 3、查看表结构 desc table_name; 4、删除索引 drop index index_name(column_name) on table_name; 5、删除表 drop table table_name; 6、添加主键 alter table users add primary key(column_name); 7、删除主键 alter table testalter_tbl drop primary key; 三、表数据操作1、插入数据 alter table table_name add column_name column_type; 四、用户配置1、创建用户和密码 create user ‘username‘@’host’ identified by password (‘password’); 2、允许任意ip的主机访问本地mysql服务器 grant all privileges . to ‘root‘@’%’; 3、允许用户jack从ip为10.10.50.127的主机连接到mysql服务器，并使用123456作为密码 grant all privileges . to ‘jack‘@’10.10.50.127’ identified by ‘123456’ with grant option; 4、改表 update user set host = ‘%’ where user = ‘root’; 5、删除用户 delete from user where user = ‘root’ and host = ‘%’; drop user ‘root‘@’%’; drop不仅会将user表中的数据删除，还会删除其他权限表的内容。而delete只删除user表中的内容，所以使用delete删除用户后需要执行FLUSH PRIVILEGES;刷新权限，否则下次使用create语句创建用户时会报错。 6、重新加载授权表 flush privileges;]]></content>
       <categories>
         <category>Linux 笔记</category>
       </categories>
@@ -128,7 +148,7 @@
   <entry>
     <title><![CDATA[Linux常用命令整理]]></title>
     <url>%2F2019%2F04%2F15%2FLinux-%E5%91%BD%E4%BB%A4%E6%95%B4%E7%90%86%2F</url>
-    <content type="text"><![CDATA[一、lsof1、列出本机正在运行的ipv4/ipv6协议服务 lsof -i 4/6 2、列出本机正在运行的tcp/udp服务 lsof -i tcp/udp 3、列出本机1-1024的开放端口 lsof -i :1-1024 4、列出本机用户的进程服务 lsfo -u user 二、chkconfig1、列出所有程序开启状态 chkconfig –list]]></content>
+    <content type="text"><![CDATA[一、lsof1、列出本机正在运行的ipv4/ipv6协议服务 lsof -i 4/6 2、列出本机正在运行的tcp/udp服务 lsof -i tcp/udp 3、列出本机1-1024的开放端口 lsof -i :1-1024 4、列出本机用户的进程服务 lsfo -u user 二、chkconfig1、列出所有程序开启状态 chkconfig –list 打开pdf文件 evince test.pdf]]></content>
       <categories>
         <category>Linux 笔记</category>
       </categories>
