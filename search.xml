@@ -74,19 +74,19 @@
       </categories>
   </entry>
   <entry>
-    <title><![CDATA[hexo添加下载功能]]></title>
-    <url>%2F2019%2F04%2F24%2Fhexo%E6%B7%BB%E5%8A%A0%E4%B8%8B%E8%BD%BD%E5%8A%9F%E8%83%BD%2F</url>
-    <content type="text"><![CDATA[1、在source目录下新建download目录与_postsAbouttagscategories等目录并列。 2、将文件放入download目录下 3、在需要下载的文章中写入如下html超链接语句，但需要在github或者coding上同步博客文件才可正常下载。 NTLMv1.pcapng 文章参考：https://www.cnblogs.com/yanh0606/p/10488356.htmlhttp://yanng.cc/2018/03/18/hexo%E6%B7%BB%E5%8A%A0%E4%B8%8B%E8%BD%BD%E5%8A%9F%E8%83%BD/]]></content>
-      <categories>
-        <category>hexo 笔记</category>
-      </categories>
-  </entry>
-  <entry>
     <title><![CDATA[Samba 协议工作流程]]></title>
     <url>%2F2019%2F04%2F24%2FSamba-%E5%8D%8F%E8%AE%AE%E5%B7%A5%E4%BD%9C%E6%B5%81%E7%A8%8B%2F</url>
     <content type="text"><![CDATA[一、Samba的工作流程主要为四个阶段：1、协议协商 客户端在访问Samba服务器时，首先由客户端发送一个SMB negprot请求数据包，并列出它所支持的所有SMB协议版本。 服务器在接受到请求信息吼开始响应请求，并列出希望使用的协议版本，选择最优的SMB类型。 如果没有可使用的协议版本则返回oXFFFFH信息，结束通信。 2、建立连接 当SMB协议版本确定后，客户端进程向服务器发起一个用户或共享的认证，这个过程是通过发送SesssetupX请求数据报实现的。 客户端发送一对用户名和密码或一个简单密码到服务器，然后服务器通过发送一个SesssetupX请应答数据报来允许或拒绝本次连接。 3、访问共享资源 当客户端和服务器完成了协商和认证之后，它会发送一个Tcon或S·MB TconX数据报并列出它想访问网络资源的名称，之后服务器会发送一个SMB TconX应答数据报以表示此次连接是否被接受或拒绝。 4、断开连接 连接到相应资源，SMB客户端就能够open SMB打开一个文件，通过read SMB读取文件，通过write SMB写入文件，通过close SMB关闭文件。 参考文章：https://zhuanlan.zhihu.com/p/41449862]]></content>
       <categories>
         <category>数据包协议分析</category>
+      </categories>
+  </entry>
+  <entry>
+    <title><![CDATA[hexo添加下载功能]]></title>
+    <url>%2F2019%2F04%2F24%2Fhexo%E6%B7%BB%E5%8A%A0%E4%B8%8B%E8%BD%BD%E5%8A%9F%E8%83%BD%2F</url>
+    <content type="text"><![CDATA[1、在source目录下新建download目录与_postsAbouttagscategories等目录并列。 2、将文件放入download目录下 3、在需要下载的文章中写入如下html超链接语句，但需要在github或者coding上同步博客文件才可正常下载。 NTLMv1.pcapng 文章参考：https://www.cnblogs.com/yanh0606/p/10488356.htmlhttp://yanng.cc/2018/03/18/hexo%E6%B7%BB%E5%8A%A0%E4%B8%8B%E8%BD%BD%E5%8A%9F%E8%83%BD/]]></content>
+      <categories>
+        <category>hexo 笔记</category>
       </categories>
   </entry>
   <entry>
